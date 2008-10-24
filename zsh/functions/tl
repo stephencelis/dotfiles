@@ -1,0 +1,13 @@
+if [ -d log ]; then
+   if [ -z $1 ]; then
+      tail -200f log/d*.log
+   else
+      tail -200f log/$1*.log
+   fi
+else
+   if [ -z $2 ]; then
+      tail -200f $HOME/Code/$1*/log/d*.log
+   else
+      tail -200f $HOME/Code/$1*/log/$2*.log
+   fi
+fi

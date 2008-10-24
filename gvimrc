@@ -1,0 +1,9 @@
+colorscheme ir_black
+set columns=149
+set guifont=DejaVuSansMono:h13
+set guioptions-=T
+set lbr
+set lines=50
+set number
+set path+=**
+set transparency=10

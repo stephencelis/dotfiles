@@ -1,0 +1,5 @@
+local matcher=$CODEPATH
+for match in $@; do
+	matcher+=/${match}*
+done
+eval cd ${matcher%% }

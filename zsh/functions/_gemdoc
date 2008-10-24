@@ -1,0 +1,2 @@
+#compdef gemdoc
+_files -W $GEMPATH/doc

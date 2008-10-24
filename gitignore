@@ -1,0 +1,13 @@
+*~
+*.bak
+*.log
+*.pid
+*.swp
+.DS_Store
+tmp
+
+# Rails
+config/*.yml
+config.*.sphinx.conf
+db/schema.rb
+db/sphinx
