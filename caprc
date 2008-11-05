@@ -1,0 +1,3 @@
+capdir = "#{ENV['HOME']}/.cap/"
+load "#{capdir}aliases.rake"
+load "#{capdir}growl.rake"
