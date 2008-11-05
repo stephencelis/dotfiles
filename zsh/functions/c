@@ -1,5 +1,5 @@
 local matcher=$CODEPATH
 for match in $@; do
-	matcher+=/${match}*
+	matcher+=/${match}*(/,@[0])
 done
 eval cd ${matcher%% }
