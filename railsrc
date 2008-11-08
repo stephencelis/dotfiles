@@ -21,3 +21,7 @@ end
 def hide_log
   change_log(nil)
 end
+
+def sql(query)
+  ActiveRecord::Base.connection.select_all(query)
+end 

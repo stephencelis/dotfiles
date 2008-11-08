@@ -16,9 +16,10 @@ alias "gem?"="gem query -r ?"
 alias ri="ri -Tf ansi"
 
 # Rails
-alias restart="echo Restarting... && touch tmp/restart.txt"
+alias "reload!"="echo Reloading... && touch tmp/restart.txt"
 alias sc="script/console"
 alias sg="script/generate"
+alias ss="script/server"
 alias rvim="mvim . +Rproject"
 
 # Java
