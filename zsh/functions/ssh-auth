@@ -1,0 +1,13 @@
+printf "Specify key (id_rsa): " && read keyname
+[ -z $keyname ] && keyname="id_rsa"
+local keypath="$HOME/.ssh/$keyname"
+if [[ ! -f "$keypath.pub" ]]; then
+  echo "Public key not found: $keypath.pub"
+  printf "Generate key pair? [Yn] " && read keypair
+  if [[ -z $keypair ]] || [[ $keypair == [Yy] ]]; then
+    ssh-keygen -f $keypath
+  else
+    return
+  fi
+fi
+ssh $@ "echo `cat $keypath.pub` >> ~/.ssh/authorized_keys"
