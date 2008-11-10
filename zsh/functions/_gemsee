@@ -1,0 +1,2 @@
+#compdef gemsee
+_files -W $GEMPATH/gems

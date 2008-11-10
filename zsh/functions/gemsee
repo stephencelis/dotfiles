@@ -1,0 +1,2 @@
+local editor=$2 && [ -z $editor ] && editor=$EDITOR
+eval $editor $(echo $GEMPATH/gems/$1*(om[1]))

@@ -11,7 +11,8 @@ export MANPATH=/usr/local/man:$MANPATH
 export CODEPATH=~/Documents/Code
 export GEMPATH=`gem env gemdir`
 
-export VISUAL="mvim -f"
+export EDITOR="mvim -f"
+export VISUAL=$EDITOR
 
 fpath=(~/.zsh/functions $fpath)
 autoload -U ~/.zsh/functions/*(:t)
