@@ -23,4 +23,5 @@ namespace :campfire do
   end
 end
 
-after "deploy", "campfire:notify"
+after "deploy",            "campfire:notify"
+after "deploy:migrations", "campfire:notify"

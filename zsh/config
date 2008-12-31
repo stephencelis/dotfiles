@@ -6,13 +6,10 @@ export RPROMPT=""
 
 export LSCOLORS="Exfxcxdxbxegedabagacad"
 
-export PATH=/usr/local/bin:/user/local/mysql/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/jruby/bin:/usr/local/mysql/bin:$PATH
 export MANPATH=/usr/local/man:$MANPATH
 export CODEPATH=~/Documents/Code
 export GEMPATH=`gem env gemdir`
-
-export EDITOR="mvim -f"
-export VISUAL=$EDITOR
 
 fpath=(~/.zsh/functions $fpath)
 autoload -U ~/.zsh/functions/*(:t)
@@ -21,10 +18,9 @@ HISTFILE=~/.zsh_history
 HISTSIZE=1000
 SAVEHIST=1000
 
-# setopt HIST_VERIFY
 setopt EXTENDED_HISTORY
 setopt APPEND_HISTORY
-setopt INC_APPEND_HISTORY SHARE_HISTORY
+# setopt INC_APPEND_HISTORY SHARE_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_REDUCE_BLANKS
 
@@ -38,10 +34,6 @@ setopt NO_LIST_BEEP
 setopt RM_STAR_WAIT
 
 unsetopt NO_HUP
-
-# These, for some reason, are unset by defining "mvim" as the $VISUAL editor.
-bindkey '^A' beginning-of-line
-bindkey '^E' end-of-line
 
 bindkey '^[[5D' backward-word
 bindkey '^[[5C' forward-word

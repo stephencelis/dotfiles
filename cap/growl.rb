@@ -15,6 +15,11 @@ after "deploy" do
   find_and_execute_task "growl:notify"
 end
 
+after "deploy:migrations" do
+  ENV["GROWL_MESSAGE"] ||= "deployed #{application} #{stage}"
+  find_and_execute_task "growl:notify"
+end
+
 after "rollback" do
   ENV["GROWL_MESSAGE"] ||= "rolled back #{application} #{stage}"
   find_and_execute_task "growl:alert"

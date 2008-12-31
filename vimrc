@@ -1,38 +1,16 @@
-" An example for a vimrc file.
-"
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last change:	2006 Nov 16
-"
-" To use it, copy it to
-"     for Unix and OS/2:  ~/.vimrc
-"	      for Amiga:  s:.vimrc
-"  for MS-DOS and Win32:  $VIM\_vimrc
-"	    for OpenVMS:  sys$login:.vimrc
-
-" When started as "evim", evim.vim will already have done these settings.
-if v:progname =~? "evim"
-  finish
-endif
-
-" Use Vim settings, rather then Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
 set nocompatible
-
-" allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
 if has("vms")
-  set nobackup		" do not keep a backup file, use versions instead
+  set nobackup " do not keep a backup file, use versions instead
 else
-  set backup		" keep a backup file
+  set backup   " keep a backup file
 endif
-set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
 
-" For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
-" let &guioptions = substitute(&guioptions, "t", "", "g")
+set history=100
+set ruler " show the cursor position all the time
+set showcmd " display incomplete commands
+set incsearch " do incremental searching
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -75,7 +53,7 @@ if has("autocmd")
 
 else
 
-  set autoindent		" always set autoindenting on
+  set autoindent " always set autoindenting on
 
 endif " has("autocmd")
 
@@ -86,7 +64,7 @@ command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 
 " Custom
 
-set expandtab shiftwidth=4 tabstop=4
+set noexpandtab shiftwidth=4 tabstop=4
 autocmd FileType ruby,eruby,yaml set et sw=2 sts=2
 " set list
 " set smartindent
@@ -104,3 +82,23 @@ endif
 " Map FuzzyFinderTextMate to '\t'
 map <leader>t :FuzzyFinderTextMate<CR>
 map ,t :ruby finder.rescan!
+
+set hidden
+nnoremap ' `
+nnoremap ` '
+runtime macros/matchit.vim
+set wildmenu
+set wildmode=list:longest
+set ignorecase
+set smartcase
+set title
+set scrolloff=3
+set backupdir=/var/tmp
+set directory=/var/tmp
+nnoremap <C-e> 3<C-e>
+nnoremap <C-y> 3<C-y>
+set list
+set listchars=tab:▶.,trail:·,eol:$
+nmap <silent> <leader>s :set nolist!<CR>
+set shortmess=atI
+set visualbell
