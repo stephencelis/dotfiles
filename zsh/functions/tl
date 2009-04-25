@@ -6,8 +6,8 @@ if [ -d log ]; then
    fi
 else
    if [ -z $2 ]; then
-      tail -200f $HOME/Code/$1*/log/d*.log
+      tail -200f $HOME/Documents/Code/$1*/log/d*.log
    else
-      tail -200f $HOME/Code/$1*/log/$2*.log
+      tail -200f $HOME/Documents/Code/$1*/log/$2*.log
    fi
 fi

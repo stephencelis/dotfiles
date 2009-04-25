@@ -10,4 +10,4 @@ if [[ ! -f "$keypath.pub" ]]; then
     return
   fi
 fi
-ssh $@ "echo `cat $keypath.pub` >> ~/.ssh/authorized_keys"
+ssh -o PubkeyAuthentication=no $@ "echo `cat $keypath.pub` >> ~/.ssh/authorized_keys"

@@ -1,4 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/Users/stephen/.zsh/functions'
-let g:netrw_dirhist_2='/Users/stephen/Dropbox/Configuration/dotfiles/zsh/functions'
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/stephen/Dropbox/Configuration/dotfiles/zsh/functions'
+let g:netrw_dirhist_2='/Users/stephen/.zsh'
+let g:netrw_dirhist_3='/Users/stephen/.zsh/functions'
+let g:netrw_dirhist_4='/Users/stephen/.zsh'
+let g:netrw_dirhist_5='/Users/stephen/.zsh/functions'
+let g:netrw_dirhist_6='/Users/stephen/.zsh'

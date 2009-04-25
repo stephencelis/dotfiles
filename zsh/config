@@ -1,12 +1,14 @@
 # setenv() { export $1=$2 }
 
+autoload -U colors
+colors
 setopt PROMPT_SUBST
-export PROMPT='%m:%3~$(git_info_for_prompt)%# '
+export PROMPT='%{${bg[grey]}%}%{${fg[blue]}%}%3~%{${fg[green]}%}$(git_info_for_prompt) %{${fg[red]}%}→ %{${fg[default]}%}%{${bg[default]}%}'
 export RPROMPT=""
 
 export LSCOLORS="Exfxcxdxbxegedabagacad"
 
-export PATH=/usr/local/bin:/usr/local/jruby/bin:/usr/local/mysql/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/jruby/bin:/usr/local/mysql/bin:/usr/local/checker-0.155:$PATH
 export MANPATH=/usr/local/man:$MANPATH
 export CODEPATH=~/Documents/Code
 export GEMPATH=`gem env gemdir`
