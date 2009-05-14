@@ -64,8 +64,7 @@ command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 
 " Custom
 
-set noexpandtab shiftwidth=4 tabstop=4
-autocmd FileType ruby,eruby,yaml set et sw=2 sts=2
+set et sw=2 sts=2
 " set list
 " set smartindent
 set nocp
@@ -98,7 +97,14 @@ set directory=/var/tmp
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 set list
-set listchars=tab:→.,trail:·,eol:$
+set listchars=tab:··,trail:·,eol:$
 nmap <silent> <leader>s :set nolist!<CR>
 set shortmess=atI
 set visualbell
+
+" Customize here: http://vim.wikia.com/wiki/VimTip24
+let w:m1=matchadd('Search', '\%<81v.\%>77v', -1)
+let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+au BufWinEnter * let w:m1=matchadd('Search', '\%<81v.\%>80v', -1)
+au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+

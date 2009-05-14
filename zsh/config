@@ -13,6 +13,9 @@ export MANPATH=/usr/local/man:$MANPATH
 export CODEPATH=~/Documents/Code
 export GEMPATH=`gem env gemdir`
 
+# export VISUAL="mate -w"
+# export EDITOR="vim"
+
 fpath=(~/.zsh/functions $fpath)
 autoload -U ~/.zsh/functions/*(:t)
 
@@ -37,5 +40,7 @@ setopt RM_STAR_WAIT
 
 unsetopt NO_HUP
 
+bindkey '^A' beginning-of-line
+bindkey '^E' end-of-line
 bindkey '^[[5D' backward-word
 bindkey '^[[5C' forward-word
