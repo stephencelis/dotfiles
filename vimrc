@@ -80,7 +80,7 @@ endif
 
 " Map FuzzyFinderTextMate to '\t'
 map <leader>t :FuzzyFinderTextMate<CR>
-map ,t :ruby finder.rescan!
+map ,t :ruby finder.rescan!<CR>
 
 set hidden
 nnoremap ' `
@@ -103,8 +103,14 @@ set shortmess=atI
 set visualbell
 
 " Customize here: http://vim.wikia.com/wiki/VimTip24
-let w:m1=matchadd('Search', '\%<81v.\%>77v', -1)
+let w:m1=matchadd('Search', '\%<81v.\%>80v', -1)
 let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 au BufWinEnter * let w:m1=matchadd('Search', '\%<81v.\%>80v', -1)
 au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 
+" Git updates are OK
+set autoread
+
+" Emacs like movement in insert mode
+map! <C-A> <Home>
+map! <C-E> <End>
