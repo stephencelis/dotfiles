@@ -27,7 +27,6 @@ endif
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
-
   " Enable file type detection.
   " Use the default filetype settings, so that mail gets 'tw' set to 72,
   " 'cindent' is on in C files, etc.
@@ -50,11 +49,8 @@ if has("autocmd")
     \ endif
 
   augroup END
-
 else
-
   set autoindent " always set autoindenting on
-
 endif " has("autocmd")
 
 " Convenient command to see the difference between the current buffer and the
@@ -90,7 +86,7 @@ set wildmenu
 set wildmode=list:longest
 set ignorecase
 set smartcase
-set title
+set notitle
 set scrolloff=3
 set backupdir=/var/tmp
 set directory=/var/tmp
@@ -103,10 +99,10 @@ set shortmess=atI
 set visualbell
 
 " Customize here: http://vim.wikia.com/wiki/VimTip24
-let w:m1=matchadd('Search', '\%<81v.\%>80v', -1)
-let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
-au BufWinEnter * let w:m1=matchadd('Search', '\%<81v.\%>80v', -1)
-au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+" let w:m1=matchadd('Search', '\%<81v.\%>80v', -1)
+" let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+" au BufWinEnter * let w:m1=matchadd('Search', '\%<81v.\%>80v', -1)
+" au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 
 " Git updates are OK
 set autoread
@@ -114,3 +110,6 @@ set autoread
 " Emacs like movement in insert mode
 map! <C-A> <Home>
 map! <C-E> <End>
+
+" Whitespace!
+autocmd BufWritePre * :%s/\s\+$//e

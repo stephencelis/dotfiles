@@ -5,7 +5,7 @@ alias -g "?"="| grep --color --extended-regexp"
 for domain (com net org edu) alias -s $domain="open"
 alias -s log="tail -200f"
 
-alias ls="ls -FG"
+# alias ls="ls -FG"
 alias which="builtin which -a"
 
 alias gvim="mvim"

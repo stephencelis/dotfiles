@@ -15,9 +15,11 @@ begin
   # Manifest
   require 'interactive_editor'
   require 'method_finder'
-  require 'wirble'
-  Wirble.init
-  Wirble.colorize
+  unless RUBY_VERSION[/^1.9/]
+    require 'wirble'
+    Wirble.init
+    Wirble.colorize
+  end
 rescue LoadError
 end
 

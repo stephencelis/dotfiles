@@ -1,11 +1,24 @@
 colorscheme ir_black
-" set columns=149
-" set guifont=DejaVuSansMono:h13
-set columns=150
+" set guifont=Menlo:h13
 set guifont=Inconsolata:h16
+set columns=159
+set lines=45
+" set lbr
+set guioptions-=r
 set guioptions-=T
-set lbr
-set lines=44
 set number
+
 set path+=**
-set transparency=5
+" set transparency=5
+
+if has("autocmd")
+  augroup txt
+    au!
+    autocmd GUIEnter *.txt set nolist
+    autocmd GUIEnter *.txt set columns=80
+    autocmd GUIEnter *.txt set noruler
+    autocmd GUIEnter *.txt set nonumber
+    autocmd GUIEnter *.txt set linebreak
+    autocmd VimEnter *.txt set fullscreen
+  augroup END
+endif
