@@ -1,4 +1,4 @@
 cd $CODEPATH
 for match in $@; do
-  eval cd $match*(/,@[1])
+  eval cd "$match*(/,@[1])"
 done
