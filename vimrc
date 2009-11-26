@@ -113,3 +113,11 @@ map! <C-E> <End>
 
 " Whitespace!
 autocmd BufWritePre * :%s/\s\+$//e
+
+au BufNewFile,BufRead *.as set filetype=actionscript
+
+augroup vimrc
+  au!
+
+  autocmd FileType actionscript setlocal sw=2 sts=2 et ai
+augroup END
