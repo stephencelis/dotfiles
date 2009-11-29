@@ -4,6 +4,7 @@ set guifont=Inconsolata:h16
 set columns=159
 set lines=45
 " set lbr
+set guioptions+=c
 set guioptions-=r
 set guioptions-=T
 set number

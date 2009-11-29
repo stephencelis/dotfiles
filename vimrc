@@ -119,5 +119,5 @@ au BufNewFile,BufRead *.as set filetype=actionscript
 augroup vimrc
   au!
 
-  autocmd FileType actionscript setlocal sw=2 sts=2 et ai
+  autocmd FileType actionscript setlocal sw=2 ts=2 et ai
 augroup END
