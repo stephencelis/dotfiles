@@ -56,7 +56,7 @@ endif " has("autocmd")
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
 command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-	 	\ | wincmd p | diffthis
+                \ | wincmd p | diffthis
 
 " Custom
 
@@ -113,11 +113,13 @@ map! <C-E> <End>
 
 " Whitespace!
 autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufWritePre * :retab
 
-au BufNewFile,BufRead *.as set filetype=actionscript
+autocmd BufNewFile,BufRead *.as set filetype=actionscript
+autocmd BufWritePre *.as :retab!
 
 augroup vimrc
   au!
 
-  autocmd FileType actionscript setlocal sw=2 ts=2 et ai
+  autocmd FileType actionscript setlocal sw=2 ts=2 ai nolist noet
 augroup END

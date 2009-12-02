@@ -10,19 +10,9 @@ chpwd_functions+='chpwd_update_git_vars'
 autoload -U colors
 colors
 setopt PROMPT_SUBST
-export PROMPT=$'%2~ %{$bold_color%}$(prompt_git_info)%{${reset_color}%}%% '
-export RPROMPT=$'$(~/.rvm/bin/rvm-prompt)'
 
-# export LSCOLORS="Exfxcxdxbxegedabagacad"
-
-export PATH=/usr/local/bin:/usr/games:/usr/local/mysql/bin:$PATH
-export MANPATH=/usr/local/man:/usr/games/man/man6:$MANPATH
-export CODEPATH=~/Documents/Code
-export GEMPATH=`gem env gemdir`
-export RIPDIR=~/.rip
-
-# export VISUAL="mate -w"
-# export EDITOR="vim"
+export VISUAL="mvim -f"
+export EDITOR="vim"
 
 fpath=(~/.zsh/functions $fpath)
 autoload -U ~/.zsh/functions/*(:t)
@@ -40,7 +30,7 @@ setopt HIST_REDUCE_BLANKS
 setopt AUTO_CD
 setopt COMPLETE_IN_WORD
 setopt LOCAL_OPTIONS
-# setopt LOCAL_TRAPS
+setopt LOCAL_TRAPS
 setopt MULTIOS
 setopt NO_BG_NICE
 setopt NO_LIST_BEEP
@@ -48,7 +38,6 @@ setopt RM_STAR_WAIT
 
 unsetopt NO_HUP
 
-bindkey '^A' beginning-of-line
-bindkey '^E' end-of-line
+bindkey -e # Emacs bindings.
 bindkey '[D' backward-word
 bindkey '[C' forward-word
