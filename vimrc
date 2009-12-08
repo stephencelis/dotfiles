@@ -123,3 +123,5 @@ augroup vimrc
 
   autocmd FileType actionscript setlocal sw=2 ts=2 ai nolist noet
 augroup END
+
+command W w !sudo tee % >/dev/null
