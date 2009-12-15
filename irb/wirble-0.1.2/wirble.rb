@@ -17,7 +17,7 @@ require 'ostruct'
 # README.  If you've installed via RubyGems, root around your cache a
 # little bit (or fire up gem_server) and read it before you tear your
 # hair out sifting through the code below.
-# 
+#
 module Wirble
   VERSION = '0.1.2'
 
@@ -27,7 +27,7 @@ module Wirble
   #
   module Internals
     # list of internal libraries to automatically load
-    LIBRARIES = %w{pp irb/completion rubygems}
+    LIBRARIES = [] # %w{pp irb/completion rubygems}
 
     #
     # load tab completion and rubygems
@@ -56,7 +56,7 @@ module Wirble
   end
 
   #
-  # Basic IRB history support.  This is based on the tips from 
+  # Basic IRB history support.  This is based on the tips from
   # http://wiki.rubygarden.org/Ruby/page/show/Irb/TipsAndTricks
   #
   class History
@@ -65,7 +65,7 @@ module Wirble
       :history_size   => (ENV['IRB_HISTORY_SIZE'] || 1000).to_i,
       :history_perms  => File::WRONLY | File::CREAT | File::TRUNC,
     }
- 
+
     private
 
     def say(*args)
@@ -160,7 +160,7 @@ module Wirble
             when '='
               # ignore these, they're used elsewhere
               nil
-            else 
+            else
               # $stderr.puts "DEBUG: ignoring char #{c}"
             end
           when :symbol
@@ -296,7 +296,7 @@ module Wirble
         :light_purple => '1;35',
         :white        => '1;37',
       }
-      
+
       #
       # Return the escape code for a given color.
       #
@@ -307,7 +307,7 @@ module Wirble
 
     #
     # Default Wirble color scheme.
-    # 
+    #
     DEFAULT_COLORS = {
       # delimiter colors
       :comma              => :blue,
@@ -344,7 +344,7 @@ module Wirble
 
     #
     # Fruity testing colors.
-    # 
+    #
     TESTING_COLORS = {
       :comma            => :red,
       :refers           => :red,
@@ -367,14 +367,14 @@ module Wirble
 
     #
     # Set color map to hash
-    # 
+    #
     def self.colors=(hash)
       @colors = hash
     end
 
     #
     # Get current color map
-    # 
+    #
     def self.colors
       @colors ||= {}.update(DEFAULT_COLORS)
     end
@@ -389,7 +389,7 @@ module Wirble
 
     #
     # Colorize the results of inspect
-    # 
+    #
     def self.colorize(str)
       begin
         ret, nocol = '', Color.escape(:nothing)
@@ -406,7 +406,7 @@ module Wirble
 
     #
     # Enable colorized IRB results.
-    # 
+    #
     def self.enable(custom_colors = nil)
       # if there's a better way to do this, I'm all ears.
       ::IRB::Irb.class_eval do
@@ -427,7 +427,7 @@ module Wirble
 
     #
     # Disable colorized IRB results.
-    # 
+    #
     def self.disable
       ::IRB::Irb.class_eval do
         alias :output_value  :non_color_output_value

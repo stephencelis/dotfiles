@@ -1,17 +1,17 @@
-RAILS_DIRNAME = File.basename(Dir.pwd)
-IRB.conf[:PROMPT] ||= {}
-IRB.conf[:PROMPT][:RAILS] = {
-  :PROMPT_I => "#{RAILS_DIRNAME}> ",
-  :PROMPT_N => "#{RAILS_DIRNAME}> ",
-  :PROMPT_S => "#{RAILS_DIRNAME}* ",
-  :PROMPT_C => "#{RAILS_DIRNAME}? ",
-  :RETURN   => "=> %s\n" 
-}
-IRB.conf[:PROMPT_MODE] = :RAILS
+# RAILS_DIRNAME = File.basename(Dir.pwd)
+# IRB.conf[:PROMPT] ||= {}
+# IRB.conf[:PROMPT][:RAILS] = {
+#   :PROMPT_I => "#{RAILS_DIRNAME}> ",
+#   :PROMPT_N => "#{RAILS_DIRNAME}> ",
+#   :PROMPT_S => "#{RAILS_DIRNAME}* ",
+#   :PROMPT_C => "#{RAILS_DIRNAME}? ",
+#   :RETURN   => "=> %s\n"
+# }
+# IRB.conf[:PROMPT_MODE] = :RAILS
 
 def change_log(stream)
   ActiveRecord::Base.logger = Logger.new(stream)
-  ActiveRecord::Base.clear_active_connections!
+  reload!
 end
 
 def show_log
@@ -24,4 +24,4 @@ end
 
 def sql(query)
   ActiveRecord::Base.connection.select_all(query)
-end 
+end
