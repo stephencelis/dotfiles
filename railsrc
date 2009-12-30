@@ -9,17 +9,17 @@
 # }
 # IRB.conf[:PROMPT_MODE] = :RAILS
 
-def change_log(stream)
+def log_to(stream)
   ActiveRecord::Base.logger = Logger.new(stream)
-  reload!
+  ActiveRecord::Base.connection_pool.clear_reloadable_connections!
 end
 
 def show_log
-  change_log(STDOUT)
+  log_to(STDOUT)
 end
 
 def hide_log
-  change_log(nil)
+  log_to(nil)
 end
 
 def sql(query)

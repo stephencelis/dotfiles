@@ -27,8 +27,8 @@ end
 
 def growl_send(message, p = 1)
   require 'meow'
-  icon = OSX::NSWorkspace.sharedWorkspace.iconForFile(`which cap`.chomp) 
+  icon = OSX::NSWorkspace.sharedWorkspace.iconForFile(`which cap`.chomp)
   Meow.notify("cap", "Capistrano", message, :priority => p, :icon => icon)
 rescue LoadError
-  `growlnotify -ncap -p#{priority} -m #{message.inspect} Capistrano`
+  `growlnotify -ncap -p#{p} -m #{message.inspect} Capistrano`
 end

@@ -16,4 +16,5 @@ then
 fi
 
 ssh -o PubkeyAuthentication=no $@ \
-  "echo `cat $keypath.pub` >> ~/.ssh/authorized_keys"
+  "echo `cat $keypath.pub` >> ~/.ssh/authorized_keys &&
+    chmod 700 ~/.ssh/authorized_keys"
