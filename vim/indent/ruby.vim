@@ -51,9 +51,9 @@ let s:skip_expr =
 " Regex used for words that, at the start of a line, add a level of indent.
 let s:ruby_indent_keywords = '^\s*\zs\<\%(module\|class\|def\|if\|for' .
       \ '\|while\|until\|else\|elsif\|case\|when\|unless\|begin\|ensure' .
-      \ '\|rescue\)\>' .
-      \ '\|\%([*+/,=-]\|<<\|>>\|:\s\)\s*\zs' .
-      \    '\<\%(if\|for\|while\|until\|case\|unless\|begin\)\>'
+      \ '\|rescue\)\>' " .
+"      \ '\|\%([*+/,=-]\|<<\|>>\|:\s\)\s*\zs' .
+"      \    '\<\%(if\|for\|while\|until\|case\|unless\|begin\)\>'
 
 " Regex used for words that, at the start of a line, remove a level of indent.
 let s:ruby_deindent_keywords =
@@ -236,13 +236,13 @@ function GetRubyIndent()
     call cursor(v:lnum, 1)
     if searchpair(s:end_start_regex, s:end_middle_regex, s:end_end_regex, 'bW',
 	    \ s:end_skip_expr) > 0
-      let line = getline('.')
-      if strpart(line, 0, col('.') - 1) =~ '=\s*$' &&
-       \ strpart(line, col('.') - 1, 2) !~ 'do'
-	let ind = virtcol('.') - 1
-      else
+"      let line = getline('.')
+"      if strpart(line, 0, col('.') - 1) =~ '=\s*$' &&
+"       \ strpart(line, col('.') - 1, 2) !~ 'do'
+"	let ind = virtcol('.') - 1
+"      else
 	let ind = indent('.')
-      endif
+"     endif
     endif
     return ind
   endif
@@ -314,8 +314,8 @@ function GetRubyIndent()
   let col = s:Match(lnum, s:ruby_indent_keywords)
   if col > 0
     call cursor(lnum, col)
-    let ind = virtcol('.') - 1 + &sw
-"    let ind = indent(lnum) + &sw
+"    let ind = virtcol('.') - 1 + &sw
+    let ind = indent(lnum) + &sw
     " TODO: make this better (we need to count them) (or, if a searchpair
     " fails, we know that something is lacking an end and thus we indent a
     " level
