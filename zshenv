@@ -1,5 +1,5 @@
 export PROMPT=$'%2~ %{$bold_color%}$(prompt_git_info)%{${reset_color}%}%% '
-export RPROMPT=$'$(~/.rvm/bin/rvm-prompt)'
+export RPROMPT=$'%{${fg[white]}%}$(~/.rvm/bin/rvm-prompt)%{${reset_color}%}'
 
 PATH="/usr/local/bin:/usr/local/mysql/bin:$PATH"
 PATH="$HOME/.gem/bin:$PATH"

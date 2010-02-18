@@ -11,7 +11,7 @@ autoload -U colors
 colors
 setopt PROMPT_SUBST
 
-export VISUAL="mvim -f"
+export VISUAL="vim" # "mvim -f"
 export EDITOR="vim"
 
 fpath=(~/.zsh/functions $fpath)

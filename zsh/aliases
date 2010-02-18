@@ -17,9 +17,6 @@ alias ri="ri -Tf ansi"
 
 # Rails
 alias "reload!"="echo Reloading... && touch tmp/restart.txt"
-alias sc="script/console"
-alias sg="script/generate"
-alias ss="script/server"
 alias rvim="mvim . +Rproject"
 
 # Git

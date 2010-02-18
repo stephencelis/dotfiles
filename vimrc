@@ -92,7 +92,7 @@ set backupdir=/var/tmp
 set directory=/var/tmp
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
-set list
+" set list
 set listchars=tab:··,trail:·,eol:$
 nmap <silent> <leader>s :set nolist!<CR>
 set shortmess=atI

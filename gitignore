@@ -4,10 +4,11 @@
 *.pid
 *.swp
 .DS_Store
-tmp
+tmp/**/*
 
 # Rails
 config/*.yml
 config.*.sphinx.conf
+db/*.sqlite3
 db/schema.rb
 db/sphinx
