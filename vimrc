@@ -93,7 +93,7 @@ set directory=/var/tmp
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 set list
-set listchars=tab:··,trail:·,eol:$
+set listchars=eol:\ ,tab:··,trail:·
 nmap <silent> <leader>s :set nolist!<CR>
 set shortmess=atI
 set visualbell
@@ -125,3 +125,5 @@ augroup vimrc
 augroup END
 
 command W w !sudo tee % >/dev/null
+
+set statusline=%F%m%r%h%w\ %{GitBranch()}
