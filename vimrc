@@ -1,129 +1,183 @@
+" * General Settings
+"
+" Use zsh.
+set shell=zsh
+
+" Use UTF-8.
+scriptencoding utf-8
+
+" Detect filetypes, indent files.
+filetype plugin indent on
+
+" Syntax highlighting.
 set nocompatible
+syntax on
+
+" Highlight matching parentheses.
+set showmatch
+
+" Use the tab complete menu.
+set wildmenu
+set wildmode=list:longest,full
+
+" Disable bell.
+" set vb t_vb=
+
+" Enable error files & error jumping.
+set cf
+
+" Write on make/shell commands.
+set autowrite
+
+" Read external modifications.
+set autoread
+
+
+" * Text Formatting
+"
+" Don't wrap.
+set nowrap
+
+" Indent with 2 spaces.
+set expandtab
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set autoindent
+
+" Line numbers.
+" set number
+" set numberwidth=3
+
+" Enable backspace in insert mode.
 set backspace=indent,eol,start
 
-if has("vms")
-  set nobackup " do not keep a backup file, use versions instead
-else
-  set backup   " keep a backup file
-endif
-
-set history=100
-set ruler " show the cursor position all the time
-set showcmd " display incomplete commands
-set incsearch " do incremental searching
-
-" Don't use Ex mode, use Q for formatting
+" Don't use Ex mode, use Q for formatting.
 map Q gq
 
-" In many terminal emulators the mouse works just fine, thus enable it.
-set mouse=a
+" Destroy tabs and trailing whitespace.
+autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufWritePre * :retab
 
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if &t_Co > 2 || has("gui_running")
-  syntax on
-  set hlsearch
-endif
 
-" Only do this part when compiled with support for autocommands.
-if has("autocmd")
-  " Enable file type detection.
-  " Use the default filetype settings, so that mail gets 'tw' set to 72,
-  " 'cindent' is on in C files, etc.
-  " Also load indent files, to automatically do language-dependent indenting.
-  filetype plugin indent on
+" * Window Splits
+"
+" Open new horizontal windows below.
+set splitbelow
 
-  " Put these in an autocmd group, so that we can delete them easily.
-  augroup vimrcEx
+" Open new vertical windows to the right.
+set splitright
+
+
+" * Quick Keybindings
+"
+" Quick, jump out of insert mode while no one is looking.
+imap ii <Esc>
+
+" Avoid ESC => F1 slips.
+nmap <F1> <Esc>
+map! <F1> <Esc>
+
+" Yank from the cursor to the end of the line.
+nnoremap Y y$
+
+" Emacs-like movement in insert mode.
+map! <C-A> <Home>
+map! <C-E> <End>
+
+" Stop using arrow keys!
+map  <Up>    <Esc>
+map  <Down>  <Esc>
+map  <Left>  <Esc>
+map  <Right> <Esc>
+map! <Up>    <Esc>
+map! <Down>  <Esc>
+map! <Left>  <Esc>
+map! <Right> <Esc>
+
+
+" * Commands
+"
+" Atomic writes.
+command W w !sudo tee % >/dev/null
+
+
+" * Search
+"
+" Show matches while typing.
+set incsearch
+
+" Highlight search results once found.
+set hlsearch
+
+" Ignore case.
+" set ignorecase
+
+" Smart about case matching.
+set smartcase
+
+
+" * Display
+"
+" Always show status
+set laststatus=2
+
+" Show tabs and trailing whitespace.
+set list
+set listchars=tab:··,trail:·
+
+" Show cursor position.
+set ruler
+
+" 5 lines of context.
+set scrolloff=5
+
+" Scroll 5 lines at a time.
+nnoremap <C-e> 5<C-e>
+nnoremap <C-y> 5<C-y>
+
+" Short messages.
+set shortmess="at1" " aOstT
+
+" Show incomplete commands.
+set showcmd
+
+" Set title.
+set title
+
+
+" * Buffers
+"
+" Hideable buffers.
+set hidden
+
+
+" * Nostalgia
+"
+" Backup, to tmp.
+set backup
+set backupdir=/var/tmp
+
+" Swap to tmp.
+set directory=/var/tmp
+
+" History.
+set history=100
+
+
+" * Miscellanea
+"
+" Start augroup.
+augroup vimrcEx
   au!
 
   " For all text files set 'textwidth' to 78 characters.
   autocmd FileType text setlocal textwidth=78
 
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
+  " Always jump to the last known cursor position.
   autocmd BufReadPost *
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
     \   exe "normal! g`\"" |
     \ endif
 
-  augroup END
-else
-  set autoindent " always set autoindenting on
-endif " has("autocmd")
-
-" Convenient command to see the difference between the current buffer and the
-" file it was loaded from, thus the changes you made.
-command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-                \ | wincmd p | diffthis
-
-" Custom
-
-set et sw=2 sts=2
-" set list
-" set smartindent
-set nocp
-set nobk
-
-" Make ',e' (in normal mode) give a prompt for opening files
-" in the same dir as the current buffer's file.
-if has("unix")
-  map ,e :e <C-R>=expand("%:p:h") . "/" <CR>
-else
-  map ,e :e <C-R>=expand("%:p:h") . "\\" <CR>
-endif
-
-" Map FuzzyFinderTextMate to '\t'
-map <leader>t :FuzzyFinderTextMate<CR>
-map ,t :ruby finder.rescan!<CR>
-
-set hidden
-nnoremap ' `
-nnoremap ` '
-runtime macros/matchit.vim
-set wildmenu
-set wildmode=list:longest
-set ignorecase
-set smartcase
-set notitle
-set scrolloff=3
-set backupdir=/var/tmp
-set directory=/var/tmp
-nnoremap <C-e> 3<C-e>
-nnoremap <C-y> 3<C-y>
-set list
-set listchars=eol:\ ,tab:··,trail:·
-nmap <silent> <leader>s :set nolist!<CR>
-set shortmess=atI
-set visualbell
-
-" Customize here: http://vim.wikia.com/wiki/VimTip24
-" let w:m1=matchadd('Search', '\%<81v.\%>80v', -1)
-" let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
-" au BufWinEnter * let w:m1=matchadd('Search', '\%<81v.\%>80v', -1)
-" au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
-
-" Git updates are OK
-set autoread
-
-" Emacs like movement in insert mode
-map! <C-A> <Home>
-map! <C-E> <End>
-
-" Whitespace!
-autocmd BufWritePre * :%s/\s\+$//e
-autocmd BufWritePre * :retab
-
-autocmd BufNewFile,BufRead *.as set filetype=actionscript
-autocmd BufWritePre *.as :retab!
-
-augroup vimrc
-  au!
-
-  autocmd FileType actionscript setlocal sw=2 ts=2 ai nolist noet
 augroup END
-
-command W w !sudo tee % >/dev/null
-
-set statusline=%F%m%r%h%w\ %{GitBranch()}

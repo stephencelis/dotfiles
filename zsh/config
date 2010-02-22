@@ -41,3 +41,5 @@ unsetopt NO_HUP
 bindkey -e # Emacs bindings.
 bindkey '[D' backward-word
 bindkey '[C' forward-word
+
+function git(){hub $@}
