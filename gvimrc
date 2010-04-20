@@ -17,7 +17,7 @@ if has("autocmd")
   augroup txt
     au!
     autocmd GUIEnter *.txt set nolist
-    autocmd GUIEnter *.txt set columns=80
+    autocmd GUIEnter *.txt set columns=78
     autocmd GUIEnter *.txt set noruler
     autocmd GUIEnter *.txt set nonumber
     autocmd GUIEnter *.txt set linebreak

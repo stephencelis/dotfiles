@@ -85,15 +85,11 @@ nnoremap Y y$
 map! <C-A> <Home>
 map! <C-E> <End>
 
-" Stop using arrow keys!
-map  <Up>    <Esc>
-map  <Down>  <Esc>
-map  <Left>  <Esc>
-map  <Right> <Esc>
-map! <Up>    <Esc>
-map! <Down>  <Esc>
-map! <Left>  <Esc>
-map! <Right> <Esc>
+" Avoid using arrow keys.
+imap <C-H><C-H> <C-O>h
+imap <C-J><C-J> <C-O>j
+imap <C-K><C-K> <C-O>k
+imap <C-L><C-L> <C-O>l
 
 
 " * Commands
@@ -124,6 +120,8 @@ set laststatus=2
 
 " Show tabs and trailing whitespace.
 set list
+" Use the same symbols as TextMate for tabstops and EOLs
+" set listchars=tab:▸\ ,eol:¬
 set listchars=tab:··,trail:·
 
 " Show cursor position.
@@ -181,3 +179,7 @@ augroup vimrcEx
     \ endif
 
 augroup END
+
+
+" Pathogen: github.com/tpope/vim-pathogen
+call pathogen#runtime_append_all_bundles()
