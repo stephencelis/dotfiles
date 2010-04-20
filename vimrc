@@ -181,5 +181,11 @@ augroup vimrcEx
 augroup END
 
 
+" * Plugins
+"
 " Pathogen: github.com/tpope/vim-pathogen
 call pathogen#runtime_append_all_bundles()
+
+
+" NERD_commenter: whitespace-friendly.
+let NERDSpaceDelims=1
