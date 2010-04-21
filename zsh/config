@@ -13,6 +13,14 @@ autoload -U colors
 colors
 setopt PROMPT_SUBST
 
+# * Prompts
+export PROMPT=$'%2~ %{$bold_color%}$(prompt_git_info)%{${reset_color}%}%% '
+
+if [[ -s ~/.rvm/bin/rvm-prompt ]]
+then
+  export RPROMPT=$'%{${fg[white]}%}$(~/.rvm/bin/rvm-prompt)%{${reset_color}%}'
+fi
+
 # * Load functions
 fpath=(~/.zsh/functions $fpath)
 autoload -U ~/.zsh/functions/*(:t)
@@ -45,4 +53,4 @@ bindkey -e
 bindkey '[D' backward-word
 bindkey '[C' forward-word
 
-which hub > /dev/null && function git() { hub $@ }
+function git() { hub $@ }
