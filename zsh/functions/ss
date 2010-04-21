@@ -1,6 +1,0 @@
-if [ -f script/rails ]
-then
-  rails server $argv
-else
-  script/server $argv
-fi

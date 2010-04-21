@@ -57,7 +57,7 @@ map Q gq
 
 " Destroy tabs and trailing whitespace.
 autocmd BufWritePre * :%s/\s\+$//e
-autocmd BufWritePre * :retab
+" autocmd BufWritePre * :retab
 
 
 " * Window Splits
