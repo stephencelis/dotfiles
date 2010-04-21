@@ -45,4 +45,4 @@ bindkey -e
 bindkey '[D' backward-word
 bindkey '[C' forward-word
 
-function git() { hub $@ }
+which hub > /dev/null && function git() { hub $@ }
