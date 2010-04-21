@@ -1,3 +1,0 @@
-# Dir["#{ENV['HOME']}/.cap/*.rb"].each do |tasks|
-#   load tasks
-# end
