@@ -1,6 +1,10 @@
 # * Prompts
 export PROMPT=$'%2~ %{$bold_color%}$(prompt_git_info)%{${reset_color}%}%% '
-export RPROMPT=$'%{${fg[white]}%}$(~/.rvm/bin/rvm-prompt)%{${reset_color}%}'
+
+if [[ -s ~/.rvm/bin/rvm-prompt ]]
+then
+  export RPROMPT=$'%{${fg[white]}%}$(~/.rvm/bin/rvm-prompt)%{${reset_color}%}'
+fi
 
 # * Paths
 PATH="/usr/local/bin:$PATH"
