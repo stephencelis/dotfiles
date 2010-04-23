@@ -97,3 +97,9 @@
 [submodule "vim/bundle/NERD_tree"]
 	path = vim/bundle/NERD_tree
 	url = git://github.com/scrooloose/nerdtree.git
+[submodule "irb/wirble"]
+	path = irb/wirble
+	url = git://github.com/blackwinter/wirble.git
+[submodule "vim/bundle/makegreen"]
+	path = vim/bundle/makegreen
+	url = git://github.com/reinh/vim-makegreen.git
