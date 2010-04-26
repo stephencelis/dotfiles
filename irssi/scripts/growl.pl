@@ -1,0 +1,1 @@
+irssi-growl/growl.pl

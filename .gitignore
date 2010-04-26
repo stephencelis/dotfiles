@@ -1,5 +1,5 @@
 .DS_Store
-vim/.VimballRecord
-vim/.netrwhist
-gitconfig
 gem
+gitconfig
+irssi/config
+vim/.netrwhist

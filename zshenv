@@ -1,7 +1,6 @@
 # * Paths
-PATH="/usr/local/bin:$PATH"
+PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 PATH="$HOME/.gem/bin:$PATH"
-PATH="$HOME/.brew/bin:$HOME/.brew/sbin:$PATH"
 PATH="$HOME/.local/bin:$PATH"
 # PATH="bin:$PATH"
 export PATH

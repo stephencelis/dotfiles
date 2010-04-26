@@ -103,3 +103,6 @@
 [submodule "vim/bundle/makegreen"]
 	path = vim/bundle/makegreen
 	url = git://github.com/reinh/vim-makegreen.git
+[submodule "irssi/scripts/irssi-growl"]
+	path = irssi/scripts/irssi-growl
+	url = git://github.com/jashmenn/irssi-growl.git
