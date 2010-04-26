@@ -189,3 +189,7 @@ call pathogen#runtime_append_all_bundles()
 
 " NERD_commenter: whitespace-friendly.
 let NERDSpaceDelims=1
+
+
+" NERD_tree: don't hijack netrw.
+let NERDTreeHijackNetrw=0
