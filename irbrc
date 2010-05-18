@@ -5,4 +5,4 @@ begin
 rescue LoadError
   require 'irb/completion'
   require 'irb/ext/save-history'
-end
+end unless RUBY_PLATFORM =~ /darwin/
