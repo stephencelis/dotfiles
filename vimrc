@@ -193,3 +193,8 @@ let NERDSpaceDelims=1
 
 " NERD_tree: don't hijack netrw.
 let NERDTreeHijackNetrw=0
+
+
+" RDoc: set filetype.
+au BufNewFile,BufRead *.rdoc set filetype=rdoc
+
