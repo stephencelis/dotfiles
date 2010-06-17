@@ -106,3 +106,6 @@
 [submodule "irssi/scripts/irssi-growl"]
 	path = irssi/scripts/irssi-growl
 	url = git://github.com/jashmenn/irssi-growl.git
+[submodule "vim/bundle/rdoc"]
+	path = vim/bundle/rdoc
+	url = git://github.com/hallison/vim-rdoc.git

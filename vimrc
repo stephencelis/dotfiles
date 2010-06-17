@@ -119,10 +119,10 @@ set smartcase
 set laststatus=2
 
 " Show tabs and trailing whitespace.
-set list
+" set list
 " Use the same symbols as TextMate for tabstops and EOLs
-" set listchars=tab:▸\ ,eol:¬
-set listchars=tab:··,trail:·
+set listchars=tab:▸\ ,eol:¬
+" set listchars=tab:··,trail:·
 
 " Show cursor position.
 set ruler
