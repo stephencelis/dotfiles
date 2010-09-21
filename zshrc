@@ -2,4 +2,4 @@
 . ~/.zsh/aliases
 . ~/.zsh/completion
 
-[[ -s ~/.rvm/scripts/rvm ]] && . ~/.rvm/scripts/rvm
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"

@@ -21,7 +21,7 @@ set wildmenu
 set wildmode=list:longest,full
 
 " Disable bell.
-" set vb t_vb=
+set vb t_vb=
 
 " Enable error files & error jumping.
 set cf
@@ -55,6 +55,8 @@ set backspace=indent,eol,start
 " Don't use Ex mode, use Q for formatting.
 map Q gq
 
+set colorcolumn=81
+
 " Destroy tabs and trailing whitespace.
 autocmd BufWritePre * :%s/\s\+$//e
 " autocmd BufWritePre * :retab
@@ -68,11 +70,17 @@ set splitbelow
 " Open new vertical windows to the right.
 set splitright
 
+" Speed.
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
 
 " * Quick Keybindings
 "
 " Quick, jump out of insert mode while no one is looking.
-imap ii <Esc>
+imap jj <Esc>
 
 " Avoid ESC => F1 slips.
 nmap <F1> <Esc>
@@ -85,15 +93,12 @@ nnoremap Y y$
 map! <C-A> <Home>
 map! <C-E> <End>
 
-" Avoid using arrow keys.
-imap <C-H><C-H> <C-O>h
-imap <C-J><C-J> <C-O>j
-imap <C-K><C-K> <C-O>k
-imap <C-L><C-L> <C-O>l
-
 
 " * Commands
 "
+" Semi-.
+nnoremap ; :
+
 " Atomic writes.
 command W w !sudo tee % >/dev/null
 
@@ -107,7 +112,7 @@ set incsearch
 set hlsearch
 
 " Ignore case.
-" set ignorecase
+set ignorecase
 
 " Smart about case matching.
 set smartcase
@@ -120,6 +125,7 @@ set laststatus=2
 
 " Show tabs and trailing whitespace.
 " set list
+
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
 " set listchars=tab:··,trail:·
@@ -162,9 +168,27 @@ set directory=/var/tmp
 " History.
 set history=100
 
+" Undo.
+set undofile
+set undodir=/var/tmp
+
 
 " * Miscellanea
 "
+" Take me to your leader.
+let mapleader = ","
+
+" Quality regex.
+nnoremap / /\v
+vnoremap / /\v
+
+" Gsub by default.
+set gdefault
+
+" Tabracketing.
+nnoremap <Tab> %
+vnoremap <Tab> %
+
 " Start augroup.
 augroup vimrcEx
   au!
@@ -198,3 +222,6 @@ let NERDTreeHijackNetrw=0
 " RDoc: set filetype.
 au BufNewFile,BufRead *.rdoc set filetype=rdoc
 
+
+" YankRing
+let g:yankring_history_file = '.yankring_history'
