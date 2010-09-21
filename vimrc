@@ -219,9 +219,13 @@ let NERDSpaceDelims=1
 let NERDTreeHijackNetrw=0
 
 
+" Rails: get a job.
+autocmd User Rails Rnavcommand job app/jobs -glob=**/* -suffix=_job.rb
+
+
 " RDoc: set filetype.
 au BufNewFile,BufRead *.rdoc set filetype=rdoc
 
 
-" YankRing
+" YankRing: a hidden history.
 let g:yankring_history_file = '.yankring_history'
