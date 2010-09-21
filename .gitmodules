@@ -109,6 +109,3 @@
 [submodule "vim/bundle/rdoc"]
 	path = vim/bundle/rdoc
 	url = git://github.com/hallison/vim-rdoc.git
-[submodule "vim/bundle/fakeclip"]
-	path = vim/bundle/fakeclip
-	url = git://github.com/kana/vim-fakeclip.git
