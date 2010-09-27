@@ -178,10 +178,6 @@ set undodir=/var/tmp
 " Take me to your leader.
 let mapleader = ","
 
-" Quality regex.
-nnoremap / /\v
-vnoremap / /\v
-
 " Gsub by default.
 set gdefault
 
