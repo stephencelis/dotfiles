@@ -100,18 +100,24 @@
 [submodule "irb/wirble"]
 	path = irb/wirble
 	url = git://github.com/blackwinter/wirble.git
-[submodule "vim/bundle/makegreen"]
-	path = vim/bundle/makegreen
-	url = git://github.com/reinh/vim-makegreen.git
 [submodule "irssi/scripts/irssi-growl"]
 	path = irssi/scripts/irssi-growl
 	url = git://github.com/jashmenn/irssi-growl.git
-[submodule "vim/bundle/rdoc"]
-	path = vim/bundle/rdoc
-	url = git://github.com/hallison/vim-rdoc.git
 [submodule "vim/bundle/conque"]
 	path = vim/bundle/conque
 	url = git://github.com/rson/vim-conque.git
 [submodule "vim/bundle/gundo"]
 	path = vim/bundle/gundo
 	url = git://github.com/sjl/gundo.vim.git
+[submodule "vim/bundle/file-line"]
+	path = vim/bundle/file-line
+	url = git://github.com/vim-scripts/file-line.git
+[submodule "vim/bundle/supertab"]
+	path = vim/bundle/supertab
+	url = git://github.com/ervandew/supertab.git
+[submodule "vim/bundle/command-t"]
+	path = vim/bundle/command-t
+	url = git://github.com/wincent/Command-T.git
+[submodule "vim/bundle/git-motemen"]
+	path = vim/bundle/git-motemen
+	url = git://github.com/motemen/git-vim.git
