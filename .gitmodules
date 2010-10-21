@@ -70,9 +70,6 @@
 [submodule "vim/bundle/cocoa"]
   path = vim/bundle/cocoa
   url = git://github.com/msanders/cocoa.vim.git
-[submodule "vim/bundle/vimshell"]
-  path = vim/bundle/vimshell
-  url = git://github.com/Shougo/vimshell.git
 [submodule "vim/bundle/ragtag"]
   path = vim/bundle/ragtag
   url = git://github.com/tpope/vim-ragtag.git

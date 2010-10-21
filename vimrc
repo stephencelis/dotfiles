@@ -191,6 +191,9 @@ autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 
+" Self-discipline:
+nnoremap <leader>ev :tabe $MYVIMRC<cr>
+
 " Start augroup.
 augroup vimrcEx
   au!
@@ -213,6 +216,19 @@ augroup END
 call pathogen#runtime_append_all_bundles()
 
 
+" Ack: leader.
+nnoremap <leader>a :Ack<Space>
+
+
+" Conque: shell.
+nnoremap <leader>sh :ConqueTermSplit zsh<CR>
+nnoremap <leader>vsh :ConqueTermVSplit zsh<CR>
+
+
+" Gundo: shortcut.
+nnoremap <F5> :GundoToggle<CR>
+
+
 " NERD_commenter: whitespace-friendly.
 let NERDSpaceDelims=1
 
@@ -227,6 +243,10 @@ autocmd User Rails Rnavcommand job app/jobs -glob=**/* -suffix=_job.rb
 
 " RDoc: set filetype.
 au BufNewFile,BufRead *.rdoc set filetype=rdoc
+
+
+" Scratch: leader.
+nnoremap <leader><Tab> :Sscratch<CR>
 
 
 " YankRing: a hidden history.
