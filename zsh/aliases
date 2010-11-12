@@ -12,3 +12,6 @@ alias which="builtin which -a"
 
 # * less.vim
 alias vess="/usr/share/vim/vim72/macros/less.sh"
+
+# dietrb
+alias irb='[[ -x `which dietrb` ]] && [[ `ruby -v` =~ 1.9 ]] && dietrb || irb'

@@ -94,9 +94,6 @@
 [submodule "vim/bundle/NERD_tree"]
 	path = vim/bundle/NERD_tree
 	url = git://github.com/scrooloose/nerdtree.git
-[submodule "irb/wirble"]
-	path = irb/wirble
-	url = git://github.com/blackwinter/wirble.git
 [submodule "irssi/scripts/irssi-growl"]
 	path = irssi/scripts/irssi-growl
 	url = git://github.com/jashmenn/irssi-growl.git

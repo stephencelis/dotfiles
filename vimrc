@@ -191,6 +191,9 @@ autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 
+" Oh, man.
+runtime ftplugin/man.vim
+
 " Self-discipline:
 nnoremap <leader>ev :tabe $MYVIMRC<cr>
 
@@ -225,6 +228,10 @@ nnoremap <leader>sh :ConqueTermSplit zsh<CR>
 nnoremap <leader>vsh :ConqueTermVSplit zsh<CR>
 
 
+" Coffee: script.
+au BufNewFile,BufRead *.coffee set filetype=coffee
+
+
 " Gundo: shortcut.
 nnoremap <F5> :GundoToggle<CR>
 
@@ -237,8 +244,10 @@ let NERDSpaceDelims=1
 let NERDTreeHijackNetrw=0
 
 
-" Rails: get a job.
+" Rails: Navi.
 autocmd User Rails Rnavcommand job app/jobs -glob=**/* -suffix=_job.rb
+autocmd User Rails Rnavcommand coffeescript app/coffeescripts -glob=**/* -suffix=.coffee
+autocmd User Rails Rnavcommand stylesheet app/stylesheets -glob=**/* -suffix=.sass
 
 
 " RDoc: set filetype.
