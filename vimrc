@@ -256,6 +256,9 @@ au BufNewFile,BufRead *.rdoc set filetype=rdoc
 " Scratch: leader.
 nnoremap <leader><Tab> :Sscratch<CR>
 
+" Supertab: stop.
+let g:SuperTabCrMapping = 0
+
 
 " YankRing: a hidden history.
 let g:yankring_history_file = '.yankring_history'
