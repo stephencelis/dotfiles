@@ -1,32 +1,47 @@
+autoload :Readline, 'readline'
+require 'pp'
+
 if IRB.const_defined?(:VERSION) # MacRuby, 1.9 with DietIRB...
   require 'irb/ext/completion'
   require 'irb/ext/history'
 
   require 'irb/ext/colorize'
   class IRB::ColoredFormatter
-    COLOR_SCHEMES[:stephencelis] = COLOR_SCHEMES[:dark_background].merge({
-      # :prompt             => :green,
-      # :result_prefix      => :light_purple,
+    def debug!
+      def color(type)
+        type = TYPE_ALIASES[type] if TYPE_ALIASES.has_key?(type)
+        p type
+        @colors[type]
+      end
+    end
 
-      # :comma              => :blue,
-      # :operator           => :blue,
+    COLOR_SCHEMES[:stephencelis] = {
+      # :prompt
+      # :result_prefix
 
-      # :open_hash          => :green,
-      # :close_hash         => :green,
-      # :open_array         => :green,
-      # :close_array        => :green,
+      # :comma
+      # :operator
 
-      :symbol_prefix      => :brown, # :yellow, # hmm ident...
-      :symbol             => :brown, # :yellow,
+      # :open_hash
+      # :close_hash
+      # :open_array
+      # :close_array
 
-      # :open_string        => :red,
-      # :string             => :cyan,
-      # :close_string       => :red,
+      :symbol_prefix      => :red,
+      :symbol             => :red,
 
-      # :number             => :cyan,
-      # :keyword            => :brown,
-      # :constant           => :light_green
-    })
+      :open_string        => :purple,
+      :string             => :red,
+      :close_string       => :purple,
+
+      :number             => :red,
+      :keyword            => :purple,
+      :constant           => :green,
+
+      :on_gvar            => :cyan,
+      :on_cvar            => :cyan,
+      :on_ivar            => :cyan
+    }
   end
 
   IRB.formatter.color_scheme = :stephencelis

@@ -246,8 +246,7 @@ let NERDTreeHijackNetrw=0
 
 " Rails: Navi.
 autocmd User Rails Rnavcommand job app/jobs -glob=**/* -suffix=_job.rb
-autocmd User Rails Rnavcommand coffeescript app/coffeescripts -glob=**/* -suffix=.coffee
-autocmd User Rails Rnavcommand stylesheet app/stylesheets -glob=**/* -suffix=.sass
+" autocmd User Rails Rnavcommand stylesheet app/assets/stylesheets -glob=**/* -suffix=.sass
 
 
 " RDoc: set filetype.
