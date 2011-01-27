@@ -115,3 +115,6 @@
 [submodule "vim/bundle/git-motemen"]
 	path = vim/bundle/git-motemen
 	url = git://github.com/motemen/git-vim.git
+[submodule "vim/bundle/Color-Sampler-Pack"]
+	path = vim/bundle/Color-Sampler-Pack
+	url = git://github.com/vim-scripts/Color-Sampler-Pack.git

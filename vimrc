@@ -3,6 +3,9 @@
 " Use zsh.
 set shell=zsh
 
+" Fast TTY
+set ttyfast
+
 " Use UTF-8.
 scriptencoding utf-8
 
@@ -12,6 +15,9 @@ filetype plugin indent on
 " Syntax highlighting.
 set nocompatible
 syntax on
+
+" No modelines
+set modelines=0
 
 " Highlight matching parentheses.
 set showmatch
@@ -86,9 +92,6 @@ imap jj <Esc>
 nmap <F1> <Esc>
 map! <F1> <Esc>
 
-" Yank from the cursor to the end of the line.
-nnoremap Y y$
-
 " Emacs-like movement in insert mode.
 map! <C-A> <Home>
 map! <C-E> <End>
@@ -161,6 +164,7 @@ set hidden
 " Backup, to tmp.
 set backup
 set backupdir=/var/tmp
+set backupskip=/tmp/*,/private/tmp/*
 
 " Swap to tmp.
 set directory=/var/tmp
@@ -190,12 +194,13 @@ autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+autocmd FileType ruby       nmap <leader>r :w !ruby<CR>
 
 " Oh, man.
 runtime ftplugin/man.vim
 
 " Self-discipline:
-nnoremap <leader>ev :tabe $MYVIMRC<cr>
+nnoremap <leader>ev :tabe $MYVIMRC<CR>
 
 " Start augroup.
 augroup vimrcEx
@@ -216,7 +221,9 @@ augroup END
 " * Plugins
 "
 " Pathogen: github.com/tpope/vim-pathogen
+filetype off
 call pathogen#runtime_append_all_bundles()
+filetype plugin indent on
 
 
 " Ack: leader.
@@ -262,3 +269,6 @@ let g:SuperTabCrMapping = 0
 
 " YankRing: a hidden history.
 let g:yankring_history_file = '.yankring_history'
+
+" Yank from the cursor to the end of the line.
+nnoremap Y y$
