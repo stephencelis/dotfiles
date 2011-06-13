@@ -37,8 +37,7 @@ setopt HIST_REDUCE_BLANKS
 
 setopt AUTO_CD
 setopt COMPLETE_IN_WORD
-# Enabling the following breaks `git reset --soft HEAD^'
-# setopt EXTENDED_GLOB
+setopt EXTENDED_GLOB
 setopt LOCAL_OPTIONS
 setopt LOCAL_TRAPS
 setopt MULTIOS

@@ -63,11 +63,6 @@ map Q gq
 
 set colorcolumn=81
 
-" Destroy tabs and trailing whitespace.
-autocmd BufWritePre * :%s/\s\+$//e
-" autocmd BufWritePre * :retab
-
-
 " * Window Splits
 "
 " Open new horizontal windows below.
@@ -202,12 +197,18 @@ runtime ftplugin/man.vim
 " Self-discipline:
 nnoremap <leader>ev :tabe $MYVIMRC<CR>
 
+nnoremap <leader>w :%s/\s\+$//e<CR>:retab<CR>
+
+
 " Start augroup.
 augroup vimrcEx
-  au!
+  autocmd!
 
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
+  autocmd BufRead,BufNewFile *.txt setfiletype text
+  autocmd FileType markdown,text set wrap
+  autocmd FileType markdown,text set linebreak
+  autocmd FileType markdown,text set nolist
+  autocmd FileType markdown,text set textwidth=78
 
   " Always jump to the last known cursor position.
   autocmd BufReadPost *
@@ -228,6 +229,10 @@ filetype plugin indent on
 
 " Ack: leader.
 nnoremap <leader>a :Ack<Space>
+
+
+" ActionScript: script.
+au BufNewFile,BufRead *.as set filetype=actionscript
 
 
 " Conque: shell.
@@ -262,6 +267,7 @@ au BufNewFile,BufRead *.rdoc set filetype=rdoc
 
 " Scratch: leader.
 nnoremap <leader><Tab> :Sscratch<CR>
+
 
 " Supertab: stop.
 let g:SuperTabCrMapping = 0

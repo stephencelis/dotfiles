@@ -12,7 +12,7 @@ if [ -n "$__CURRENT_GIT_BRANCH" ]; then
                 ;;
         esac
         if [ -n "$__CURRENT_GIT_BRANCH_IS_DIRTY" ]; then
-                s+="%{${fg[yellow]}%}⚡%{${reset_color}%}"
+                s+="%{${fg[yellow]}%}!%{${reset_color}%}"
         fi
 
         printf "%s " $s

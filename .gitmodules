@@ -121,3 +121,6 @@
 [submodule "vim/pathogen"]
 	path = vim/pathogen
 	url = git://github.com/tpope/vim-pathogen.git
+[submodule "vim/bundle/actionscript"]
+	path = vim/bundle/actionscript
+	url = git://github.com/vim-scripts/actionscript.vim--Cuss.git
