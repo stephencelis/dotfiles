@@ -1,5 +1,15 @@
 # setenv() { export $1=$2 }
 
+# * Lion
+#
+# Remember working directory.
+precmd () {
+  local SEARCH=' '
+  local REPLACE='%20'
+  local PWD_URL="file://$HOSTNAME${PWD//$SEARCH/$REPLACE}"
+  printf '\e]7;%s\a' "$PWD_URL"
+}
+
 # * Git prompt
 typeset -ga preexec_functions
 typeset -ga precmd_functions
