@@ -1,0 +1,1 @@
+curl -s "http://domai.nr/api/json/search?q=$1" | tr '{' '\n' | grep register | awk ' { print $2 "-" $12 } ' | sed 's/[^0-9a-z\.\-]/ /g';
