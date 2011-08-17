@@ -21,7 +21,7 @@ setopt PROMPT_SUBST
 # * Prompts
 export PROMPT=$'%2~ %{$bold_color%}$(prompt_git_info)%{${reset_color}%}%% '
 
-if [[ -x ~/.rbenv/bin/rbenv ]]
+if [[ -x ~/.rbenv/bin/rbenv ]] || [[ -x /usr/local/bin/rbenv ]]
 then
   export RPROMPT=$'%{${fg[white]}%}$(rbenv version-name)%{${reset_color}%}'
 fi

@@ -38,7 +38,6 @@ set autowrite
 " Read external modifications.
 set autoread
 
-
 " * Text Formatting
 "
 " Don't wrap.
@@ -77,7 +76,6 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-
 " * Quick Keybindings
 "
 " Quick, jump out of insert mode while no one is looking.
@@ -91,7 +89,6 @@ map! <F1> <Esc>
 map! <C-A> <Home>
 map! <C-E> <End>
 
-
 " * Commands
 "
 " Semi-.
@@ -99,7 +96,6 @@ nnoremap ; :
 
 " Atomic writes.
 command W w !sudo tee % >/dev/null
-
 
 " * Search
 "
@@ -114,7 +110,6 @@ set ignorecase
 
 " Smart about case matching.
 set smartcase
-
 
 " * Display
 "
@@ -147,12 +142,10 @@ set showcmd
 " Set title.
 set title
 
-
 " * Buffers
 "
 " Hideable buffers.
 set hidden
-
 
 " * Nostalgia
 "
@@ -174,6 +167,11 @@ set undodir=/var/tmp
 " Clippy.
 set clipboard=unnamed
 
+" Mouse?
+" if has("mouse")
+  " set mouse=a
+  " set mousehide
+" endif
 
 " * Miscellanea
 "
@@ -202,7 +200,6 @@ nnoremap <leader>ev :tabe $MYVIMRC<CR>
 
 nnoremap <leader>w :%s/\s\+$//e<CR>:retab<CR>
 
-
 " Start augroup.
 augroup vimrcEx
   autocmd!
@@ -221,7 +218,6 @@ augroup vimrcEx
 
 augroup END
 
-
 " * Plugins
 "
 " Pathogen: github.com/tpope/vim-pathogen
@@ -229,52 +225,40 @@ filetype off
 call pathogen#runtime_append_all_bundles()
 filetype plugin indent on
 
-
 " Ack: leader.
 nnoremap <leader>a :Ack<Space>
 
-
 " ActionScript: script.
 au BufNewFile,BufRead *.as set filetype=actionscript
-
 
 " Conque: shell.
 nnoremap <leader>sh :ConqueTermSplit zsh<CR>
 nnoremap <leader>vsh :ConqueTermVSplit zsh<CR>
 
-
 " Coffee: script.
 au BufNewFile,BufRead *.coffee set filetype=coffee
-
 
 " Gundo: shortcut.
 nnoremap <F5> :GundoToggle<CR>
 
-
 " NERD_commenter: whitespace-friendly.
 let NERDSpaceDelims=1
 
-
 " NERD_tree: don't hijack netrw.
 let NERDTreeHijackNetrw=0
-
 
 " Rails: Navi.
 autocmd User Rails Rnavcommand job app/jobs -glob=**/* -suffix=_job.rb
 " autocmd User Rails Rnavcommand stylesheet app/assets/stylesheets -glob=**/* -suffix=.sass
 
-
 " RDoc: set filetype.
 au BufNewFile,BufRead *.rdoc set filetype=rdoc
-
 
 " Scratch: leader.
 nnoremap <leader><Tab> :Sscratch<CR>
 
-
 " Supertab: stop.
 let g:SuperTabCrMapping = 0
-
 
 " YankRing: a hidden history.
 let g:yankring_history_file = '.yankring_history'
