@@ -5,3 +5,7 @@
 *.swp
 .DS_Store
 tmp/**/*
+
+.bundle
+vendor/bundle/*
+!vendor/bundle/cache

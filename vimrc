@@ -171,6 +171,9 @@ set history=100
 set undofile
 set undodir=/var/tmp
 
+" Clippy.
+set clipboard=unnamed
+
 
 " * Miscellanea
 "

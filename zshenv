@@ -5,15 +5,13 @@
 #   eval `/usr/libexec/path_helper -s`
 # fi
 
-# if [[ -n $rvm_path ]]
-# then
-#   . "$rvm_path/environments/$rvm_ruby_string"
-# fi
-
 PATH="/usr/local/sbin:$PATH"
+PATH="$HOME/.rbenv/bin:$PATH"
 PATH="$HOME/.local/bin:$PATH"
 PATH="$PATH:/$HOME/Library/Developer/flex_sdk_4/bin"
 export PATH
+
+eval "$(rbenv init -)"
 
 export CODEPATH="$HOME/Documents/Code"
 
