@@ -266,6 +266,9 @@ nnoremap <leader><Tab> :Sscratch<CR>
 " Supertab: stop.
 let g:SuperTabCrMapping = 0
 
+" Tagbar: tag-browsing.
+nnoremap <leader>l :TagbarToggle<CR><C-w>l
+
 " YankRing: a hidden history.
 let g:yankring_history_file = '.yankring_history'
 
