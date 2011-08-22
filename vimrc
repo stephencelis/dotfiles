@@ -76,6 +76,12 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" Agility.
+imap <C-h> <C-o>h
+imap <C-j> <C-o>j
+imap <C-k> <C-o>k
+imap <C-l> <C-o>a
+
 " * Quick Keybindings
 "
 " Quick, jump out of insert mode while no one is looking.

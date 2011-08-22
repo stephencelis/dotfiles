@@ -121,3 +121,6 @@
 [submodule "vim/bundle/actionscript"]
 	path = vim/bundle/actionscript
 	url = git://github.com/vim-scripts/actionscript.vim--Cuss.git
+[submodule "vim/bundle/delimitMate"]
+	path = vim/bundle/delimitMate
+	url = git://github.com/Raimondi/delimitMate.git
