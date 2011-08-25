@@ -127,3 +127,6 @@
 [submodule "vim/bundle/tagbar"]
 	path = vim/bundle/tagbar
 	url = git://github.com/majutsushi/tagbar.git
+[submodule "vim/bundle/afterimage"]
+	path = vim/bundle/afterimage
+	url = git://github.com/tpope/vim-afterimage.git
