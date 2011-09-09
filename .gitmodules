@@ -130,3 +130,9 @@
 [submodule "vim/bundle/afterimage"]
 	path = vim/bundle/afterimage
 	url = git://github.com/tpope/vim-afterimage.git
+[submodule "vim/bundle/slim"]
+	path = vim/bundle/slim
+	url = git://github.com/bbommarito/vim-slim.git
+[submodule "vim/bundle/vim-javascript"]
+	path = vim/bundle/vim-javascript
+	url = git://github.com/serverhorror/javascript.vim.git
