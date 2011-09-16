@@ -1,2 +1,4 @@
 rvm_archflags="-arch x86_64"
-export rvm_path="/Users/stephen/.rvm"
+rvm_leave_gem_alone=1
+rvm_project_rvmrc=0
+rvm_path="/Users/stephen/.rvm"
