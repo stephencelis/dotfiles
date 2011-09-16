@@ -110,6 +110,7 @@ set incsearch
 
 " Highlight search results once found.
 set hlsearch
+highlight Search ctermfg=gray ctermbg=red cterm=none
 
 " Ignore case.
 set ignorecase
