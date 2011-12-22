@@ -1,32 +1,31 @@
 set runtimepath+=~/.vim/bundle/vundle
-if exists('vundle#rc')
-  call vundle#rc()
-  Bundle 'actionscript.vim'
-  Bundle 'file-line'
-  Bundle 'kchmck/vim-coffee-script'
-  Bundle 'mileszs/ack.vim'
-  Bundle 'pangloss/vim-javascript'
-  Bundle 'Raimondi/delimitMate'
-  Bundle 'sjl/gundo.vim'
-  " Bundle 'tpope/vim-bundler'
-  Bundle 'tpope/vim-commentary'
-  Bundle 'tpope/vim-cucumber'
-  Bundle 'tpope/vim-endwise'
-  Bundle 'tpope/vim-fugitive'
-  Bundle 'tpope/vim-haml'
-  Bundle 'tpope/vim-markdown'
-  Bundle 'tpope/vim-markdown'
-  Bundle 'tpope/vim-rails'
-  Bundle 'tpope/vim-rake'
-  Bundle 'tpope/vim-surround'
-  Bundle 'tpope/vim-vividchalk'
-  Bundle 'vim-ruby/vim-ruby'
-  Bundle 'wgibbs/vim-irblack'
-  Bundle 'wincent/Command-T'
-endif
+call vundle#rc()
+Bundle 'actionscript.vim'
+Bundle 'file-line'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'mileszs/ack.vim'
+Bundle 'pangloss/vim-javascript'
+Bundle 'Raimondi/delimitMate'
+Bundle 'sjl/gundo.vim'
+" Bundle 'tpope/vim-bundler'
+Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-cucumber'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-rake'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-vividchalk'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'wgibbs/vim-irblack'
+Bundle 'wincent/Command-T'
 
 filetype indent plugin on
 syntax enable
+let mapleader = ','
 
 set title
 set visualbell t_vb=
