@@ -1,279 +1,51 @@
-" * General Settings
-"
-" Use zsh.
-set shell=zsh
+set runtimepath+=~/.vim/bundle/vundle
+if exists('vundle#rc')
+  call vundle#rc()
+  Bundle 'actionscript.vim'
+  Bundle 'file-line'
+  Bundle 'kchmck/vim-coffee-script'
+  Bundle 'mileszs/ack.vim'
+  Bundle 'pangloss/vim-javascript'
+  Bundle 'Raimondi/delimitMate'
+  Bundle 'sjl/gundo.vim'
+  " Bundle 'tpope/vim-bundler'
+  Bundle 'tpope/vim-commentary'
+  Bundle 'tpope/vim-cucumber'
+  Bundle 'tpope/vim-endwise'
+  Bundle 'tpope/vim-fugitive'
+  Bundle 'tpope/vim-haml'
+  Bundle 'tpope/vim-markdown'
+  Bundle 'tpope/vim-markdown'
+  Bundle 'tpope/vim-rails'
+  Bundle 'tpope/vim-rake'
+  Bundle 'tpope/vim-surround'
+  Bundle 'tpope/vim-vividchalk'
+  Bundle 'vim-ruby/vim-ruby'
+  Bundle 'wgibbs/vim-irblack'
+  Bundle 'wincent/Command-T'
+endif
 
-" Fast TTY
-set ttyfast
+filetype indent plugin on
+syntax enable
 
-" Use UTF-8.
-scriptencoding utf-8
-
-" Detect filetypes, indent files.
-filetype plugin indent on
-
-" Syntax highlighting.
-set nocompatible
-syntax on
-
-" No modelines
-set modelines=0
-
-" Highlight matching parentheses.
-set showmatch
-
-" Use the tab complete menu.
-set wildmenu
-set wildmode=list:longest,full
-
-" Disable bell.
-set vb t_vb=
-
-" Enable error files & error jumping.
-set cf
-
-" Write on make/shell commands.
-set autowrite
-
-" Read external modifications.
-set autoread
-
-" * Text Formatting
-"
-" Don't wrap.
-set nowrap
-
-" Indent with 2 spaces.
-set expandtab
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
-set autoindent
-
-" Line numbers.
-" set number
-" set numberwidth=3
-
-" Enable backspace in insert mode.
-set backspace=indent,eol,start
-
-" Don't use Ex mode, use Q for formatting.
-map Q gq
-
-set colorcolumn=81
-
-" * Window Splits
-"
-" Open new horizontal windows below.
-set splitbelow
-
-" Open new vertical windows to the right.
-set splitright
-
-" Speed.
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-
-" Agility.
-imap <C-h> <C-o>h
-imap <C-j> <C-o>j
-imap <C-k> <C-o>k
-imap <C-l> <C-o>a
-
-" * Quick Keybindings
-"
-" Quick, jump out of insert mode while no one is looking.
-imap jj <Esc>
-
-" Avoid ESC => F1 slips.
-nmap <F1> <Esc>
-map! <F1> <Esc>
-
-" Emacs-like movement in insert mode.
-map! <C-A> <Home>
-map! <C-E> <End>
-
-" * Commands
-"
-" Semi-.
-nnoremap ; :
-
-" Atomic writes.
-command W w !sudo tee % >/dev/null
-
-" * Search
-"
-" Show matches while typing.
-set incsearch
-
-" Highlight search results once found.
-set hlsearch
-highlight Search ctermfg=gray ctermbg=red cterm=none
-
-" Ignore case.
-set ignorecase
-
-" Smart about case matching.
-set smartcase
-
-" * Display
-"
-" Always show status
+set title
+set visualbell t_vb=
 set laststatus=2
-
-" Show tabs and trailing whitespace.
-" set list
-
-" Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:▸\ ,eol:¬
-" set listchars=tab:··,trail:·
-
-" Show cursor position.
 set ruler
 
-" 5 lines of context.
-set scrolloff=5
+set shiftwidth=2 tabstop=2
+set expandtab
+set autoindent
 
-" Scroll 5 lines at a time.
-nnoremap <C-e> 5<C-e>
-nnoremap <C-y> 5<C-y>
+set showmatch
 
-" Short messages.
-set shortmess="at1" " aOstT
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
 
-" Show incomplete commands.
-set showcmd
-
-" Set title.
-set title
-
-" * Buffers
-"
-" Hideable buffers.
-set hidden
-
-" * Nostalgia
-"
-" Backup, to tmp.
-set backup
-set backupdir=/var/tmp
-set backupskip=/tmp/*,/private/tmp/*
-
-" Swap to tmp.
-set directory=/var/tmp
-
-" History.
-set history=100
-
-" Undo.
 set undofile
 set undodir=/var/tmp
 
-" Clippy.
-set clipboard=unnamed
-
-" Mouse?
-" if has("mouse")
-  " set mouse=a
-  " set mousehide
-" endif
-
-" * Miscellanea
-"
-" Take me to your leader.
-let mapleader = ","
-
-" Gsub by default.
-set gdefault
-
-" Tabracketing.
-nnoremap <Tab> %
-vnoremap <Tab> %
-
-autocmd BufRead,BufNewFile Guardfile setfiletype ruby
-
-" Omnicomplete.
-autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-autocmd FileType ruby       nmap <leader>r :w !ruby<CR>
-
-" Oh, man.
-runtime ftplugin/man.vim
-
-" Self-discipline:
-nnoremap <leader>ev :tabe $MYVIMRC<CR>
-
-nnoremap <leader>w :%s/\s\+$//e<CR>:retab<CR>
-
-" Start augroup.
-augroup vimrcEx
-  autocmd!
-
-  autocmd BufRead,BufNewFile *.txt setfiletype text
-  autocmd FileType markdown,text set wrap
-  autocmd FileType markdown,text set linebreak
-  autocmd FileType markdown,text set nolist
-  autocmd FileType markdown,text set textwidth=78
-
-  " Always jump to the last known cursor position.
-  autocmd BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
-
-augroup END
-
-" * Plugins
-"
-" Pathogen: github.com/tpope/vim-pathogen
-filetype off
-call pathogen#runtime_append_all_bundles()
-filetype plugin indent on
-
-" Ack: leader.
-nnoremap <leader>a :Ack<Space>
-
-" ActionScript: script.
-au BufNewFile,BufRead *.as set filetype=actionscript
-
-" Conque: shell.
-nnoremap <leader>sh :ConqueTermSplit zsh<CR>
-nnoremap <leader>vsh :ConqueTermVSplit zsh<CR>
-
-" Coffee: script.
-au BufNewFile,BufRead *.coffee set filetype=coffee
-
-" Gundo: shortcut.
-nnoremap <F5> :GundoToggle<CR>
-
-" NERD_commenter: whitespace-friendly.
-let NERDSpaceDelims=1
-
-" NERD_tree: don't hijack netrw.
-let NERDTreeHijackNetrw=0
-
-" Rails: Navi.
-autocmd User Rails Rnavcommand job app/jobs -glob=**/* -suffix=_job.rb
-" autocmd User Rails Rnavcommand stylesheet app/assets/stylesheets -glob=**/* -suffix=.sass
-
-" RDoc: set filetype.
-au BufNewFile,BufRead *.rdoc set filetype=rdoc
-
-" Scratch: leader.
-nnoremap <leader><Tab> :Sscratch<CR>
-
-" Supertab: stop.
-let g:SuperTabCrMapping = 0
-
-" Tagbar: tag-browsing.
-nnoremap <leader>l :TagbarToggle<CR><C-w>l
-
-" YankRing: a hidden history.
-let g:yankring_history_file = '.yankring_history'
-
-" Yank from the cursor to the end of the line.
-nnoremap Y y$
+set wildmenu
+set wildmode=list:longest,full

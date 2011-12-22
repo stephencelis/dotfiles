@@ -3,3 +3,4 @@ gem
 gitconfig
 irssi/config
 vim/.netrwhist
+vim/bundle
