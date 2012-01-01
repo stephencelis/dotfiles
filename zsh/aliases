@@ -12,3 +12,12 @@ alias which="builtin which -a"
 
 # * Bundler
 alias b="bundle exec"
+
+# * VIM
+if [[ -x /Applications/MacVim.app/Contents/MacOS/Vim ]]
+then
+  alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
+elif [[ -x ~/Applications/MacVim.app/Contents/MacOS/Vim ]]
+then
+  alias vim="~/Applications/MacVim.app/Contents/MacOS/Vim"
+fi

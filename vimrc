@@ -1,7 +1,10 @@
 set runtimepath+=~/.vim/bundle/vundle
 call vundle#rc()
 Bundle 'actionscript.vim'
+Bundle 'Color-Sampler-Pack'
+Bundle 'CSApprox'
 Bundle 'file-line'
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'mileszs/ack.vim'
 Bundle 'pangloss/vim-javascript'
@@ -24,13 +27,14 @@ Bundle 'wgibbs/vim-irblack'
 Bundle 'wincent/Command-T'
 
 filetype indent plugin on
+colorscheme ir_black
 syntax enable
 let mapleader = ','
 
 set title
-set visualbell t_vb=
 set laststatus=2
 set ruler
+set visualbell t_vb=
 
 set shiftwidth=2 tabstop=2
 set expandtab
@@ -42,6 +46,8 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+
+set hidden
 
 set undofile
 set undodir=/var/tmp

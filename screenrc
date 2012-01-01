@@ -1,4 +1,5 @@
 startup_message off
+term screen-256color
 
 setenv LC_CTYPE en_US.UTF-8
 defutf8 on

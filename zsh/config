@@ -18,6 +18,11 @@ autoload -U colors
 colors
 setopt PROMPT_SUBST
 
+if $(grc &>/dev/null)
+then
+  source `brew --prefix`/etc/grc.bashrc
+fi
+
 # * Prompts
 export PROMPT=$'%2~ %{$bold_color%}$(prompt_git_info)%{${reset_color}%}%% '
 
