@@ -17,7 +17,7 @@ alias b="bundle exec"
 if [[ -x /Applications/MacVim.app/Contents/MacOS/Vim ]]
 then
   alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
-elif [[ -x ~/Applications/MacVim.app/Contents/MacOS/Vim ]]
+elif [[ -x $HOME/Applications/MacVim.app/Contents/MacOS/Vim ]]
 then
-  alias vim="~/Applications/MacVim.app/Contents/MacOS/Vim"
+  alias vim="$HOME/Applications/MacVim.app/Contents/MacOS/Vim"
 fi

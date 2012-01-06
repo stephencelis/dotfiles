@@ -4,7 +4,6 @@ Bundle 'actionscript.vim'
 Bundle 'Color-Sampler-Pack'
 Bundle 'CSApprox'
 Bundle 'file-line'
-Bundle 'altercation/vim-colors-solarized'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'mileszs/ack.vim'
 Bundle 'pangloss/vim-javascript'
@@ -27,7 +26,7 @@ Bundle 'wgibbs/vim-irblack'
 Bundle 'wincent/Command-T'
 
 filetype indent plugin on
-colorscheme ir_black
+colorscheme wombat256
 syntax enable
 let mapleader = ','
 
@@ -48,6 +47,12 @@ set ignorecase
 set smartcase
 
 set hidden
+
+set backup
+set backupdir=/var/tmp
+set backupskip=/tmp/*,/private/tmp/*
+
+set directory=/var/tmp
 
 set undofile
 set undodir=/var/tmp

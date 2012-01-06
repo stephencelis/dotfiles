@@ -16,8 +16,17 @@ eval "$(rbenv init -)"
 export CODEPATH="$HOME/Documents/Code"
 
 # * Editing
-export VISUAL="vim"
-export EDITOR="vim"
+if [[ -x /Applications/MacVim.app/Contents/MacOS/Vim ]]
+then
+  VISUAL="/Applications/MacVim.app/Contents/MacOS/Vim"
+elif [[ -x $HOME/Applications/MacVim.app/Contents/MacOS/Vim ]]
+then
+  VISUAL="$HOME/Applications/MacVim.app/Contents/MacOS/Vim"
+else
+  VISUAL="vim"
+fi
+export VISUAL
+export EDITOR=$VISUAL
 
 # * ZSH configuration
 #
