@@ -28,6 +28,7 @@ Bundle 'wincent/Command-T'
 filetype indent plugin on
 colorscheme wombat256
 syntax enable
+nnoremap \ ,
 let mapleader = ','
 
 set title
@@ -59,3 +60,9 @@ set undodir=/var/tmp
 
 set wildmenu
 set wildmode=list:longest,full
+
+nnoremap <leader>ev :split $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader>/ :nohlsearch<cr>
+
+match Error /\v\s+$/
