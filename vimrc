@@ -28,6 +28,7 @@ Bundle 'wincent/Command-T'
 filetype indent plugin on
 colorscheme wombat256
 syntax enable
+nnoremap \ ,
 let mapleader = ','
 
 set visualbell t_vb=
@@ -60,6 +61,6 @@ set undodir=/var/tmp
 
 match Error /\v\s+$/
 
-nnoremap <cr> :nohlsearch<cr><cr>
+nnoremap <leader>/ :nohlsearch<cr>
 nnoremap <leader>ev :split $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
