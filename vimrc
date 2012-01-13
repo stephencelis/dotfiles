@@ -62,5 +62,8 @@ set undodir=/var/tmp
 match Error /\v\s+$/
 
 nnoremap <leader>/ :nohlsearch<cr>
+nnoremap <leader>p p`[v`]=
+nnoremap <leader>P P`[v`]=
+
 nnoremap <leader>ev :split $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
