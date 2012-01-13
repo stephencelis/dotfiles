@@ -25,6 +25,7 @@ Bundle 'tpope/vim-vividchalk'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'wgibbs/vim-irblack'
 " Bundle 'wincent/Command-T'
+Bundle 'Lokaltog/vim-powerline'
 
 filetype indent plugin on
 colorscheme wombat256
