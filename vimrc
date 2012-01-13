@@ -5,6 +5,7 @@ Bundle 'Color-Sampler-Pack'
 Bundle 'CSApprox'
 Bundle 'file-line'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'Raimondi/delimitMate'
@@ -23,7 +24,8 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-vividchalk'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'wgibbs/vim-irblack'
-Bundle 'wincent/Command-T'
+" Bundle 'wincent/Command-T'
+Bundle 'Lokaltog/vim-powerline'
 
 filetype indent plugin on
 colorscheme wombat256
@@ -61,6 +63,10 @@ set undodir=/var/tmp
 
 match Error /\v\s+$/
 
+nnoremap <c-k> <c-w>k
+nnoremap <c-j> <c-w>j
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
 nnoremap <leader>/ :nohlsearch<cr>
 nnoremap <leader>p p`[v`]=
 nnoremap <leader>P P`[v`]=
