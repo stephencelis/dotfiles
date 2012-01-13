@@ -33,45 +33,40 @@ syntax enable
 nnoremap \ ,
 let mapleader = ','
 
+set visualbell t_vb=
 set title
 set laststatus=2
-set ruler
-set visualbell t_vb=
+set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)\ %P
+set showcmd
 
-set shiftwidth=2 tabstop=2
-set expandtab
-set autoindent
-
+set cursorline
 set showmatch
-
 set hlsearch
 set incsearch
 set ignorecase
 set smartcase
 
-set hidden
-
-set backup
-set backupdir=/var/tmp
-set backupskip=/tmp/*,/private/tmp/*
-
-set directory=/var/tmp
-
-set undofile
-set undodir=/var/tmp
+set shiftwidth=2 tabstop=2
+set expandtab
+set autoindent
 
 set wildmenu
 set wildmode=list:longest,full
 
-" Split navigation.
+set hidden
+set backup
+set backupdir=/var/tmp
+set backupskip=/tmp/*,/private/tmp/*
+set directory=/var/tmp
+set undofile
+set undodir=/var/tmp
+
+match Error /\v\s+$/
+
 nnoremap <c-k> <c-w>k
 nnoremap <c-j> <c-w>j
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
-
-" MYVIMRC.
+nnoremap <leader>/ :nohlsearch<cr>
 nnoremap <leader>ev :split $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
-nnoremap <leader>/ :nohlsearch<cr>
-
-match Error /\v\s+$/
