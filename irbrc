@@ -49,3 +49,14 @@ else # Other rubies.
   require 'irb/completion'
   require 'irb/ext/save-history'
 end
+
+version = %x{[[ -x `which rbenv` ]] && rbenv version-name}.chomp
+version = '>' if version.empty?
+IRB.conf[:PROMPT][:CUSTOM] = {
+  :PROMPT_N => "#{version}> ",
+  :PROMPT_I => "#{version}> ",
+  :PROMPT_S => nil,
+  :PROMPT_C => ' ?> ',
+  :RETURN => " => %s\n"
+}
+IRB.conf[:PROMPT_MODE] = :CUSTOM

@@ -4,9 +4,12 @@
 #   eval `/usr/libexec/path_helper -s`
 # fi
 
-PATH="/usr/local/sbin:$PATH"
 PATH="$HOME/.rbenv/bin:$PATH"
 PATH="$HOME/.local/bin:$PATH"
+PATH="/usr/local/bin:$PATH"
+PATH="/usr/local/sbin:$PATH"
+PATH="/usr/local/share/python:$PATH"
+PATH="$PATH:/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources"
 PATH="$PATH:/$HOME/Library/Developer/flex_sdk_4/bin"
 export PATH
 

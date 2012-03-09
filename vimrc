@@ -1,5 +1,6 @@
 set runtimepath+=~/.vim/bundle/vundle
 call vundle#rc()
+Bundle 'stephencelis/vim-mml'
 Bundle 'actionscript.vim'
 Bundle 'Color-Sampler-Pack'
 Bundle 'CSApprox'
@@ -36,7 +37,6 @@ let mapleader = ','
 set visualbell t_vb=
 set title
 set laststatus=2
-set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)\ %P
 set showcmd
 
 set cursorline
@@ -61,15 +61,15 @@ set directory=/var/tmp
 set undofile
 set undodir=/var/tmp
 
-match Error /\v\s+$/
-
 nnoremap <c-k> <c-w>k
 nnoremap <c-j> <c-w>j
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 nnoremap <leader>/ :nohlsearch<cr>
-nnoremap <leader>p p`[v`]=
-nnoremap <leader>P P`[v`]=
 
 nnoremap <leader>ev :split $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
+
+match Error /\v\s+$/
+
+autocmd FileType mml nnoremap <leader>m :w<cr>:MmlMake<cr>
