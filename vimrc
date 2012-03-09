@@ -3,7 +3,9 @@ call vundle#rc()
 Bundle 'stephencelis/vim-mml'
 Bundle 'actionscript.vim'
 Bundle 'Color-Sampler-Pack'
-Bundle 'CSApprox'
+if has('gui')
+  Bundle 'CSApprox'
+endif
 Bundle 'file-line'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
