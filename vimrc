@@ -1,5 +1,6 @@
 set runtimepath+=~/.vim/bundle/vundle
 call vundle#rc()
+Bundle 'gmarik/vundle'
 Bundle 'stephencelis/vim-mml'
 Bundle 'actionscript.vim'
 Bundle 'Color-Sampler-Pack'
