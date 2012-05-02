@@ -9,6 +9,7 @@ if has('gui')
 endif
 Bundle 'file-line'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'digitaltoad/vim-jade'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'mileszs/ack.vim'
@@ -28,6 +29,7 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-vividchalk'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'wavded/vim-stylus'
 Bundle 'wgibbs/vim-irblack'
 " Bundle 'wincent/Command-T'
 

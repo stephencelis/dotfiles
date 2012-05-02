@@ -64,11 +64,3 @@ bindkey '[D' backward-word
 bindkey '[C' forward-word
 
 [[ -x `which hub` ]] && function git { hub $@ }
-
-if [[ -x `which pry` ]]
-then
-  function irb { pry $@ }
-elif [[ -x `which dietrb` ]]
-then
-  function irb { dietrb $@ }
-fi
