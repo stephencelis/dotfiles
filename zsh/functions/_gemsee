@@ -1,2 +1,0 @@
-#compdef gemsee
-_files -W `gem env gemdir`/gems

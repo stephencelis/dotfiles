@@ -1,0 +1,14 @@
+colorscheme wombat256
+
+nnoremap \ ,
+let mapleader = ','
+
+set visualbell t_vb=
+set cursorline
+set nonumber
+set wildmenu
+set wildmode=list:longest,full
+
+nnoremap <leader>/ :nohlsearch<cr>
+
+autocmd FileType mml nnoremap <leader>m :w<cr>:MmlMake<cr>

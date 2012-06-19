@@ -1,1 +1,0 @@
-open $(echo `gem env gemdir`/doc/$1*(om[1]))/rdoc/index.html

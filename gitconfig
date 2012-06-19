@@ -1,0 +1,20 @@
+[user]
+	name = Stephen Celis
+	email = stephen@stephencelis.com
+[color]
+	ui = auto
+[alias]
+	br = branch
+	ci = commit -s -v
+	co = checkout
+	di = diff
+	ignore = update-index --assume-unchanged
+	st = status -s
+[core]
+	excludesfile = ~/.gitignore
+[push]
+	default = matching
+[credential]
+	helper = osxkeychain
+[github]
+	user = stephencelis

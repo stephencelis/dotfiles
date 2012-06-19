@@ -1,2 +1,0 @@
-local editor=$2 && [ -z $editor ] && editor=$EDITOR
-eval $editor $(echo `gem env gemdir`/gems/$1*(om[1]))

@@ -1,0 +1,181 @@
+#!/usr/bin/env ruby
+
+# giftube – Generates an animated gif from a YouTube url.
+#
+# Usage:
+#
+#   giftube [youtube url] [minute:second] [duration]
+#
+#   ex.
+#
+#     giftube 'http://www.youtube.com/watch?v=LBRy4HfDuxc' 0:20 5
+
+# Change these configuration options if you'd like
+SCALE             = '480:360'
+FRAMES_PER_SECOND = '20'
+
+END {
+  if __FILE__ == $0
+    USAGE = "giftube [youtube url] [minute:second] [duration]"
+    abort(USAGE) unless ARGV.size == 3
+
+    url, start_time, duration = *ARGV
+
+    generator = GifGenerator.generate(
+      :source_file => VideoDownloader.download(url).download_path,
+      :start_time  => start_time,
+      :duration    => duration
+    )
+
+    puts "Animated gif: #{generator.output_path}"
+  end
+}
+
+require 'uri'
+
+class CommandLineUtility
+  class << self
+    def path
+      new.path
+    end
+  end
+
+  def initialize
+    install unless installed?
+  end
+end
+
+class YoutubeDLCommandLineUtility < CommandLineUtility
+  INSTALL_PATH = "/tmp/youtube-dl"
+  INSTALL_URL  = 'https://raw.github.com/rg3/youtube-dl/2012.02.27/youtube-dl'
+
+  def installed?
+    File.exists?(INSTALL_PATH) || (%x|which youtube-dl| && $?.success?)
+  end
+
+  def path
+    if File.exists?(INSTALL_PATH)
+      INSTALL_PATH
+    else
+      %x|which youtube-dl|.chomp
+    end
+  end
+
+  def install
+    %x|curl '#{INSTALL_URL}' > #{INSTALL_PATH}|
+    %x|chmod +x #{INSTALL_PATH}|
+  end
+end
+
+class MplayerCommandLineUtility < CommandLineUtility
+  INSTALL_URL   = 'http://mplayerosxext.googlecode.com/files/MPlayer-OSX-Extended_rev14.zip'
+  DOWNLOAD_PATH = '/tmp/mplayer.zip'
+  EXECUTABLE    = "/tmp/MPlayer OSX Extended.app/Contents/"   +
+                  "Resources/Binaries/mpextended.mpBinaries/" +
+                  "Contents/mpextended.mpBinaries/Contents/MacOS/mplayer"
+
+  def installed?
+    File.exists?(EXECUTABLE) || (%x|which mplayer| && $?.success?)
+  end
+
+  def path
+    if File.exists?(EXECUTABLE)
+      EXECUTABLE
+    else
+      %x|which mplayer|.chomp
+    end
+  end
+
+  def install
+    %x|curl '#{INSTALL_URL}' > #{DOWNLOAD_PATH}| unless File.exists?(DOWNLOAD_PATH)
+    Dir.chdir('/tmp') do
+      %x|unzip #{DOWNLOAD_PATH}|
+    end
+  end
+end
+
+class VideoDownloader
+  DOWNLOAD_PATH = '/tmp'
+
+  class << self
+    def download(url)
+      downloader = new(url)
+      downloader.download
+      downloader
+    end
+  end
+
+  attr_reader :url
+  def initialize(url)
+    @url = URI.parse(url)
+    ensure_url_is_valid
+  end
+
+  def id
+    @id ||= query_string['v']
+  end
+
+  def download
+    system("#{youtube_dl} -o #{download_path} '#{url}'")
+  end
+
+  def youtube_dl
+    YoutubeDLCommandLineUtility.path
+  end
+
+  def download_path
+    File.join(DOWNLOAD_PATH, target_file_name)
+  end
+
+  private
+    def target_file_name
+      "#{id}.flv"
+    end
+
+    def ensure_url_is_valid
+      if id.nil?
+        raise ArgumentError, "YouTube url '#{url}' doesn't include video identifier"
+      end
+    end
+
+    def query_string
+      @query_string ||= url.query.split('&').inject({}) do |params, param|
+        key, value = param.split('=')
+        params[key] = value
+        params
+      end
+    end
+end
+
+class GifGenerator
+  class << self
+    def generate(configuration)
+      generator = new(configuration)
+      generator.generate
+      generator
+    end
+  end
+
+  attr_reader :source_file, :start_time, :duration
+  def initialize(configuration)
+    @source_file = configuration[:source_file]
+    @start_time  = configuration[:start_time]
+    @duration    = configuration[:duration]
+  end
+
+  def generate
+    %x{'#{mplayer}' #{source_file} -nosound -vo gif89a:fps=#{FRAMES_PER_SECOND}:output=#{output_path} -vf scale=#{SCALE} -ss #{start_time} -endpos #{duration}}
+  end
+
+  def mplayer
+    MplayerCommandLineUtility.path
+  end
+
+  def output_path
+    File.basename(source_file, '.*') + '.gif'
+  end
+
+  def to_s
+    output_path
+  end
+end

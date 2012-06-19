@@ -1,6 +1,15 @@
-[submodule "irssi/scripts/irssi-growl"]
-	path = irssi/scripts/irssi-growl
-	url = git://github.com/jashmenn/irssi-growl.git
-[submodule "vim/bundle/vundle"]
-	path = vim/bundle/vundle
-	url = git://github.com/gmarik/vundle.git
+[submodule "janus/commentary"]
+	path = janus/commentary
+	url = git://github.com/tpope/vim-commentary.git
+[submodule "janus/mml"]
+	path = janus/mml
+	url = git://github.com/stephencelis/vim-mml.git
+[submodule "janus/file-line"]
+	path = janus/file-line
+	url = git://github.com/bogado/file-line.git
+[submodule "janus/powerline"]
+	path = janus/powerline
+	url = git://github.com/Lokaltog/vim-powerline.git
+[submodule "janus/CSApprox"]
+	path = janus/CSApprox
+	url = git://github.com/godlygeek/csapprox.git
