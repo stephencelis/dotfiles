@@ -1,6 +1,8 @@
 
-all: install link
+all: update link
+
 install: setup-oh-my-zsh setup-janus setup-rbenv link
+update: update-oh-my-zsh update-janus update-rbenv
 
 
 # Local
@@ -28,7 +30,7 @@ setup-oh-my-zsh: \
 install-oh-my-zsh:
 	curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 install-oh-my-zsh-plugins:
-	mkdir $(HOME)/.oh-my-zsh/custom/plugins
+	mkdir -p $(HOME)/.oh-my-zsh/custom/plugins
 	git clone -- git://github.com/zsh-users/zsh-history-substring-search.git \
 		$(HOME)/.oh-my-zsh/custom/plugins/zsh-history-substring-search
 	git clone -- git://github.com/zsh-users/zsh-syntax-highlighting.git \
@@ -40,6 +42,13 @@ link-oh-my-zsh:
 		$(HOME)/.oh-my-zsh/custom/stephencelis.zsh-theme
 	ln -F$(ln_options) $(PWD)/oh-my-zsh/custom/plugins/stephencelis/ \
 		$(HOME)/.oh-my-zsh/custom/plugins/stephencelis
+update-oh-my-zsh:
+	cd $(HOME)/.oh-my-zsh
+	git pull
+	cd $(HOME)/.oh-my-zsh/custom/plugins/zsh-history-substring-search
+	git pull
+	cd $(HOME)/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+	git pull
 uninstall-oh-my-zsh:
 	rm -fR $(HOME)/.oh-my-zsh
 
@@ -55,6 +64,9 @@ install-janus:
 	curl -Lo- https://bit.ly/janus-bootstrap | bash
 link-janus:
 	ln -F$(ln_options) $(PWD)/janus/ $(HOME)/.janus
+update-janus:
+	cd $(HOME)/.vim
+	git pull
 uninstall-janus:
 	rm -fR $(HOME)/.vim
 
@@ -74,6 +86,13 @@ install-rbenv-plugins:
 		$(HOME)/.rbenv/plugins/ruby-build
 	git clone -- git://github.com/carsomyr/rbenv-bundler.git \
 		$(HOME)/.rbenv/plugins/bundler
+update-rbenv:
+	cd $(HOME)/.rbenv
+	git pull
+	cd $(HOME)/.rbenv/plugins/ruby-build
+	git pull
+	cd $(HOME)/.rbenv/plugins/bundler
+	git pull
 uninstall-rbenv:
 	rm -fR $(HOME)/.rbenv
 
