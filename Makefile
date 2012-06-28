@@ -2,10 +2,15 @@
 all: update link
 
 install: setup-oh-my-zsh setup-janus setup-rbenv link
-update: update-oh-my-zsh update-janus update-rbenv
+update: update-local update-oh-my-zsh update-janus update-rbenv
 
 
 # Local
+
+update-local:
+	git pull
+	git submodule update --init
+	git submodule foreach git pull
 
 ln_options = hfsv
 link:
