@@ -1,8 +1,8 @@
 
-all: update link
+all: update
 
-install: setup-oh-my-zsh setup-janus setup-rbenv link
-update: update-local update-oh-my-zsh update-janus update-rbenv
+install: update-local setup-oh-my-zsh setup-janus setup-rbenv link
+update: update-local update-oh-my-zsh update-janus update-rbenv link
 
 
 # Local
