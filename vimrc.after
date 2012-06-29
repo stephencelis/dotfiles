@@ -1,8 +1,16 @@
 colorscheme wombat256
+highlight ColorColumn ctermbg=233
 
-set visualbell t_vb=
+set autoindent
+set colorcolumn=80
 set cursorline
 " set nonumber
+set numberwidth=4
+set scrolloff=3
+set showcmd
+set undodir=~/.vim/_temp
+set undofile
+set visualbell
 set wildmenu
 set wildmode=list:longest,full
 
