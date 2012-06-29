@@ -48,12 +48,12 @@ link-oh-my-zsh:
 	ln -F$(ln_options) $(PWD)/oh-my-zsh/custom/plugins/stephencelis/ \
 		$(HOME)/.oh-my-zsh/custom/plugins/stephencelis
 update-oh-my-zsh:
-	cd $(HOME)/.oh-my-zsh
-	git pull
-	cd $(HOME)/.oh-my-zsh/custom/plugins/zsh-history-substring-search
-	git pull
-	cd $(HOME)/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-	git pull
+	cd $(HOME)/.oh-my-zsh \
+		&& git pull
+	cd $(HOME)/.oh-my-zsh/custom/plugins/zsh-history-substring-search \
+		&& git pull
+	cd $(HOME)/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting \
+		&& git pull
 uninstall-oh-my-zsh:
 	rm -fR $(HOME)/.oh-my-zsh
 
@@ -70,9 +70,7 @@ install-janus:
 link-janus:
 	ln -F$(ln_options) $(PWD)/janus/ $(HOME)/.janus
 update-janus:
-	cd $(HOME)/.vim
-	git pull
-	rake
+	cd $(HOME)/.vim && rake
 uninstall-janus:
 	rm -fR $(HOME)/.vim
 
@@ -93,12 +91,12 @@ install-rbenv-plugins:
 	git clone -- git://github.com/carsomyr/rbenv-bundler.git \
 		$(HOME)/.rbenv/plugins/bundler
 update-rbenv:
-	cd $(HOME)/.rbenv
-	git pull
-	cd $(HOME)/.rbenv/plugins/ruby-build
-	git pull
-	cd $(HOME)/.rbenv/plugins/bundler
-	git pull
+	cd $(HOME)/.rbenv \
+		&& git pull
+	cd $(HOME)/.rbenv/plugins/ruby-build \
+		&& git pull
+	cd $(HOME)/.rbenv/plugins/bundler \
+		&& git pull
 uninstall-rbenv:
 	rm -fR $(HOME)/.rbenv
 
