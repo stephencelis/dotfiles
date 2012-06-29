@@ -1,1 +1,2 @@
 call janus#disable_plugin('nerdcommenter')
+call janus#disable_plugin('nerdtree')

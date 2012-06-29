@@ -5,10 +5,13 @@ let mapleader = ','
 
 set visualbell t_vb=
 set cursorline
-set nonumber
+" set nonumber
 set wildmenu
 set wildmode=list:longest,full
 
 nnoremap <leader>/ :nohlsearch<cr>
 
-autocmd FileType mml nnoremap <leader>m :w<cr>:MmlMake<cr>
+augroup myvimrc
+  au!
+  autocmd FileType mml nnoremap <leader>m :w<cr>:MmlMake<cr>
+augroup END
