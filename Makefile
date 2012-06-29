@@ -8,9 +8,11 @@ update: update-local update-oh-my-zsh update-janus update-rbenv link
 # Local
 
 update-local:
-	git pull
+	git pull --rebase || git stash && git pull --rebase && git stash pop
 	git submodule update --init
-	git submodule foreach git pull
+	git submodule foreach git checkout master
+	git submodule foreach git pull origin master
+	cd janus/powerline && git checkout develop && git pull origin develop
 
 ln_options = hfsv
 link:
@@ -49,11 +51,11 @@ link-oh-my-zsh:
 		$(HOME)/.oh-my-zsh/custom/plugins/stephencelis
 update-oh-my-zsh:
 	cd $(HOME)/.oh-my-zsh \
-		&& git pull
+		&& git pull origin master
 	cd $(HOME)/.oh-my-zsh/custom/plugins/zsh-history-substring-search \
-		&& git pull
+		&& git pull origin master
 	cd $(HOME)/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting \
-		&& git pull
+		&& git pull origin master
 uninstall-oh-my-zsh:
 	rm -fR $(HOME)/.oh-my-zsh
 
@@ -92,11 +94,11 @@ install-rbenv-plugins:
 		$(HOME)/.rbenv/plugins/bundler
 update-rbenv:
 	cd $(HOME)/.rbenv \
-		&& git pull
+		&& git pull origin master
 	cd $(HOME)/.rbenv/plugins/ruby-build \
-		&& git pull
+		&& git pull origin master
 	cd $(HOME)/.rbenv/plugins/bundler \
-		&& git pull
+		&& git pull origin master
 uninstall-rbenv:
 	rm -fR $(HOME)/.rbenv
 
