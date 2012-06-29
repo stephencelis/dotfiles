@@ -72,6 +72,7 @@ link-janus:
 update-janus:
 	cd $(HOME)/.vim
 	git pull
+	rake
 uninstall-janus:
 	rm -fR $(HOME)/.vim
 
