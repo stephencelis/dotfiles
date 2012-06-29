@@ -1,8 +1,5 @@
 colorscheme wombat256
 
-nnoremap \ ,
-let mapleader = ','
-
 set visualbell t_vb=
 set cursorline
 " set nonumber
@@ -15,3 +12,6 @@ augroup myvimrc
   au!
   autocmd FileType mml nnoremap <leader>m :w<cr>:MmlMake<cr>
 augroup END
+
+let g:vroom_use_bundle_exec=0
+let g:vroom_use_vimux=1
