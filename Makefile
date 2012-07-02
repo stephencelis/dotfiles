@@ -12,6 +12,7 @@ update-local:
 	git submodule update --init
 	git submodule foreach git checkout master
 	git submodule foreach git pull origin master
+	# powerline.vim uses a "develop" branch, not master.
 	cd janus/powerline && git checkout develop && git pull origin develop
 
 ln_options = hfsv

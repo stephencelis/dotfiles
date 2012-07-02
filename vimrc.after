@@ -4,7 +4,6 @@ highlight ColorColumn ctermbg=233
 set autoindent
 set colorcolumn=80
 set cursorline
-" set nonumber
 set numberwidth=4
 set scrolloff=3
 set showcmd
@@ -13,6 +12,7 @@ set undofile
 set visualbell
 set wildmenu
 set wildmode=list:longest,full
+set nowrap
 
 nnoremap <leader>/ :nohlsearch<cr>
 
