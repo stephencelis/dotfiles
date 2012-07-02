@@ -19,3 +19,6 @@
 [submodule "janus/vimux"]
 	path = janus/vimux
 	url = git://github.com/benmills/vimux.git
+[submodule "janus/tomorrow-theme"]
+	path = janus/tomorrow-theme
+	url = git://github.com/chriskempson/vim-tomorrow-theme.git
