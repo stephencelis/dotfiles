@@ -18,6 +18,7 @@ update-local:
 ln_options = hfsv
 link:
 	ln -$(ln_options) $(PWD)/gitconfig $(HOME)/.gitconfig
+	ln -$(ln_options) $(PWD)/githelpers $(HOME)/.githelpers
 	ln -$(ln_options) $(PWD)/gitignore $(HOME)/.gitignore
 	ln -$(ln_options) $(PWD)/irbrc $(HOME)/.irbrc
 	ln -$(ln_options) $(PWD)/screenrc $(HOME)/.screenrc

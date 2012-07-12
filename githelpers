@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Original by Gary Bernhardt:
+#
+# https://raw.github.com/garybernhardt/dotfiles/master/.githelpers
+#
+# Log output:
+#
+#   51c333e    2012-07-12    Gary Bernhardt    add vim-eunuch
+#
+# The log format uses } characters between each field, and `column` is later
+# used to split on them. A } in the commit subject or any other field will
+# break this.
+
+HASH="%C(yellow)%h%Creset"
+DATE="%C(green)%ad%Creset"
+AUTHOR="%C(bold blue)%an%Creset"
+REFS="%C(red)%d%Creset"
+SUBJECT="%s"
+
+FORMAT="$HASH}$DATE}$AUTHOR}$REFS $SUBJECT"
+
+show_git_head() {
+  echo "$(pretty_git_log -1)
+$(git show --color -p --pretty="tformat:")" |
+    less -FXRS
+}
+
+pretty_git_log() {
+  git log --pretty="tformat:${FORMAT}" --date=short $* |
+    # Line columns up based on } delimiter
+    column -s '}' -t |
+    # Page only if we need to
+    less -FXRS
+}

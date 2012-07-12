@@ -10,10 +10,14 @@
 	di = diff
 	ignore = update-index --assume-unchanged
 	st = status -s
+	h = "!source ~/.githelpers && show_git_head"
+	l = "!source ~/.githelpers && pretty_git_log"
 [core]
 	excludesfile = ~/.gitignore
 [push]
 	default = matching
+[merge]
+	tool = vimdiff
 [credential]
 	helper = osxkeychain
 [github]
