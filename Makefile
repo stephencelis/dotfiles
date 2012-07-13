@@ -74,7 +74,8 @@ install-janus:
 link-janus:
 	ln -F$(ln_options) $(PWD)/janus/ $(HOME)/.janus
 update-janus:
-	cd $(HOME)/.vim && rake
+	cd $(HOME)/.vim \
+		&& rake
 uninstall-janus:
 	rm -fR $(HOME)/.vim
 
