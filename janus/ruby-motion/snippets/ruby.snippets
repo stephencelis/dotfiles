@@ -1,15 +1,9 @@
-snippet JSONObjectWithData:options:error:
-	JSONObjectWithData(${1}, options: ${2}, error: ${3})${4}
-snippet JSONObjectWithStream:options:error:
-	JSONObjectWithStream(${1}, options: ${2}, error: ${3})${4}
 snippet URLByAppendingPathComponent:
 	URLByAppendingPathComponent(${1})${2}
 snippet URLByAppendingPathComponent:isDirectory:
 	URLByAppendingPathComponent(${1}, isDirectory: ${2})${3}
 snippet URLByAppendingPathExtension:
 	URLByAppendingPathExtension(${1})${2}
-snippet URLByResolvingBookmarkData:options:relativeToURL:bookmarkDataIsStale:error:
-	URLByResolvingBookmarkData(${1}, options: ${2}, relativeToURL: ${3}, bookmarkDataIsStale: ${4}, error: ${5})${6}
 snippet URLForAuxiliaryExecutable:
 	URLForAuxiliaryExecutable(${1})${2}
 snippet URLForDirectory:inDomain:appropriateForURL:create:error:
@@ -22,8 +16,6 @@ snippet URLForResource:withExtension:
 	URLForResource(${1}, withExtension: ${2})${3}
 snippet URLForResource:withExtension:subdirectory:
 	URLForResource(${1}, withExtension: ${2}, subdirectory: ${3})${4}
-snippet URLForResource:withExtension:subdirectory:inBundleWithURL:
-	URLForResource(${1}, withExtension: ${2}, subdirectory: ${3}, inBundleWithURL: ${4})${5}
 snippet URLForResource:withExtension:subdirectory:localization:
 	URLForResource(${1}, withExtension: ${2}, subdirectory: ${3}, localization: ${4})${5}
 snippet URLForUbiquityContainerIdentifier:
@@ -44,16 +36,10 @@ snippet URLProtocol:wasRedirectedToRequest:redirectResponse:
 	URLProtocol(${1}, wasRedirectedToRequest: ${2}, redirectResponse: ${3})${4}
 snippet URLProtocolDidFinishLoading:
 	URLProtocolDidFinishLoading(${1})${2}
-snippet URLWithString:
-	URLWithString(${1})${2}
-snippet URLWithString:relativeToURL:
-	URLWithString(${1}, relativeToURL: ${2})${3}
 snippet URLsForDirectory:inDomains:
 	URLsForDirectory(${1}, inDomains: ${2})${3}
 snippet URLsForResourcesWithExtension:subdirectory:
 	URLsForResourcesWithExtension(${1}, subdirectory: ${2})${3}
-snippet URLsForResourcesWithExtension:subdirectory:inBundleWithURL:
-	URLsForResourcesWithExtension(${1}, subdirectory: ${2}, inBundleWithURL: ${3})${4}
 snippet URLsForResourcesWithExtension:subdirectory:localization:
 	URLsForResourcesWithExtension(${1}, subdirectory: ${2}, localization: ${3})${4}
 snippet abbreviationForDate:
@@ -74,6 +60,8 @@ snippet accessibilityLineNumberForPoint:
 	accessibilityLineNumberForPoint(${1})${2}
 snippet accessibilityScroll:
 	accessibilityScroll(${1})${2}
+snippet accessibilityScrollStatusForScrollView:
+	accessibilityScrollStatusForScrollView(${1})${2}
 snippet accommodatePresentedItemDeletionWithCompletionHandler:
 	accommodatePresentedItemDeletionWithCompletionHandler(${1})${2}
 snippet accommodatePresentedSubitemDeletionAtURL:completionHandler:
@@ -92,6 +80,12 @@ snippet actionSheetCancel:
 	actionSheetCancel(${1})${2}
 snippet actionsForTarget:forControlEvent:
 	actionsForTarget(${1}, forControlEvent: ${2})${3}
+snippet activityDidFinish:
+	activityDidFinish(${1})${2}
+snippet activityViewController:itemForActivityType:
+	activityViewController(${1}, itemForActivityType: ${2})${3}
+snippet activityViewControllerPlaceholderItem:
+	activityViewControllerPlaceholderItem(${1})${2}
 snippet addAnimation:forKey:
 	addAnimation(${1}, forKey: ${2})${3}
 snippet addArcWithCenter:radius:startAngle:endAngle:clockwise:
@@ -108,6 +102,10 @@ snippet addCharactersInString:
 	addCharactersInString(${1})${2}
 snippet addChildViewController:
 	addChildViewController(${1})${2}
+snippet addConstraint:
+	addConstraint(${1})${2}
+snippet addConstraints:
+	addConstraints(${1})${2}
 snippet addCurveToPoint:controlPoint1:controlPoint2:
 	addCurveToPoint(${1}, controlPoint1: ${2}, controlPoint2: ${3})${4}
 snippet addDependency:
@@ -116,8 +114,6 @@ snippet addEntriesFromDictionary:
 	addEntriesFromDictionary(${1})${2}
 snippet addExecutionBlock:
 	addExecutionBlock(${1})${2}
-snippet addFilePresenter:
-	addFilePresenter(${1})${2}
 snippet addFileWrapper:
 	addFileWrapper(${1})${2}
 snippet addGestureRecognizer:
@@ -152,6 +148,8 @@ snippet addOperationWithBlock:
 	addOperationWithBlock(${1})${2}
 snippet addOperations:waitUntilFinished:
 	addOperations(${1}, waitUntilFinished: ${2})${3}
+snippet addPointer:
+	addPointer(${1})${2}
 snippet addPort:forMode:
 	addPort(${1}, forMode: ${2})${3}
 snippet addPrintFormatter:startingAtPageAtIndex:
@@ -180,8 +178,6 @@ snippet addValue:forHTTPHeaderField:
 	addValue(${1}, forHTTPHeaderField: ${2})${3}
 snippet additionalContentForURL:error:
 	additionalContentForURL(${1}, error: ${2})${3}
-snippet addressCheckingResultWithRange:components:
-	addressCheckingResultWithRange(${1}, components: ${2})${3}
 snippet alertView:clickedButtonAtIndex:
 	alertView(${1}, clickedButtonAtIndex: ${2})${3}
 snippet alertView:didDismissWithButtonIndex:
@@ -192,32 +188,16 @@ snippet alertViewCancel:
 	alertViewCancel(${1})${2}
 snippet alertViewShouldEnableFirstOtherButton:
 	alertViewShouldEnableFirstOtherButton(${1})${2}
+snippet alignmentRectForFrame:
+	alignmentRectForFrame(${1})${2}
 snippet allKeysForObject:
 	allKeysForObject(${1})${2}
-snippet allocWithZone:
-	allocWithZone(${1})${2}
-snippet andPredicateWithSubpredicates:
-	andPredicateWithSubpredicates(${1})${2}
-snippet animateWithDuration:animations:
-	animateWithDuration(${1}, animations: ${2})${3}
-snippet animateWithDuration:animations:completion:
-	animateWithDuration(${1}, animations: ${2}, completion: ${3})${4}
-snippet animateWithDuration:delay:options:animations:completion:
-	animateWithDuration(${1}, delay: ${2}, options: ${3}, animations: ${4}, completion: ${5})${6}
-snippet animatedImageNamed:duration:
-	animatedImageNamed(${1}, duration: ${2})${3}
-snippet animatedImageWithImages:duration:
-	animatedImageWithImages(${1}, duration: ${2})${3}
-snippet animatedResizableImageNamed:capInsets:duration:
-	animatedResizableImageNamed(${1}, capInsets: ${2}, duration: ${3})${4}
 snippet animationDidStart:
 	animationDidStart(${1})${2}
 snippet animationDidStop:finished:
 	animationDidStop(${1}, finished: ${2})${3}
 snippet animationForKey:
 	animationForKey(${1})${2}
-snippet animationWithKeyPath:
-	animationWithKeyPath(${1})${2}
 snippet appendAttributedString:
 	appendAttributedString(${1})${2}
 snippet appendBytes:length:
@@ -232,6 +212,8 @@ snippet application:didChangeStatusBarFrame:
 	application(${1}, didChangeStatusBarFrame: ${2})${3}
 snippet application:didChangeStatusBarOrientation:
 	application(${1}, didChangeStatusBarOrientation: ${2})${3}
+snippet application:didDecodeRestorableStateWithCoder:
+	application(${1}, didDecodeRestorableStateWithCoder: ${2})${3}
 snippet application:didFailToRegisterForRemoteNotificationsWithError:
 	application(${1}, didFailToRegisterForRemoteNotificationsWithError: ${2})${3}
 snippet application:didFinishLaunchingWithOptions:
@@ -246,10 +228,22 @@ snippet application:handleOpenURL:
 	application(${1}, handleOpenURL: ${2})${3}
 snippet application:openURL:sourceApplication:annotation:
 	application(${1}, openURL: ${2}, sourceApplication: ${3}, annotation: ${4})${5}
+snippet application:shouldRestoreApplicationState:
+	application(${1}, shouldRestoreApplicationState: ${2})${3}
+snippet application:shouldSaveApplicationState:
+	application(${1}, shouldSaveApplicationState: ${2})${3}
+snippet application:supportedInterfaceOrientationsForWindow:
+	application(${1}, supportedInterfaceOrientationsForWindow: ${2})${3}
+snippet application:viewControllerWithRestorationIdentifierPath:coder:
+	application(${1}, viewControllerWithRestorationIdentifierPath: ${2}, coder: ${3})${4}
 snippet application:willChangeStatusBarFrame:
 	application(${1}, willChangeStatusBarFrame: ${2})${3}
 snippet application:willChangeStatusBarOrientation:duration:
 	application(${1}, willChangeStatusBarOrientation: ${2}, duration: ${3})${4}
+snippet application:willEncodeRestorableStateWithCoder:
+	application(${1}, willEncodeRestorableStateWithCoder: ${2})${3}
+snippet application:willFinishLaunchingWithOptions:
+	application(${1}, willFinishLaunchingWithOptions: ${2})${3}
 snippet applicationDidBecomeActive:
 	applicationDidBecomeActive(${1})${2}
 snippet applicationDidEnterBackground:
@@ -270,12 +264,10 @@ snippet applicationWillResignActive:
 	applicationWillResignActive(${1})${2}
 snippet applicationWillTerminate:
 	applicationWillTerminate(${1})${2}
+snippet applyLayoutAttributes:
+	applyLayoutAttributes(${1})${2}
 snippet applyTransform:
 	applyTransform(${1})${2}
-snippet archiveRootObject:toFile:
-	archiveRootObject(${1}, toFile: ${2})${3}
-snippet archivedDataWithRootObject:
-	archivedDataWithRootObject(${1})${2}
 snippet archiver:didEncodeObject:
 	archiver(${1}, didEncodeObject: ${2})${3}
 snippet archiver:willEncodeObject:
@@ -292,18 +284,6 @@ snippet arrayByAddingObjectsFromArray:
 	arrayByAddingObjectsFromArray(${1})${2}
 snippet arrayForKey:
 	arrayForKey(${1})${2}
-snippet arrayWithArray:
-	arrayWithArray(${1})${2}
-snippet arrayWithCapacity:
-	arrayWithCapacity(${1})${2}
-snippet arrayWithContentsOfFile:
-	arrayWithContentsOfFile(${1})${2}
-snippet arrayWithContentsOfURL:
-	arrayWithContentsOfURL(${1})${2}
-snippet arrayWithObject:
-	arrayWithObject(${1})${2}
-snippet arrayWithObjects:count:
-	arrayWithObjects(${1}, count: ${2})${3}
 snippet attemptRecoveryFromError:optionIndex:
 	attemptRecoveryFromError(${1}, optionIndex: ${2})${3}
 snippet attemptRecoveryFromError:optionIndex:delegate:didRecoverSelector:contextInfo:
@@ -316,6 +296,8 @@ snippet attributedStringForObjectValue:withDefaultAttributes:
 	attributedStringForObjectValue(${1}, withDefaultAttributes: ${2})${3}
 snippet attributedSubstringFromRange:
 	attributedSubstringFromRange(${1})${2}
+snippet attributedTitleForState:
+	attributedTitleForState(${1})${2}
 snippet attributesAtIndex:effectiveRange:
 	attributesAtIndex(${1}, effectiveRange: ${2})${3}
 snippet attributesAtIndex:longestEffectiveRange:inRange:
@@ -326,16 +308,8 @@ snippet attributesOfItemAtPath:error:
 	attributesOfItemAtPath(${1}, error: ${2})${3}
 snippet autoAdjustmentFiltersWithOptions:
 	autoAdjustmentFiltersWithOptions(${1})${2}
-snippet automaticallyNotifiesObserversForKey:
-	automaticallyNotifiesObserversForKey(${1})${2}
 snippet autosaveWithCompletionHandler:
 	autosaveWithCompletionHandler(${1})${2}
-snippet availableCaptureModesForCameraDevice:
-	availableCaptureModesForCameraDevice(${1})${2}
-snippet availableMediaTypesForSourceType:
-	availableMediaTypesForSourceType(${1})${2}
-snippet availableTagSchemesForLanguage:
-	availableTagSchemesForLanguage(${1})${2}
 snippet awakeAfterUsingCoder:
 	awakeAfterUsingCoder(${1})${2}
 snippet backButtonBackgroundImageForState:barMetrics:
@@ -350,6 +324,8 @@ snippet backgroundImageForState:
 	backgroundImageForState(${1})${2}
 snippet backgroundImageForState:barMetrics:
 	backgroundImageForState(${1}, barMetrics: ${2})${3}
+snippet backgroundImageForState:style:barMetrics:
+	backgroundImageForState(${1}, style: ${2}, barMetrics: ${3})${4}
 snippet backgroundImageForToolbarPosition:barMetrics:
 	backgroundImageForToolbarPosition(${1}, barMetrics: ${2})${3}
 snippet backgroundRectForBounds:
@@ -358,54 +334,26 @@ snippet backgroundVerticalPositionAdjustmentForBarMetrics:
 	backgroundVerticalPositionAdjustmentForBarMetrics(${1})${2}
 snippet baseWritingDirectionForPosition:inDirection:
 	baseWritingDirectionForPosition(${1}, inDirection: ${2})${3}
-snippet beginAnimations:context:
-	beginAnimations(${1}, context: ${2})${3}
+snippet beginAppearanceTransition:animated:
+	beginAppearanceTransition(${1}, animated: ${2})${3}
 snippet beginBackgroundTaskWithExpirationHandler:
 	beginBackgroundTaskWithExpirationHandler(${1})${2}
 snippet beginCustomizingItems:
 	beginCustomizingItems(${1})${2}
 snippet beginTrackingWithTouch:withEvent:
 	beginTrackingWithTouch(${1}, withEvent: ${2})${3}
-snippet bestPaperForPageSize:withPapersFromArray:
-	bestPaperForPageSize(${1}, withPapersFromArray: ${2})${3}
-snippet bezierPathWithArcCenter:radius:startAngle:endAngle:clockwise:
-	bezierPathWithArcCenter(${1}, radius: ${2}, startAngle: ${3}, endAngle: ${4}, clockwise: ${5})${6}
-snippet bezierPathWithCGPath:
-	bezierPathWithCGPath(${1})${2}
-snippet bezierPathWithOvalInRect:
-	bezierPathWithOvalInRect(${1})${2}
-snippet bezierPathWithRect:
-	bezierPathWithRect(${1})${2}
-snippet bezierPathWithRoundedRect:byRoundingCorners:cornerRadii:
-	bezierPathWithRoundedRect(${1}, byRoundingCorners: ${2}, cornerRadii: ${3})${4}
-snippet bezierPathWithRoundedRect:cornerRadius:
-	bezierPathWithRoundedRect(${1}, cornerRadius: ${2})${3}
-snippet blockOperationWithBlock:
-	blockOperationWithBlock(${1})${2}
-snippet boldSystemFontOfSize:
-	boldSystemFontOfSize(${1})${2}
-snippet bookmarkDataWithContentsOfURL:error:
-	bookmarkDataWithContentsOfURL(${1}, error: ${2})${3}
 snippet bookmarkDataWithOptions:includingResourceValuesForKeys:relativeToURL:error:
 	bookmarkDataWithOptions(${1}, includingResourceValuesForKeys: ${2}, relativeToURL: ${3}, error: ${4})${5}
 snippet boolForKey:
 	boolForKey(${1})${2}
 snippet borderRectForBounds:
 	borderRectForBounds(${1})${2}
+snippet boundingRectWithSize:options:context:
+	boundingRectWithSize(${1}, options: ${2}, context: ${3})${4}
 snippet bringSubviewToFront:
 	bringSubviewToFront(${1})${2}
-snippet bundleForClass:
-	bundleForClass(${1})${2}
-snippet bundleWithIdentifier:
-	bundleWithIdentifier(${1})${2}
-snippet bundleWithPath:
-	bundleWithPath(${1})${2}
-snippet bundleWithURL:
-	bundleWithURL(${1})${2}
 snippet buttonTitleAtIndex:
 	buttonTitleAtIndex(${1})${2}
-snippet buttonWithType:
-	buttonWithType(${1})${2}
 snippet cStringUsingEncoding:
 	cStringUsingEncoding(${1})${2}
 snippet cache:willEvictObject:
@@ -416,22 +364,16 @@ snippet canBeConvertedToEncoding:
 	canBeConvertedToEncoding(${1})${2}
 snippet canBePreventedByGestureRecognizer:
 	canBePreventedByGestureRecognizer(${1})${2}
-snippet canEditVideoAtPath:
-	canEditVideoAtPath(${1})${2}
-snippet canHandleRequest:
-	canHandleRequest(${1})${2}
-snippet canInitWithRequest:
-	canInitWithRequest(${1})${2}
 snippet canOpenURL:
 	canOpenURL(${1})${2}
 snippet canPerformAction:withSender:
 	canPerformAction(${1}, withSender: ${2})${3}
+snippet canPerformUnwindSegueAction:fromViewController:withSender:
+	canPerformUnwindSegueAction(${1}, fromViewController: ${2}, withSender: ${3})${4}
+snippet canPerformWithActivityItems:
+	canPerformWithActivityItems(${1})${2}
 snippet canPreventGestureRecognizer:
 	canPreventGestureRecognizer(${1})${2}
-snippet canPrintData:
-	canPrintData(${1})${2}
-snippet canPrintURL:
-	canPrintURL(${1})${2}
 snippet cancelAuthenticationChallenge:
 	cancelAuthenticationChallenge(${1})${2}
 snippet cancelLocalNotification:
@@ -440,22 +382,16 @@ snippet cancelPerformSelector:target:argument:
 	cancelPerformSelector(${1}, target: ${2}, argument: ${3})${4}
 snippet cancelPerformSelectorsWithTarget:
 	cancelPerformSelectorsWithTarget(${1})${2}
-snippet cancelPreviousPerformRequestsWithTarget:
-	cancelPreviousPerformRequestsWithTarget(${1})${2}
-snippet cancelPreviousPerformRequestsWithTarget:selector:object:
-	cancelPreviousPerformRequestsWithTarget(${1}, selector: ${2}, object: ${3})${4}
 snippet cancelTrackingWithEvent:
 	cancelTrackingWithEvent(${1})${2}
-snippet canonicalLanguageIdentifierFromString:
-	canonicalLanguageIdentifierFromString(${1})${2}
-snippet canonicalLocaleIdentifierFromString:
-	canonicalLocaleIdentifierFromString(${1})${2}
-snippet canonicalRequestForRequest:
-	canonicalRequestForRequest(${1})${2}
+snippet capitalizedStringWithLocale:
+	capitalizedStringWithLocale(${1})${2}
 snippet caretRectForPosition:
 	caretRectForPosition(${1})${2}
 snippet caseInsensitiveCompare:
 	caseInsensitiveCompare(${1})${2}
+snippet cellForItemAtIndexPath:
+	cellForItemAtIndexPath(${1})${2}
 snippet cellForRowAtIndexPath:
 	cellForRowAtIndexPath(${1})${2}
 snippet changeCountTokenForSaveOperation:
@@ -466,8 +402,6 @@ snippet changeFileAttributes:atPath:
 	changeFileAttributes(${1}, atPath: ${2})${3}
 snippet characterAtIndex:
 	characterAtIndex(${1})${2}
-snippet characterDirectionForLanguage:
-	characterDirectionForLanguage(${1})${2}
 snippet characterIsMember:
 	characterIsMember(${1})${2}
 snippet characterOffsetOfPosition:withinRange:
@@ -476,14 +410,6 @@ snippet characterRangeAtPoint:
 	characterRangeAtPoint(${1})${2}
 snippet characterRangeByExtendingPosition:inDirection:
 	characterRangeByExtendingPosition(${1}, inDirection: ${2})${3}
-snippet characterSetWithBitmapRepresentation:
-	characterSetWithBitmapRepresentation(${1})${2}
-snippet characterSetWithCharactersInString:
-	characterSetWithCharactersInString(${1})${2}
-snippet characterSetWithContentsOfFile:
-	characterSetWithContentsOfFile(${1})${2}
-snippet characterSetWithRange:
-	characterSetWithRange(${1})${2}
 snippet checkResourceIsReachableAndReturnError:
 	checkResourceIsReachableAndReturnError(${1})${2}
 snippet classForClassName:
@@ -500,24 +426,50 @@ snippet closestPositionToPoint:
 	closestPositionToPoint(${1})${2}
 snippet closestPositionToPoint:withinRange:
 	closestPositionToPoint(${1}, withinRange: ${2})${3}
+snippet collectionView:canPerformAction:forItemAtIndexPath:withSender:
+	collectionView(${1}, canPerformAction: ${2}, forItemAtIndexPath: ${3}, withSender: ${4})${5}
+snippet collectionView:cellForItemAtIndexPath:
+	collectionView(${1}, cellForItemAtIndexPath: ${2})${3}
+snippet collectionView:didDeselectItemAtIndexPath:
+	collectionView(${1}, didDeselectItemAtIndexPath: ${2})${3}
+snippet collectionView:didEndDisplayingCell:forItemAtIndexPath:
+	collectionView(${1}, didEndDisplayingCell: ${2}, forItemAtIndexPath: ${3})${4}
+snippet collectionView:didEndDisplayingSupplementaryView:forElementOfKind:atIndexPath:
+	collectionView(${1}, didEndDisplayingSupplementaryView: ${2}, forElementOfKind: ${3}, atIndexPath: ${4})${5}
+snippet collectionView:didHighlightItemAtIndexPath:
+	collectionView(${1}, didHighlightItemAtIndexPath: ${2})${3}
+snippet collectionView:didSelectItemAtIndexPath:
+	collectionView(${1}, didSelectItemAtIndexPath: ${2})${3}
+snippet collectionView:didUnhighlightItemAtIndexPath:
+	collectionView(${1}, didUnhighlightItemAtIndexPath: ${2})${3}
+snippet collectionView:layout:insetForSectionAtIndex:
+	collectionView(${1}, layout: ${2}, insetForSectionAtIndex: ${3})${4}
+snippet collectionView:layout:minimumInteritemSpacingForSectionAtIndex:
+	collectionView(${1}, layout: ${2}, minimumInteritemSpacingForSectionAtIndex: ${3})${4}
+snippet collectionView:layout:minimumLineSpacingForSectionAtIndex:
+	collectionView(${1}, layout: ${2}, minimumLineSpacingForSectionAtIndex: ${3})${4}
+snippet collectionView:layout:referenceSizeForFooterInSection:
+	collectionView(${1}, layout: ${2}, referenceSizeForFooterInSection: ${3})${4}
+snippet collectionView:layout:referenceSizeForHeaderInSection:
+	collectionView(${1}, layout: ${2}, referenceSizeForHeaderInSection: ${3})${4}
+snippet collectionView:layout:sizeForItemAtIndexPath:
+	collectionView(${1}, layout: ${2}, sizeForItemAtIndexPath: ${3})${4}
+snippet collectionView:numberOfItemsInSection:
+	collectionView(${1}, numberOfItemsInSection: ${2})${3}
+snippet collectionView:performAction:forItemAtIndexPath:withSender:
+	collectionView(${1}, performAction: ${2}, forItemAtIndexPath: ${3}, withSender: ${4})${5}
+snippet collectionView:shouldDeselectItemAtIndexPath:
+	collectionView(${1}, shouldDeselectItemAtIndexPath: ${2})${3}
+snippet collectionView:shouldHighlightItemAtIndexPath:
+	collectionView(${1}, shouldHighlightItemAtIndexPath: ${2})${3}
+snippet collectionView:shouldSelectItemAtIndexPath:
+	collectionView(${1}, shouldSelectItemAtIndexPath: ${2})${3}
+snippet collectionView:shouldShowMenuForItemAtIndexPath:
+	collectionView(${1}, shouldShowMenuForItemAtIndexPath: ${2})${3}
+snippet collectionView:viewForSupplementaryElementOfKind:atIndexPath:
+	collectionView(${1}, viewForSupplementaryElementOfKind: ${2}, atIndexPath: ${3})${4}
 snippet colorWithAlphaComponent:
 	colorWithAlphaComponent(${1})${2}
-snippet colorWithCGColor:
-	colorWithCGColor(${1})${2}
-snippet colorWithCIColor:
-	colorWithCIColor(${1})${2}
-snippet colorWithHue:saturation:brightness:alpha:
-	colorWithHue(${1}, saturation: ${2}, brightness: ${3}, alpha: ${4})${5}
-snippet colorWithPatternImage:
-	colorWithPatternImage(${1})${2}
-snippet colorWithRed:green:blue:
-	colorWithRed(${1}, green: ${2}, blue: ${3})${4}
-snippet colorWithRed:green:blue:alpha:
-	colorWithRed(${1}, green: ${2}, blue: ${3}, alpha: ${4})${5}
-snippet colorWithString:
-	colorWithString(${1})${2}
-snippet colorWithWhite:alpha:
-	colorWithWhite(${1}, alpha: ${2})${3}
 snippet commonPrefixWithString:options:
 	commonPrefixWithString(${1}, options: ${2})${3}
 snippet compare:
@@ -540,8 +492,6 @@ snippet components:fromDate:
 	components(${1}, fromDate: ${2})${3}
 snippet components:fromDate:toDate:options:
 	components(${1}, fromDate: ${2}, toDate: ${3}, options: ${4})${5}
-snippet componentsFromLocaleIdentifier:
-	componentsFromLocaleIdentifier(${1})${2}
 snippet componentsJoinedByString:
 	componentsJoinedByString(${1})${2}
 snippet componentsSeparatedByCharactersInSet:
@@ -586,8 +536,8 @@ snippet connectionDidResumeDownloading:totalBytesWritten:expectedTotalBytes:
 	connectionDidResumeDownloading(${1}, totalBytesWritten: ${2}, expectedTotalBytes: ${3})${4}
 snippet connectionShouldUseCredentialStorage:
 	connectionShouldUseCredentialStorage(${1})${2}
-snippet connectionWithRequest:delegate:
-	connectionWithRequest(${1}, delegate: ${2})${3}
+snippet constraintsAffectingLayoutForAxis:
+	constraintsAffectingLayoutForAxis(${1})${2}
 snippet containsIndex:
 	containsIndex(${1})${2}
 snippet containsIndexes:
@@ -604,6 +554,10 @@ snippet containsPoint:
 	containsPoint(${1})${2}
 snippet containsValueForKey:
 	containsValueForKey(${1})${2}
+snippet contentCompressionResistancePriorityForAxis:
+	contentCompressionResistancePriorityForAxis(${1})${2}
+snippet contentHuggingPriorityForAxis:
+	contentHuggingPriorityForAxis(${1})${2}
 snippet contentOffsetForSegmentAtIndex:
 	contentOffsetForSegmentAtIndex(${1})${2}
 snippet contentPositionAdjustmentForSegmentType:barMetrics:
@@ -620,12 +574,6 @@ snippet contentsOfDirectoryAtPath:error:
 	contentsOfDirectoryAtPath(${1}, error: ${2})${3}
 snippet contentsOfDirectoryAtURL:includingPropertiesForKeys:options:error:
 	contentsOfDirectoryAtURL(${1}, includingPropertiesForKeys: ${2}, options: ${3}, error: ${4})${5}
-snippet contextWithEAGLContext:
-	contextWithEAGLContext(${1})${2}
-snippet contextWithEAGLContext:options:
-	contextWithEAGLContext(${1}, options: ${2})${3}
-snippet contextWithOptions:
-	contextWithOptions(${1})${2}
 snippet continueTrackingWithTouch:withEvent:
 	continueTrackingWithTouch(${1}, withEvent: ${2})${3}
 snippet continueWithoutCredentialForAuthenticationChallenge:
@@ -658,12 +606,8 @@ snippet convertTime:fromLayer:
 	convertTime(${1}, fromLayer: ${2})${3}
 snippet convertTime:toLayer:
 	convertTime(${1}, toLayer: ${2})${3}
-snippet cookieWithProperties:
-	cookieWithProperties(${1})${2}
 snippet cookiesForURL:
 	cookiesForURL(${1})${2}
-snippet cookiesWithResponseHeaderFields:forURL:
-	cookiesWithResponseHeaderFields(${1}, forURL: ${2})${3}
 snippet coordinateReadingItemAtURL:options:error:byAccessor:
 	coordinateReadingItemAtURL(${1}, options: ${2}, error: ${3}, byAccessor: ${4})${5}
 snippet coordinateReadingItemAtURL:options:writingItemAtURL:options:error:byAccessor:
@@ -680,8 +624,6 @@ snippet copyItemAtURL:toURL:error:
 	copyItemAtURL(${1}, toURL: ${2}, error: ${3})${4}
 snippet copyWithZone:
 	copyWithZone(${1})${2}
-snippet correctionCheckingResultWithRange:replacementString:
-	correctionCheckingResultWithRange(${1}, replacementString: ${2})${3}
 snippet countByEnumeratingWithState:objects:count:
 	countByEnumeratingWithState(${1}, objects: ${2}, count: ${3})${4}
 snippet countForObject:
@@ -706,84 +648,28 @@ snippet createSymbolicLinkAtPath:withDestinationPath:error:
 	createSymbolicLinkAtPath(${1}, withDestinationPath: ${2}, error: ${3})${4}
 snippet createSymbolicLinkAtURL:withDestinationURL:error:
 	createSymbolicLinkAtURL(${1}, withDestinationURL: ${2}, error: ${3})${4}
-snippet credentialForTrust:
-	credentialForTrust(${1})${2}
-snippet credentialWithIdentity:certificates:persistence:
-	credentialWithIdentity(${1}, certificates: ${2}, persistence: ${3})${4}
-snippet credentialWithUser:password:persistence:
-	credentialWithUser(${1}, password: ${2}, persistence: ${3})${4}
 snippet credentialsForProtectionSpace:
 	credentialsForProtectionSpace(${1})${2}
-snippet currentVersionOfItemAtURL:
-	currentVersionOfItemAtURL(${1})${2}
 snippet cut:
 	cut(${1})${2}
-snippet dashCheckingResultWithRange:replacementString:
-	dashCheckingResultWithRange(${1}, replacementString: ${2})${3}
-snippet dataDetectorWithTypes:error:
-	dataDetectorWithTypes(${1}, error: ${2})${3}
 snippet dataForKey:
 	dataForKey(${1})${2}
 snippet dataForPasteboardType:
 	dataForPasteboardType(${1})${2}
 snippet dataForPasteboardType:inItemSet:
 	dataForPasteboardType(${1}, inItemSet: ${2})${3}
-snippet dataFromPropertyList:format:errorDescription:
-	dataFromPropertyList(${1}, format: ${2}, errorDescription: ${3})${4}
-snippet dataFromTXTRecordDictionary:
-	dataFromTXTRecordDictionary(${1})${2}
 snippet dataUsingEncoding:
 	dataUsingEncoding(${1})${2}
 snippet dataUsingEncoding:allowLossyConversion:
 	dataUsingEncoding(${1}, allowLossyConversion: ${2})${3}
-snippet dataWithBytes:length:
-	dataWithBytes(${1}, length: ${2})${3}
-snippet dataWithBytesNoCopy:length:
-	dataWithBytesNoCopy(${1}, length: ${2})${3}
-snippet dataWithBytesNoCopy:length:freeWhenDone:
-	dataWithBytesNoCopy(${1}, length: ${2}, freeWhenDone: ${3})${4}
-snippet dataWithCapacity:
-	dataWithCapacity(${1})${2}
-snippet dataWithContentsOfFile:
-	dataWithContentsOfFile(${1})${2}
-snippet dataWithContentsOfFile:options:error:
-	dataWithContentsOfFile(${1}, options: ${2}, error: ${3})${4}
-snippet dataWithContentsOfMappedFile:
-	dataWithContentsOfMappedFile(${1})${2}
-snippet dataWithContentsOfURL:
-	dataWithContentsOfURL(${1})${2}
-snippet dataWithContentsOfURL:options:error:
-	dataWithContentsOfURL(${1}, options: ${2}, error: ${3})${4}
-snippet dataWithData:
-	dataWithData(${1})${2}
-snippet dataWithJSONObject:options:error:
-	dataWithJSONObject(${1}, options: ${2}, error: ${3})${4}
-snippet dataWithLength:
-	dataWithLength(${1})${2}
-snippet dataWithPropertyList:format:options:error:
-	dataWithPropertyList(${1}, format: ${2}, options: ${3}, error: ${4})${5}
 snippet dateByAddingComponents:toDate:options:
 	dateByAddingComponents(${1}, toDate: ${2}, options: ${3})${4}
 snippet dateByAddingTimeInterval:
 	dateByAddingTimeInterval(${1})${2}
-snippet dateCheckingResultWithRange:date:
-	dateCheckingResultWithRange(${1}, date: ${2})${3}
-snippet dateCheckingResultWithRange:date:timeZone:duration:
-	dateCheckingResultWithRange(${1}, date: ${2}, timeZone: ${3}, duration: ${4})${5}
-snippet dateFormatFromTemplate:options:locale:
-	dateFormatFromTemplate(${1}, options: ${2}, locale: ${3})${4}
 snippet dateFromComponents:
 	dateFromComponents(${1})${2}
 snippet dateFromString:
 	dateFromString(${1})${2}
-snippet dateWithTimeInterval:sinceDate:
-	dateWithTimeInterval(${1}, sinceDate: ${2})${3}
-snippet dateWithTimeIntervalSince1970:
-	dateWithTimeIntervalSince1970(${1})${2}
-snippet dateWithTimeIntervalSinceNow:
-	dateWithTimeIntervalSinceNow(${1})${2}
-snippet dateWithTimeIntervalSinceReferenceDate:
-	dateWithTimeIntervalSinceReferenceDate(${1})${2}
 snippet daylightSavingTimeOffsetForDate:
 	daylightSavingTimeOffsetForDate(${1})${2}
 snippet decimalNumberByAdding:
@@ -812,16 +698,6 @@ snippet decimalNumberBySubtracting:
 	decimalNumberBySubtracting(${1})${2}
 snippet decimalNumberBySubtracting:withBehavior:
 	decimalNumberBySubtracting(${1}, withBehavior: ${2})${3}
-snippet decimalNumberHandlerWithRoundingMode:scale:raiseOnExactness:raiseOnOverflow:raiseOnUnderflow:raiseOnDivideByZero:
-	decimalNumberHandlerWithRoundingMode(${1}, scale: ${2}, raiseOnExactness: ${3}, raiseOnOverflow: ${4}, raiseOnUnderflow: ${5}, raiseOnDivideByZero: ${6})${7}
-snippet decimalNumberWithDecimal:
-	decimalNumberWithDecimal(${1})${2}
-snippet decimalNumberWithMantissa:exponent:isNegative:
-	decimalNumberWithMantissa(${1}, exponent: ${2}, isNegative: ${3})${4}
-snippet decimalNumberWithString:
-	decimalNumberWithString(${1})${2}
-snippet decimalNumberWithString:locale:
-	decimalNumberWithString(${1}, locale: ${2})${3}
 snippet decodeArrayOfObjCType:count:at:
 	decodeArrayOfObjCType(${1}, count: ${2}, at: ${3})${4}
 snippet decodeBoolForKey:
@@ -852,64 +728,62 @@ snippet decodeIntegerForKey:
 	decodeIntegerForKey(${1})${2}
 snippet decodeObjectForKey:
 	decodeObjectForKey(${1})${2}
+snippet decodeObjectOfClass:forKey:
+	decodeObjectOfClass(${1}, forKey: ${2})${3}
+snippet decodeObjectOfClasses:forKey:
+	decodeObjectOfClasses(${1}, forKey: ${2})${3}
+snippet decodePropertyListForKey:
+	decodePropertyListForKey(${1})${2}
+snippet decodeRestorableStateWithCoder:
+	decodeRestorableStateWithCoder(${1})${2}
 snippet decodeUIEdgeInsetsForKey:
 	decodeUIEdgeInsetsForKey(${1})${2}
 snippet decodeUIOffsetForKey:
 	decodeUIOffsetForKey(${1})${2}
 snippet decodeValueOfObjCType:at:
 	decodeValueOfObjCType(${1}, at: ${2})${3}
-snippet defaultActionForKey:
-	defaultActionForKey(${1})${2}
+snippet decrementImageForState:
+	decrementImageForState(${1})${2}
 snippet defaultCredentialForProtectionSpace:
 	defaultCredentialForProtectionSpace(${1})${2}
-snippet defaultValueForKey:
-	defaultValueForKey(${1})${2}
 snippet delete:
 	delete(${1})${2}
 snippet deleteCharactersInRange:
 	deleteCharactersInRange(${1})${2}
 snippet deleteCookie:
 	deleteCookie(${1})${2}
+snippet deleteItemsAtIndexPaths:
+	deleteItemsAtIndexPaths(${1})${2}
 snippet deleteRowsAtIndexPaths:withRowAnimation:
 	deleteRowsAtIndexPaths(${1}, withRowAnimation: ${2})${3}
+snippet deleteSections:
+	deleteSections(${1})${2}
 snippet deleteSections:withRowAnimation:
 	deleteSections(${1}, withRowAnimation: ${2})${3}
 snippet dequeueNotificationsMatching:coalesceMask:
 	dequeueNotificationsMatching(${1}, coalesceMask: ${2})${3}
 snippet dequeueReusableCellWithIdentifier:
 	dequeueReusableCellWithIdentifier(${1})${2}
+snippet dequeueReusableCellWithIdentifier:forIndexPath:
+	dequeueReusableCellWithIdentifier(${1}, forIndexPath: ${2})${3}
+snippet dequeueReusableCellWithReuseIdentifier:forIndexPath:
+	dequeueReusableCellWithReuseIdentifier(${1}, forIndexPath: ${2})${3}
+snippet dequeueReusableHeaderFooterViewWithIdentifier:
+	dequeueReusableHeaderFooterViewWithIdentifier(${1})${2}
+snippet dequeueReusableSupplementaryViewOfKind:withReuseIdentifier:forIndexPath:
+	dequeueReusableSupplementaryViewOfKind(${1}, withReuseIdentifier: ${2}, forIndexPath: ${3})${4}
 snippet descriptionWithLocale:
 	descriptionWithLocale(${1})${2}
 snippet descriptionWithLocale:indent:
 	descriptionWithLocale(${1}, indent: ${2})${3}
+snippet deselectItemAtIndexPath:animated:
+	deselectItemAtIndexPath(${1}, animated: ${2})${3}
 snippet deselectRowAtIndexPath:animated:
 	deselectRowAtIndexPath(${1}, animated: ${2})${3}
 snippet destinationOfSymbolicLinkAtPath:error:
 	destinationOfSymbolicLinkAtPath(${1}, error: ${2})${3}
-snippet detachNewThreadSelector:toTarget:withObject:
-	detachNewThreadSelector(${1}, toTarget: ${2}, withObject: ${3})${4}
-snippet detectorOfType:context:options:
-	detectorOfType(${1}, context: ${2}, options: ${3})${4}
 snippet dictionaryForKey:
 	dictionaryForKey(${1})${2}
-snippet dictionaryFromTXTRecordData:
-	dictionaryFromTXTRecordData(${1})${2}
-snippet dictionaryHasDefinitionForTerm:
-	dictionaryHasDefinitionForTerm(${1})${2}
-snippet dictionaryWithCapacity:
-	dictionaryWithCapacity(${1})${2}
-snippet dictionaryWithContentsOfFile:
-	dictionaryWithContentsOfFile(${1})${2}
-snippet dictionaryWithContentsOfURL:
-	dictionaryWithContentsOfURL(${1})${2}
-snippet dictionaryWithDictionary:
-	dictionaryWithDictionary(${1})${2}
-snippet dictionaryWithObject:forKey:
-	dictionaryWithObject(${1}, forKey: ${2})${3}
-snippet dictionaryWithObjects:forKeys:
-	dictionaryWithObjects(${1}, forKeys: ${2})${3}
-snippet dictionaryWithObjects:forKeys:count:
-	dictionaryWithObjects(${1}, forKeys: ${2}, count: ${3})${4}
 snippet dictionaryWithValuesForKeys:
 	dictionaryWithValuesForKeys(${1})${2}
 snippet didAddSubview:
@@ -930,6 +804,8 @@ snippet didPresentAlertView:
 	didPresentAlertView(${1})${2}
 snippet didRotateFromInterfaceOrientation:
 	didRotateFromInterfaceOrientation(${1})${2}
+snippet didTransitionFromLayout:toLayout:
+	didTransitionFromLayout(${1}, toLayout: ${2})${3}
 snippet didTransitionToState:
 	didTransitionToState(${1})${2}
 snippet directoryContentsAtPath:
@@ -956,6 +832,8 @@ snippet displayNameAtPath:
 	displayNameAtPath(${1})${2}
 snippet displayNameForKey:value:
 	displayNameForKey(${1}, value: ${2})${3}
+snippet dividerImageForLeftSegmentState:rightSegmentState:
+	dividerImageForLeftSegmentState(${1}, rightSegmentState: ${2})${3}
 snippet dividerImageForLeftSegmentState:rightSegmentState:barMetrics:
 	dividerImageForLeftSegmentState(${1}, rightSegmentState: ${2}, barMetrics: ${3})${4}
 snippet documentInteractionController:canPerformAction:
@@ -1042,6 +920,8 @@ snippet drawRect:forViewPrintFormatter:
 	drawRect(${1}, forViewPrintFormatter: ${2})${3}
 snippet drawTextInRect:
 	drawTextInRect(${1})${2}
+snippet drawWithRect:options:context:
+	drawWithRect(${1}, options: ${2}, context: ${3})${4}
 snippet earlierDate:
 	earlierDate(${1})${2}
 snippet editingRectForBounds:
@@ -1090,6 +970,8 @@ snippet encodeObject:
 	encodeObject(${1})${2}
 snippet encodeObject:forKey:
 	encodeObject(${1}, forKey: ${2})${3}
+snippet encodeRestorableStateWithCoder:
+	encodeRestorableStateWithCoder(${1})${2}
 snippet encodeRootObject:
 	encodeRootObject(${1})${2}
 snippet encodeUIEdgeInsets:forKey:
@@ -1152,12 +1034,6 @@ snippet enumeratorAtPath:
 	enumeratorAtPath(${1})${2}
 snippet enumeratorAtURL:includingPropertiesForKeys:options:errorHandler:
 	enumeratorAtURL(${1}, includingPropertiesForKeys: ${2}, options: ${3}, errorHandler: ${4})${5}
-snippet errorWithDomain:code:userInfo:
-	errorWithDomain(${1}, code: ${2}, userInfo: ${3})${4}
-snippet escapedPatternForString:
-	escapedPatternForString(${1})${2}
-snippet escapedTemplateForString:
-	escapedTemplateForString(${1})${2}
 snippet evaluateWithObject:
 	evaluateWithObject(${1})${2}
 snippet evaluateWithObject:substitutionVariables:
@@ -1166,40 +1042,12 @@ snippet evictUbiquitousItemAtURL:error:
 	evictUbiquitousItemAtURL(${1}, error: ${2})${3}
 snippet exceptionDuringOperation:error:leftOperand:rightOperand:
 	exceptionDuringOperation(${1}, error: ${2}, leftOperand: ${3}, rightOperand: ${4})${5}
-snippet exceptionWithName:reason:userInfo:
-	exceptionWithName(${1}, reason: ${2}, userInfo: ${3})${4}
 snippet exchangeObjectAtIndex:withObjectAtIndex:
 	exchangeObjectAtIndex(${1}, withObjectAtIndex: ${2})${3}
 snippet exchangeSubviewAtIndex:withSubviewAtIndex:
 	exchangeSubviewAtIndex(${1}, withSubviewAtIndex: ${2})${3}
-snippet expressionForAggregate:
-	expressionForAggregate(${1})${2}
-snippet expressionForBlock:arguments:
-	expressionForBlock(${1}, arguments: ${2})${3}
-snippet expressionForConstantValue:
-	expressionForConstantValue(${1})${2}
-snippet expressionForFunction:arguments:
-	expressionForFunction(${1}, arguments: ${2})${3}
-snippet expressionForFunction:selectorName:arguments:
-	expressionForFunction(${1}, selectorName: ${2}, arguments: ${3})${4}
-snippet expressionForIntersectSet:with:
-	expressionForIntersectSet(${1}, with: ${2})${3}
-snippet expressionForKeyPath:
-	expressionForKeyPath(${1})${2}
-snippet expressionForMinusSet:with:
-	expressionForMinusSet(${1}, with: ${2})${3}
-snippet expressionForSubquery:usingIteratorVariable:predicate:
-	expressionForSubquery(${1}, usingIteratorVariable: ${2}, predicate: ${3})${4}
-snippet expressionForUnionSet:with:
-	expressionForUnionSet(${1}, with: ${2})${3}
-snippet expressionForVariable:
-	expressionForVariable(${1})${2}
 snippet expressionValueWithObject:context:
 	expressionValueWithObject(${1}, context: ${2})${3}
-snippet expressionWithFormat:argumentArray:
-	expressionWithFormat(${1}, argumentArray: ${2})${3}
-snippet expressionWithFormat:arguments:
-	expressionWithFormat(${1}, arguments: ${2})${3}
 snippet featuresInImage:
 	featuresInImage(${1})${2}
 snippet featuresInImage:options:
@@ -1212,18 +1060,6 @@ snippet fileExistsAtPath:
 	fileExistsAtPath(${1})${2}
 snippet fileExistsAtPath:isDirectory:
 	fileExistsAtPath(${1}, isDirectory: ${2})${3}
-snippet fileHandleForReadingAtPath:
-	fileHandleForReadingAtPath(${1})${2}
-snippet fileHandleForReadingFromURL:error:
-	fileHandleForReadingFromURL(${1}, error: ${2})${3}
-snippet fileHandleForUpdatingAtPath:
-	fileHandleForUpdatingAtPath(${1})${2}
-snippet fileHandleForUpdatingURL:error:
-	fileHandleForUpdatingURL(${1}, error: ${2})${3}
-snippet fileHandleForWritingAtPath:
-	fileHandleForWritingAtPath(${1})${2}
-snippet fileHandleForWritingToURL:error:
-	fileHandleForWritingToURL(${1}, error: ${2})${3}
 snippet fileManager:shouldCopyItemAtPath:toPath:
 	fileManager(${1}, shouldCopyItemAtPath: ${2}, toPath: ${3})${4}
 snippet fileManager:shouldCopyItemAtURL:toURL:
@@ -1266,26 +1102,18 @@ snippet fileSystemAttributesAtPath:
 	fileSystemAttributesAtPath(${1})${2}
 snippet fileSystemRepresentationWithPath:
 	fileSystemRepresentationWithPath(${1})${2}
-snippet fileURLWithPath:
-	fileURLWithPath(${1})${2}
-snippet fileURLWithPath:isDirectory:
-	fileURLWithPath(${1}, isDirectory: ${2})${3}
-snippet fileURLWithPathComponents:
-	fileURLWithPathComponents(${1})${2}
 snippet fillWithBlendMode:alpha:
 	fillWithBlendMode(${1}, alpha: ${2})${3}
-snippet filterNamesInCategories:
-	filterNamesInCategories(${1})${2}
-snippet filterNamesInCategory:
-	filterNamesInCategory(${1})${2}
 snippet filterUsingPredicate:
 	filterUsingPredicate(${1})${2}
-snippet filterWithName:
-	filterWithName(${1})${2}
 snippet filteredArrayUsingPredicate:
 	filteredArrayUsingPredicate(${1})${2}
 snippet filteredSetUsingPredicate:
 	filteredSetUsingPredicate(${1})${2}
+snippet finalLayoutAttributesForDeletedItemAtIndexPath:
+	finalLayoutAttributesForDeletedItemAtIndexPath(${1})${2}
+snippet finalLayoutAttributesForDeletedSupplementaryElementOfKind:atIndexPath:
+	finalLayoutAttributesForDeletedSupplementaryElementOfKind(${1}, atIndexPath: ${2})${3}
 snippet finishedHandlingError:recovered:
 	finishedHandlingError(${1}, recovered: ${2})${3}
 snippet firstMatchInString:options:range:
@@ -1296,12 +1124,10 @@ snippet firstRectForRange:
 	firstRectForRange(${1})${2}
 snippet floatForKey:
 	floatForKey(${1})${2}
-snippet fontNamesForFamilyName:
-	fontNamesForFamilyName(${1})${2}
-snippet fontWithName:size:
-	fontWithName(${1}, size: ${2})${3}
 snippet fontWithSize:
 	fontWithSize(${1})${2}
+snippet footerViewForSection:
+	footerViewForSection(${1})${2}
 snippet formIntersectionWithCharacterSet:
 	formIntersectionWithCharacterSet(${1})${2}
 snippet formUnionWithCharacterSet:
@@ -1310,10 +1136,10 @@ snippet forwardInvocation:
 	forwardInvocation(${1})${2}
 snippet forwardingTargetForSelector:
 	forwardingTargetForSelector(${1})${2}
-snippet functionWithControlPoints::::
-	functionWithControlPoints(${1})${2}
-snippet functionWithName:
-	functionWithName(${1})${2}
+snippet frameForAlignmentRect:
+	frameForAlignmentRect(${1})${2}
+snippet frameForDictationResultPlaceholder:
+	frameForDictationResultPlaceholder(${1})${2}
 snippet gestureRecognizer:shouldReceiveTouch:
 	gestureRecognizer(${1}, shouldReceiveTouch: ${2})${3}
 snippet gestureRecognizer:shouldRecognizeSimultaneouslyWithGestureRecognizer:
@@ -1380,12 +1206,12 @@ snippet getResourceValue:forKey:error:
 	getResourceValue(${1}, forKey: ${2}, error: ${3})${4}
 snippet getReturnValue:
 	getReturnValue(${1})${2}
+snippet getUUIDBytes:
+	getUUIDBytes(${1})${2}
 snippet getValue:
 	getValue(${1})${2}
 snippet getWhite:alpha:
 	getWhite(${1}, alpha: ${2})${3}
-snippet grammarCheckingResultWithRange:details:
-	grammarCheckingResultWithRange(${1}, details: ${2})${3}
 snippet guessesForWordRange:inString:language:
 	guessesForWordRange(${1}, inString: ${2}, language: ${3})${4}
 snippet handleError:userInteractionPermitted:
@@ -1394,14 +1220,14 @@ snippet handleMachMessage:
 	handleMachMessage(${1})${2}
 snippet handlePortMessage:
 	handlePortMessage(${1})${2}
-snippet hasLearnedWord:
-	hasLearnedWord(${1})${2}
 snippet hasMemberInPlane:
 	hasMemberInPlane(${1})${2}
 snippet hasPrefix:
 	hasPrefix(${1})${2}
 snippet hasSuffix:
 	hasSuffix(${1})${2}
+snippet headerViewForSection:
+	headerViewForSection(${1})${2}
 snippet hitTest:
 	hitTest(${1})${2}
 snippet hitTest:withEvent:
@@ -1420,8 +1246,6 @@ snippet imageForSegmentAtIndex:
 	imageForSegmentAtIndex(${1})${2}
 snippet imageForState:
 	imageForState(${1})${2}
-snippet imageNamed:
-	imageNamed(${1})${2}
 snippet imagePickerController:didFinishPickingImage:editingInfo:
 	imagePickerController(${1}, didFinishPickingImage: ${2}, editingInfo: ${3})${4}
 snippet imagePickerController:didFinishPickingMediaWithInfo:
@@ -1430,34 +1254,12 @@ snippet imagePickerControllerDidCancel:
 	imagePickerControllerDidCancel(${1})${2}
 snippet imageRectForContentRect:
 	imageRectForContentRect(${1})${2}
-snippet imageWithBitmapData:bytesPerRow:size:format:colorSpace:
-	imageWithBitmapData(${1}, bytesPerRow: ${2}, size: ${3}, format: ${4}, colorSpace: ${5})${6}
-snippet imageWithCGImage:
-	imageWithCGImage(${1})${2}
-snippet imageWithCGImage:options:
-	imageWithCGImage(${1}, options: ${2})${3}
-snippet imageWithCGImage:scale:orientation:
-	imageWithCGImage(${1}, scale: ${2}, orientation: ${3})${4}
-snippet imageWithCIImage:
-	imageWithCIImage(${1})${2}
-snippet imageWithCVPixelBuffer:
-	imageWithCVPixelBuffer(${1})${2}
-snippet imageWithCVPixelBuffer:options:
-	imageWithCVPixelBuffer(${1}, options: ${2})${3}
-snippet imageWithColor:
-	imageWithColor(${1})${2}
-snippet imageWithContentsOfFile:
-	imageWithContentsOfFile(${1})${2}
-snippet imageWithContentsOfURL:
-	imageWithContentsOfURL(${1})${2}
-snippet imageWithContentsOfURL:options:
-	imageWithContentsOfURL(${1}, options: ${2})${3}
-snippet imageWithData:
-	imageWithData(${1})${2}
-snippet imageWithData:options:
-	imageWithData(${1}, options: ${2})${3}
+snippet imageWithAlignmentRectInsets:
+	imageWithAlignmentRectInsets(${1})${2}
 snippet increaseLengthBy:
 	increaseLengthBy(${1})${2}
+snippet incrementImageForState:
+	incrementImageForState(${1})${2}
 snippet indexAtPosition:
 	indexAtPosition(${1})${2}
 snippet indexGreaterThanIndex:
@@ -1496,20 +1298,14 @@ snippet indexPathByAddingIndex:
 	indexPathByAddingIndex(${1})${2}
 snippet indexPathForCell:
 	indexPathForCell(${1})${2}
-snippet indexPathForRow:inSection:
-	indexPathForRow(${1}, inSection: ${2})${3}
+snippet indexPathForElementWithModelIdentifier:inView:
+	indexPathForElementWithModelIdentifier(${1}, inView: ${2})${3}
+snippet indexPathForItemAtPoint:
+	indexPathForItemAtPoint(${1})${2}
 snippet indexPathForRowAtPoint:
 	indexPathForRowAtPoint(${1})${2}
-snippet indexPathWithIndex:
-	indexPathWithIndex(${1})${2}
-snippet indexPathWithIndexes:length:
-	indexPathWithIndexes(${1}, length: ${2})${3}
 snippet indexPathsForRowsInRect:
 	indexPathsForRowsInRect(${1})${2}
-snippet indexSetWithIndex:
-	indexSetWithIndex(${1})${2}
-snippet indexSetWithIndexesInRange:
-	indexSetWithIndexesInRange(${1})${2}
 snippet indexWithOptions:passingTest:
 	indexWithOptions(${1}, passingTest: ${2})${3}
 snippet indexesInRange:options:passingTest:
@@ -1552,6 +1348,8 @@ snippet initWithAccessibilityContainer:
 	initWithAccessibilityContainer(${1})${2}
 snippet initWithActivityIndicatorStyle:
 	initWithActivityIndicatorStyle(${1})${2}
+snippet initWithActivityItems:applicationActivities:
+	initWithActivityItems(${1}, applicationActivities: ${2})${3}
 snippet initWithArray:
 	initWithArray(${1})${2}
 snippet initWithArray:copyItems:
@@ -1598,6 +1396,8 @@ snippet initWithCIColor:
 	initWithCIColor(${1})${2}
 snippet initWithCIImage:
 	initWithCIImage(${1})${2}
+snippet initWithCIImage:scale:orientation:
+	initWithCIImage(${1}, scale: ${2}, orientation: ${3})${4}
 snippet initWithCString:
 	initWithCString(${1})${2}
 snippet initWithCString:encoding:
@@ -1622,6 +1422,8 @@ snippet initWithCharactersNoCopy:length:freeWhenDone:
 	initWithCharactersNoCopy(${1}, length: ${2}, freeWhenDone: ${3})${4}
 snippet initWithCoder:
 	initWithCoder(${1})${2}
+snippet initWithCollectionViewLayout:
+	initWithCollectionViewLayout(${1})${2}
 snippet initWithColor:
 	initWithColor(${1})${2}
 snippet initWithCondition:
@@ -1658,6 +1460,8 @@ snippet initWithData:encoding:
 	initWithData(${1}, encoding: ${2})${3}
 snippet initWithData:options:
 	initWithData(${1}, options: ${2})${3}
+snippet initWithData:scale:
+	initWithData(${1}, scale: ${2})${3}
 snippet initWithDecimal:
 	initWithDecimal(${1})${2}
 snippet initWithDictionary:
@@ -1696,6 +1500,8 @@ snippet initWithFormat:locale:arguments:
 	initWithFormat(${1}, locale: ${2}, arguments: ${3})${4}
 snippet initWithFrame:
 	initWithFrame(${1})${2}
+snippet initWithFrame:collectionViewLayout:
+	initWithFrame(${1}, collectionViewLayout: ${2})${3}
 snippet initWithFrame:reuseIdentifier:
 	initWithFrame(${1}, reuseIdentifier: ${2})${3}
 snippet initWithFrame:style:
@@ -1740,6 +1546,10 @@ snippet initWithKey:ascending:comparator:
 	initWithKey(${1}, ascending: ${2}, comparator: ${3})${4}
 snippet initWithKey:ascending:selector:
 	initWithKey(${1}, ascending: ${2}, selector: ${3})${4}
+snippet initWithKeyOptions:valueOptions:capacity:
+	initWithKeyOptions(${1}, valueOptions: ${2}, capacity: ${3})${4}
+snippet initWithKeyPointerFunctions:valuePointerFunctions:capacity:
+	initWithKeyPointerFunctions(${1}, valuePointerFunctions: ${2}, capacity: ${3})${4}
 snippet initWithLayer:
 	initWithLayer(${1})${2}
 snippet initWithLeftExpression:rightExpression:customSelector:
@@ -1770,6 +1580,8 @@ snippet initWithName:data:
 	initWithName(${1}, data: ${2})${3}
 snippet initWithName:reason:userInfo:
 	initWithName(${1}, reason: ${2}, userInfo: ${3})${4}
+snippet initWithNavigationBarClass:toolbarClass:
+	initWithNavigationBarClass(${1}, toolbarClass: ${2})${3}
 snippet initWithNibName:bundle:
 	initWithNibName(${1}, bundle: ${2})${3}
 snippet initWithNotificationCenter:
@@ -1782,6 +1594,10 @@ snippet initWithObjects:forKeys:
 	initWithObjects(${1}, forKeys: ${2})${3}
 snippet initWithObjects:forKeys:count:
 	initWithObjects(${1}, forKeys: ${2}, count: ${3})${4}
+snippet initWithOptions:
+	initWithOptions(${1})${2}
+snippet initWithOptions:capacity:
+	initWithOptions(${1}, capacity: ${2})${3}
 snippet initWithOrderedSet:
 	initWithOrderedSet(${1})${2}
 snippet initWithOrderedSet:copyItems:
@@ -1794,6 +1610,12 @@ snippet initWithPattern:options:error:
 	initWithPattern(${1}, options: ${2}, error: ${3})${4}
 snippet initWithPatternImage:
 	initWithPatternImage(${1})${2}
+snippet initWithPlaceholderItem:
+	initWithPlaceholderItem(${1})${2}
+snippet initWithPointerFunctions:
+	initWithPointerFunctions(${1})${2}
+snippet initWithPointerFunctions:capacity:
+	initWithPointerFunctions(${1}, capacity: ${2})${3}
 snippet initWithProgressViewStyle:
 	initWithProgressViewStyle(${1})${2}
 snippet initWithProperties:
@@ -1818,6 +1640,8 @@ snippet initWithResponse:data:
 	initWithResponse(${1}, data: ${2})${3}
 snippet initWithResponse:data:userInfo:storagePolicy:
 	initWithResponse(${1}, data: ${2}, userInfo: ${3}, storagePolicy: ${4})${5}
+snippet initWithReuseIdentifier:
+	initWithReuseIdentifier(${1})${2}
 snippet initWithRootViewController:
 	initWithRootViewController(${1})${2}
 snippet initWithRoundingMode:scale:raiseOnExactness:raiseOnOverflow:raiseOnUnderflow:raiseOnDivideByZero:
@@ -1864,6 +1688,8 @@ snippet initWithText:
 	initWithText(${1})${2}
 snippet initWithTextInput:
 	initWithTextInput(${1})${2}
+snippet initWithTexture:size:flipped:colorSpace:
+	initWithTexture(${1}, size: ${2}, flipped: ${3}, colorSpace: ${4})${5}
 snippet initWithTimeInterval:sinceDate:
 	initWithTimeInterval(${1}, sinceDate: ${2})${3}
 snippet initWithTimeIntervalSince1970:
@@ -1902,6 +1728,10 @@ snippet initWithURL:statusCode:HTTPVersion:headerFields:
 	initWithURL(${1}, statusCode: ${2}, HTTPVersion: ${3}, headerFields: ${4})${5}
 snippet initWithUTF8String:
 	initWithUTF8String(${1})${2}
+snippet initWithUUIDBytes:
+	initWithUUIDBytes(${1})${2}
+snippet initWithUUIDString:
+	initWithUUIDString(${1})${2}
 snippet initWithUnsignedChar:
 	initWithUnsignedChar(${1})${2}
 snippet initWithUnsignedInt:
@@ -1930,22 +1760,26 @@ snippet initWithX:Y:Z:
 	initWithX(${1}, Y: ${2}, Z: ${3})${4}
 snippet initWithX:Y:Z:W:
 	initWithX(${1}, Y: ${2}, Z: ${3}, W: ${4})${5}
-snippet inputStreamWithData:
-	inputStreamWithData(${1})${2}
-snippet inputStreamWithFileAtPath:
-	inputStreamWithFileAtPath(${1})${2}
-snippet inputStreamWithURL:
-	inputStreamWithURL(${1})${2}
+snippet initialLayoutAttributesForInsertedItemAtIndexPath:
+	initialLayoutAttributesForInsertedItemAtIndexPath(${1})${2}
+snippet initialLayoutAttributesForInsertedSupplementaryElementOfKind:atIndexPath:
+	initialLayoutAttributesForInsertedSupplementaryElementOfKind(${1}, atIndexPath: ${2})${3}
 snippet insertAttributedString:atIndex:
 	insertAttributedString(${1}, atIndex: ${2})${3}
 snippet insertDictationResult:
 	insertDictationResult(${1})${2}
+snippet insertItemsAtIndexPaths:
+	insertItemsAtIndexPaths(${1})${2}
 snippet insertObject:atIndex:
 	insertObject(${1}, atIndex: ${2})${3}
 snippet insertObjects:atIndexes:
 	insertObjects(${1}, atIndexes: ${2})${3}
+snippet insertPointer:atIndex:
+	insertPointer(${1}, atIndex: ${2})${3}
 snippet insertRowsAtIndexPaths:withRowAnimation:
 	insertRowsAtIndexPaths(${1}, withRowAnimation: ${2})${3}
+snippet insertSections:
+	insertSections(${1})${2}
 snippet insertSections:withRowAnimation:
 	insertSections(${1}, withRowAnimation: ${2})${3}
 snippet insertSegmentWithImage:atIndex:animated:
@@ -1968,36 +1802,28 @@ snippet insertSubview:belowSubview:
 	insertSubview(${1}, belowSubview: ${2})${3}
 snippet insertText:
 	insertText(${1})${2}
-snippet instanceMethodForSelector:
-	instanceMethodForSelector(${1})${2}
-snippet instanceMethodSignatureForSelector:
-	instanceMethodSignatureForSelector(${1})${2}
-snippet instancesRespondToSelector:
-	instancesRespondToSelector(${1})${2}
 snippet instantiateViewControllerWithIdentifier:
 	instantiateViewControllerWithIdentifier(${1})${2}
 snippet instantiateWithOwner:options:
 	instantiateWithOwner(${1}, options: ${2})${3}
 snippet integerForKey:
 	integerForKey(${1})${2}
-snippet interactionControllerWithURL:
-	interactionControllerWithURL(${1})${2}
+snippet intersectHashTable:
+	intersectHashTable(${1})${2}
 snippet intersectOrderedSet:
 	intersectOrderedSet(${1})${2}
 snippet intersectSet:
 	intersectSet(${1})${2}
+snippet intersectsHashTable:
+	intersectsHashTable(${1})${2}
 snippet intersectsIndexesInRange:
 	intersectsIndexesInRange(${1})${2}
 snippet intersectsOrderedSet:
 	intersectsOrderedSet(${1})${2}
 snippet intersectsSet:
 	intersectsSet(${1})${2}
-snippet invocationWithMethodSignature:
-	invocationWithMethodSignature(${1})${2}
 snippet invokeWithTarget:
 	invokeWithTarget(${1})${2}
-snippet isCameraDeviceAvailable:
-	isCameraDeviceAvailable(${1})${2}
 snippet isDaylightSavingTimeForDate:
 	isDaylightSavingTimeForDate(${1})${2}
 snippet isDeletableFileAtPath:
@@ -2018,6 +1844,8 @@ snippet isEqualToDate:
 	isEqualToDate(${1})${2}
 snippet isEqualToDictionary:
 	isEqualToDictionary(${1})${2}
+snippet isEqualToHashTable:
+	isEqualToHashTable(${1})${2}
 snippet isEqualToIndexSet:
 	isEqualToIndexSet(${1})${2}
 snippet isEqualToNumber:
@@ -2034,8 +1862,6 @@ snippet isEqualToValue:
 	isEqualToValue(${1})${2}
 snippet isExecutableFileAtPath:
 	isExecutableFileAtPath(${1})${2}
-snippet isFlashAvailableForCameraDevice:
-	isFlashAvailableForCameraDevice(${1})${2}
 snippet isKindOfClass:
 	isKindOfClass(${1})${2}
 snippet isMemberOfClass:
@@ -2050,10 +1876,8 @@ snippet isPosition:withinTextUnit:inDirection:
 	isPosition(${1}, withinTextUnit: ${2}, inDirection: ${3})${4}
 snippet isReadableFileAtPath:
 	isReadableFileAtPath(${1})${2}
-snippet isSourceTypeAvailable:
-	isSourceTypeAvailable(${1})${2}
-snippet isSubclassOfClass:
-	isSubclassOfClass(${1})${2}
+snippet isSubsetOfHashTable:
+	isSubsetOfHashTable(${1})${2}
 snippet isSubsetOfOrderedSet:
 	isSubsetOfOrderedSet(${1})${2}
 snippet isSubsetOfSet:
@@ -2062,20 +1886,16 @@ snippet isSupersetOfSet:
 	isSupersetOfSet(${1})${2}
 snippet isUbiquitousItemAtURL:
 	isUbiquitousItemAtURL(${1})${2}
-snippet isValidJSONObject:
-	isValidJSONObject(${1})${2}
 snippet isWritableFileAtPath:
 	isWritableFileAtPath(${1})${2}
-snippet italicSystemFontOfSize:
-	italicSystemFontOfSize(${1})${2}
 snippet itemAtURL:didMoveToURL:
 	itemAtURL(${1}, didMoveToURL: ${2})${3}
+snippet itemAtURL:willMoveToURL:
+	itemAtURL(${1}, willMoveToURL: ${2})${3}
 snippet itemSetWithPasteboardTypes:
 	itemSetWithPasteboardTypes(${1})${2}
 snippet keyForFileWrapper:
 	keyForFileWrapper(${1})${2}
-snippet keyPathsForValuesAffectingValueForKey:
-	keyPathsForValuesAffectingValueForKey(${1})${2}
 snippet keysOfEntriesPassingTest:
 	keysOfEntriesPassingTest(${1})${2}
 snippet keysOfEntriesWithOptions:passingTest:
@@ -2090,24 +1910,28 @@ snippet languagesForScript:
 	languagesForScript(${1})${2}
 snippet laterDate:
 	laterDate(${1})${2}
+snippet layoutAttributesForDecorationViewWithReuseIdentifier:atIndexPath:
+	layoutAttributesForDecorationViewWithReuseIdentifier(${1}, atIndexPath: ${2})${3}
+snippet layoutAttributesForElementsInRect:
+	layoutAttributesForElementsInRect(${1})${2}
+snippet layoutAttributesForItemAtIndexPath:
+	layoutAttributesForItemAtIndexPath(${1})${2}
+snippet layoutAttributesForSupplementaryElementOfKind:atIndexPath:
+	layoutAttributesForSupplementaryElementOfKind(${1}, atIndexPath: ${2})${3}
+snippet layoutAttributesForSupplementaryViewOfKind:atIndexPath:
+	layoutAttributesForSupplementaryViewOfKind(${1}, atIndexPath: ${2})${3}
 snippet layoutSublayersOfLayer:
 	layoutSublayersOfLayer(${1})${2}
-snippet learnWord:
-	learnWord(${1})${2}
 snippet leftViewRectForBounds:
 	leftViewRectForBounds(${1})${2}
 snippet lengthOfBytesUsingEncoding:
 	lengthOfBytesUsingEncoding(${1})${2}
 snippet limitDateForMode:
 	limitDateForMode(${1})${2}
-snippet lineDirectionForLanguage:
-	lineDirectionForLanguage(${1})${2}
 snippet lineRangeForRange:
 	lineRangeForRange(${1})${2}
 snippet linguisticTagsInRange:scheme:options:orthography:tokenRanges:
 	linguisticTagsInRange(${1}, scheme: ${2}, options: ${3}, orthography: ${4}, tokenRanges: ${5})${6}
-snippet linkCheckingResultWithRange:URL:
-	linkCheckingResultWithRange(${1}, URL: ${2})${3}
 snippet linkItemAtPath:toPath:error:
 	linkItemAtPath(${1}, toPath: ${2}, error: ${3})${4}
 snippet linkItemAtURL:toURL:error:
@@ -2124,30 +1948,16 @@ snippet loadNibNamed:owner:options:
 	loadNibNamed(${1}, owner: ${2}, options: ${3})${4}
 snippet loadRequest:
 	loadRequest(${1})${2}
-snippet localeIdentifierFromComponents:
-	localeIdentifierFromComponents(${1})${2}
-snippet localeIdentifierFromWindowsLocaleCode:
-	localeIdentifierFromWindowsLocaleCode(${1})${2}
 snippet localizedCaseInsensitiveCompare:
 	localizedCaseInsensitiveCompare(${1})${2}
 snippet localizedCompare:
 	localizedCompare(${1})${2}
 snippet localizedName:locale:
 	localizedName(${1}, locale: ${2})${3}
-snippet localizedNameOfStringEncoding:
-	localizedNameOfStringEncoding(${1})${2}
-snippet localizedScannerWithString:
-	localizedScannerWithString(${1})${2}
 snippet localizedStandardCompare:
 	localizedStandardCompare(${1})${2}
 snippet localizedStringForKey:value:table:
 	localizedStringForKey(${1}, value: ${2}, table: ${3})${4}
-snippet localizedStringForStatusCode:
-	localizedStringForStatusCode(${1})${2}
-snippet localizedStringFromDate:dateStyle:timeStyle:
-	localizedStringFromDate(${1}, dateStyle: ${2}, timeStyle: ${3})${4}
-snippet localizedStringFromNumber:numberStyle:
-	localizedStringFromNumber(${1}, numberStyle: ${2})${3}
 snippet locationInView:
 	locationInView(${1})${2}
 snippet locationOfTouch:inView:
@@ -2162,6 +1972,8 @@ snippet longCharacterIsMember:
 	longCharacterIsMember(${1})${2}
 snippet longLongForKey:
 	longLongForKey(${1})${2}
+snippet lowercaseStringWithLocale:
+	lowercaseStringWithLocale(${1})${2}
 snippet makeObjectsPerformSelector:
 	makeObjectsPerformSelector(${1})${2}
 snippet makeObjectsPerformSelector:withObject:
@@ -2198,10 +2010,14 @@ snippet minimumTrackImageForState:
 	minimumTrackImageForState(${1})${2}
 snippet minimumValueImageRectForBounds:
 	minimumValueImageRectForBounds(${1})${2}
+snippet minusHashTable:
+	minusHashTable(${1})${2}
 snippet minusOrderedSet:
 	minusOrderedSet(${1})${2}
 snippet minusSet:
 	minusSet(${1})${2}
+snippet modelIdentifierForElementAtIndexPath:inView:
+	modelIdentifierForElementAtIndexPath(${1}, inView: ${2})${3}
 snippet motionBegan:withEvent:
 	motionBegan(${1}, withEvent: ${2})${3}
 snippet motionCancelled:withEvent:
@@ -2210,6 +2026,8 @@ snippet motionEnded:withEvent:
 	motionEnded(${1}, withEvent: ${2})${3}
 snippet mountedVolumeURLsIncludingResourceValuesForKeys:options:
 	mountedVolumeURLsIncludingResourceValuesForKeys(${1}, options: ${2})${3}
+snippet moveItemAtIndexPath:toIndexPath:
+	moveItemAtIndexPath(${1}, toIndexPath: ${2})${3}
 snippet moveItemAtPath:toPath:error:
 	moveItemAtPath(${1}, toPath: ${2}, error: ${3})${4}
 snippet moveItemAtURL:toURL:error:
@@ -2248,8 +2066,6 @@ snippet navigationController:didShowViewController:animated:
 	navigationController(${1}, didShowViewController: ${2}, animated: ${3})${4}
 snippet navigationController:willShowViewController:animated:
 	navigationController(${1}, willShowViewController: ${2}, animated: ${3})${4}
-snippet needsDisplayForKey:
-	needsDisplayForKey(${1})${2}
 snippet netService:didNotPublish:
 	netService(${1}, didNotPublish: ${2})${3}
 snippet netService:didNotResolve:
@@ -2282,64 +2098,32 @@ snippet netServiceWillResolve:
 	netServiceWillResolve(${1})${2}
 snippet nextDaylightSavingTimeTransitionAfterDate:
 	nextDaylightSavingTimeTransitionAfterDate(${1})${2}
-snippet nibWithData:bundle:
-	nibWithData(${1}, bundle: ${2})${3}
-snippet nibWithNibName:bundle:
-	nibWithNibName(${1}, bundle: ${2})${3}
-snippet notPredicateWithSubpredicate:
-	notPredicateWithSubpredicate(${1})${2}
-snippet notificationWithName:object:
-	notificationWithName(${1}, object: ${2})${3}
-snippet notificationWithName:object:userInfo:
-	notificationWithName(${1}, object: ${2}, userInfo: ${3})${4}
 snippet numberFromString:
 	numberFromString(${1})${2}
 snippet numberOfComponentsInPickerView:
 	numberOfComponentsInPickerView(${1})${2}
+snippet numberOfItemsInSection:
+	numberOfItemsInSection(${1})${2}
 snippet numberOfMatchesInString:options:range:
 	numberOfMatchesInString(${1}, options: ${2}, range: ${3})${4}
 snippet numberOfRowsInComponent:
 	numberOfRowsInComponent(${1})${2}
 snippet numberOfRowsInSection:
 	numberOfRowsInSection(${1})${2}
+snippet numberOfSectionsInCollectionView:
+	numberOfSectionsInCollectionView(${1})${2}
 snippet numberOfSectionsInTableView:
 	numberOfSectionsInTableView(${1})${2}
-snippet numberWithBool:
-	numberWithBool(${1})${2}
-snippet numberWithChar:
-	numberWithChar(${1})${2}
-snippet numberWithDouble:
-	numberWithDouble(${1})${2}
-snippet numberWithFloat:
-	numberWithFloat(${1})${2}
-snippet numberWithInt:
-	numberWithInt(${1})${2}
-snippet numberWithInteger:
-	numberWithInteger(${1})${2}
-snippet numberWithLong:
-	numberWithLong(${1})${2}
-snippet numberWithLongLong:
-	numberWithLongLong(${1})${2}
-snippet numberWithShort:
-	numberWithShort(${1})${2}
-snippet numberWithUnsignedChar:
-	numberWithUnsignedChar(${1})${2}
-snippet numberWithUnsignedInt:
-	numberWithUnsignedInt(${1})${2}
-snippet numberWithUnsignedInteger:
-	numberWithUnsignedInteger(${1})${2}
-snippet numberWithUnsignedLong:
-	numberWithUnsignedLong(${1})${2}
-snippet numberWithUnsignedLongLong:
-	numberWithUnsignedLongLong(${1})${2}
-snippet numberWithUnsignedShort:
-	numberWithUnsignedShort(${1})${2}
 snippet objectAtIndex:
 	objectAtIndex(${1})${2}
+snippet objectAtIndexedSubscript:
+	objectAtIndexedSubscript(${1})${2}
 snippet objectForInfoDictionaryKey:
 	objectForInfoDictionaryKey(${1})${2}
 snippet objectForKey:
 	objectForKey(${1})${2}
+snippet objectForKeyedSubscript:
+	objectForKeyedSubscript(${1})${2}
 snippet objectIsForcedForKey:
 	objectIsForcedForKey(${1})${2}
 snippet objectIsForcedForKey:inDomain:
@@ -2360,42 +2144,10 @@ snippet openURL:
 	openURL(${1})${2}
 snippet openWithCompletionHandler:
 	openWithCompletionHandler(${1})${2}
-snippet orPredicateWithSubpredicates:
-	orPredicateWithSubpredicates(${1})${2}
-snippet orderedSetWithArray:
-	orderedSetWithArray(${1})${2}
-snippet orderedSetWithArray:range:copyItems:
-	orderedSetWithArray(${1}, range: ${2}, copyItems: ${3})${4}
-snippet orderedSetWithCapacity:
-	orderedSetWithCapacity(${1})${2}
-snippet orderedSetWithObject:
-	orderedSetWithObject(${1})${2}
-snippet orderedSetWithObjects:count:
-	orderedSetWithObjects(${1}, count: ${2})${3}
-snippet orderedSetWithOrderedSet:
-	orderedSetWithOrderedSet(${1})${2}
-snippet orderedSetWithOrderedSet:range:copyItems:
-	orderedSetWithOrderedSet(${1}, range: ${2}, copyItems: ${3})${4}
-snippet orderedSetWithSet:
-	orderedSetWithSet(${1})${2}
-snippet orderedSetWithSet:copyItems:
-	orderedSetWithSet(${1}, copyItems: ${2})${3}
 snippet ordinalityOfUnit:inUnit:forDate:
 	ordinalityOfUnit(${1}, inUnit: ${2}, forDate: ${3})${4}
 snippet orthographyAtIndex:effectiveRange:
 	orthographyAtIndex(${1}, effectiveRange: ${2})${3}
-snippet orthographyCheckingResultWithRange:orthography:
-	orthographyCheckingResultWithRange(${1}, orthography: ${2})${3}
-snippet orthographyWithDominantScript:languageMap:
-	orthographyWithDominantScript(${1}, languageMap: ${2})${3}
-snippet otherVersionsOfItemAtURL:
-	otherVersionsOfItemAtURL(${1})${2}
-snippet outputStreamToBuffer:capacity:
-	outputStreamToBuffer(${1}, capacity: ${2})${3}
-snippet outputStreamToFileAtPath:append:
-	outputStreamToFileAtPath(${1}, append: ${2})${3}
-snippet outputStreamWithURL:append:
-	outputStreamWithURL(${1}, append: ${2})${3}
 snippet pageViewController:didFinishAnimating:previousViewControllers:transitionCompleted:
 	pageViewController(${1}, didFinishAnimating: ${2}, previousViewControllers: ${3}, transitionCompleted: ${4})${5}
 snippet pageViewController:spineLocationForInterfaceOrientation:
@@ -2404,6 +2156,8 @@ snippet pageViewController:viewControllerAfterViewController:
 	pageViewController(${1}, viewControllerAfterViewController: ${2})${3}
 snippet pageViewController:viewControllerBeforeViewController:
 	pageViewController(${1}, viewControllerBeforeViewController: ${2})${3}
+snippet pageViewController:willTransitionToViewControllers:
+	pageViewController(${1}, willTransitionToViewControllers: ${2})${3}
 snippet paragraphRangeForRange:
 	paragraphRangeForRange(${1})${2}
 snippet parser:didEndElement:namespaceURI:qualifiedName:
@@ -2450,8 +2204,6 @@ snippet paste:
 	paste(${1})${2}
 snippet pasteboardTypesForItemSet:
 	pasteboardTypesForItemSet(${1})${2}
-snippet pasteboardWithName:create:
-	pasteboardWithName(${1}, create: ${2})${3}
 snippet pathContentOfSymbolicLinkAtPath:
 	pathContentOfSymbolicLinkAtPath(${1})${2}
 snippet pathForAuxiliaryExecutable:
@@ -2462,8 +2214,6 @@ snippet pathForResource:ofType:inDirectory:
 	pathForResource(${1}, ofType: ${2}, inDirectory: ${3})${4}
 snippet pathForResource:ofType:inDirectory:forLocalization:
 	pathForResource(${1}, ofType: ${2}, inDirectory: ${3}, forLocalization: ${4})${5}
-snippet pathWithComponents:
-	pathWithComponents(${1})${2}
 snippet pathsForResourcesOfType:inDirectory:
 	pathsForResourcesOfType(${1}, inDirectory: ${2})${3}
 snippet pathsForResourcesOfType:inDirectory:forLocalization:
@@ -2472,6 +2222,8 @@ snippet pathsMatchingExtensions:
 	pathsMatchingExtensions(${1})${2}
 snippet performAsynchronousFileAccessUsingBlock:
 	performAsynchronousFileAccessUsingBlock(${1})${2}
+snippet performBatchUpdates:completion:
+	performBatchUpdates(${1}, completion: ${2})${3}
 snippet performDefaultHandlingForAuthenticationChallenge:
 	performDefaultHandlingForAuthenticationChallenge(${1})${2}
 snippet performSegueWithIdentifier:sender:
@@ -2502,12 +2254,12 @@ snippet persistentDomainForName:
 	persistentDomainForName(${1})${2}
 snippet persistentStoreTypeForFileType:
 	persistentStoreTypeForFileType(${1})${2}
-snippet phoneNumberCheckingResultWithRange:phoneNumber:
-	phoneNumberCheckingResultWithRange(${1}, phoneNumber: ${2})${3}
 snippet pickerView:accessibilityHintForComponent:
 	pickerView(${1}, accessibilityHintForComponent: ${2})${3}
 snippet pickerView:accessibilityLabelForComponent:
 	pickerView(${1}, accessibilityLabelForComponent: ${2})${3}
+snippet pickerView:attributedTitleForRow:forComponent:
+	pickerView(${1}, attributedTitleForRow: ${2}, forComponent: ${3})${4}
 snippet pickerView:didSelectRow:inComponent:
 	pickerView(${1}, didSelectRow: ${2}, inComponent: ${3})${4}
 snippet pickerView:numberOfRowsInComponent:
@@ -2524,6 +2276,8 @@ snippet placeholderRectForBounds:
 	placeholderRectForBounds(${1})${2}
 snippet pointInside:withEvent:
 	pointInside(${1}, withEvent: ${2})${3}
+snippet pointerAtIndex:
+	pointerAtIndex(${1})${2}
 snippet popNavigationItemAnimated:
 	popNavigationItemAnimated(${1})${2}
 snippet popToRootViewControllerAnimated:
@@ -2536,10 +2290,6 @@ snippet popoverControllerDidDismissPopover:
 	popoverControllerDidDismissPopover(${1})${2}
 snippet popoverControllerShouldDismissPopover:
 	popoverControllerShouldDismissPopover(${1})${2}
-snippet portWithMachPort:
-	portWithMachPort(${1})${2}
-snippet portWithMachPort:options:
-	portWithMachPort(${1}, options: ${2})${3}
 snippet positionAdjustmentForSearchBarIcon:
 	positionAdjustmentForSearchBarIcon(${1})${2}
 snippet positionFromPosition:inDirection:offset:
@@ -2560,32 +2310,20 @@ snippet postNotificationName:object:
 	postNotificationName(${1}, object: ${2})${3}
 snippet postNotificationName:object:userInfo:
 	postNotificationName(${1}, object: ${2}, userInfo: ${3})${4}
-snippet predicateWithBlock:
-	predicateWithBlock(${1})${2}
-snippet predicateWithFormat:argumentArray:
-	predicateWithFormat(${1}, argumentArray: ${2})${3}
-snippet predicateWithFormat:arguments:
-	predicateWithFormat(${1}, arguments: ${2})${3}
-snippet predicateWithLeftExpression:rightExpression:customSelector:
-	predicateWithLeftExpression(${1}, rightExpression: ${2}, customSelector: ${3})${4}
-snippet predicateWithLeftExpression:rightExpression:modifier:type:options:
-	predicateWithLeftExpression(${1}, rightExpression: ${2}, modifier: ${3}, type: ${4}, options: ${5})${6}
 snippet predicateWithSubstitutionVariables:
 	predicateWithSubstitutionVariables(${1})${2}
-snippet predicateWithValue:
-	predicateWithValue(${1})${2}
-snippet preferredLocalizationsFromArray:
-	preferredLocalizationsFromArray(${1})${2}
-snippet preferredLocalizationsFromArray:forPreferences:
-	preferredLocalizationsFromArray(${1}, forPreferences: ${2})${3}
 snippet preflightAndReturnError:
 	preflightAndReturnError(${1})${2}
+snippet prepareForCollectionViewUpdates:
+	prepareForCollectionViewUpdates(${1})${2}
 snippet prepareForDrawingPages:
 	prepareForDrawingPages(${1})${2}
 snippet prepareForReadingItemsAtURLs:options:writingItemsAtURLs:options:error:byAccessor:
 	prepareForReadingItemsAtURLs(${1}, options: ${2}, writingItemsAtURLs: ${3}, options: ${4}, error: ${5}, byAccessor: ${6})${7}
 snippet prepareForSegue:sender:
 	prepareForSegue(${1}, sender: ${2})${3}
+snippet prepareWithActivityItems:
+	prepareWithActivityItems(${1})${2}
 snippet prepareWithInvocationTarget:
 	prepareWithInvocationTarget(${1})${2}
 snippet presentAnimated:completionHandler:
@@ -2614,6 +2352,10 @@ snippet presentPreviewAnimated:
 	presentPreviewAnimated(${1})${2}
 snippet presentViewController:animated:completion:
 	presentViewController(${1}, animated: ${2}, completion: ${3})${4}
+snippet presentationCountForPageViewController:
+	presentationCountForPageViewController(${1})${2}
+snippet presentationIndexForPageViewController:
+	presentationIndexForPageViewController(${1})${2}
 snippet presentedItemDidGainVersion:
 	presentedItemDidGainVersion(${1})${2}
 snippet presentedItemDidLoseVersion:
@@ -2638,8 +2380,6 @@ snippet previousLocationInView:
 	previousLocationInView(${1})${2}
 snippet printFormattersForPageAtIndex:
 	printFormattersForPageAtIndex(${1})${2}
-snippet printInfoWithDictionary:
-	printInfoWithDictionary(${1})${2}
 snippet printInteractionController:choosePaper:
 	printInteractionController(${1}, choosePaper: ${2})${3}
 snippet printInteractionControllerDidDismissPrinterOptions:
@@ -2658,26 +2398,12 @@ snippet printInteractionControllerWillStartJob:
 	printInteractionControllerWillStartJob(${1})${2}
 snippet propertyForKey:
 	propertyForKey(${1})${2}
-snippet propertyForKey:inRequest:
-	propertyForKey(${1}, inRequest: ${2})${3}
-snippet propertyList:isValidForFormat:
-	propertyList(${1}, isValidForFormat: ${2})${3}
-snippet propertyListFromData:mutabilityOption:format:errorDescription:
-	propertyListFromData(${1}, mutabilityOption: ${2}, format: ${3}, errorDescription: ${4})${5}
-snippet propertyListWithData:options:format:error:
-	propertyListWithData(${1}, options: ${2}, format: ${3}, error: ${4})${5}
-snippet propertyListWithStream:options:format:error:
-	propertyListWithStream(${1}, options: ${2}, format: ${3}, error: ${4})${5}
 snippet publishWithOptions:
 	publishWithOptions(${1})${2}
 snippet pushNavigationItem:animated:
 	pushNavigationItem(${1}, animated: ${2})${3}
 snippet pushViewController:animated:
 	pushViewController(${1}, animated: ${2})${3}
-snippet quoteCheckingResultWithRange:replacementString:
-	quoteCheckingResultWithRange(${1}, replacementString: ${2})${3}
-snippet raise:format:arguments:
-	raise(${1}, format: ${2}, arguments: ${3})${4}
 snippet rangeAtIndex:
 	rangeAtIndex(${1})${2}
 snippet rangeEnclosingPosition:withGranularity:inDirection:
@@ -2736,20 +2462,28 @@ snippet rectForSection:
 	rectForSection(${1})${2}
 snippet redoMenuTitleForUndoActionName:
 	redoMenuTitleForUndoActionName(${1})${2}
-snippet registerClass:
-	registerClass(${1})${2}
+snippet registerClass:forCellReuseIdentifier:
+	registerClass(${1}, forCellReuseIdentifier: ${2})${3}
+snippet registerClass:forCellWithReuseIdentifier:
+	registerClass(${1}, forCellWithReuseIdentifier: ${2})${3}
+snippet registerClass:forDecorationViewWithReuseIdentifier:
+	registerClass(${1}, forDecorationViewWithReuseIdentifier: ${2})${3}
+snippet registerClass:forSupplementaryViewOfKind:withReuseIdentifier:
+	registerClass(${1}, forSupplementaryViewOfKind: ${2}, withReuseIdentifier: ${3})${4}
 snippet registerDefaults:
 	registerDefaults(${1})${2}
 snippet registerForRemoteNotificationTypes:
 	registerForRemoteNotificationTypes(${1})${2}
 snippet registerNib:forCellReuseIdentifier:
 	registerNib(${1}, forCellReuseIdentifier: ${2})${3}
+snippet registerNib:forCellWithReuseIdentifier:
+	registerNib(${1}, forCellWithReuseIdentifier: ${2})${3}
+snippet registerNib:forDecorationViewWithReuseIdentifier:
+	registerNib(${1}, forDecorationViewWithReuseIdentifier: ${2})${3}
+snippet registerNib:forSupplementaryViewOfKind:withReuseIdentifier:
+	registerNib(${1}, forSupplementaryViewOfKind: ${2}, withReuseIdentifier: ${3})${4}
 snippet registerUndoWithTarget:selector:object:
 	registerUndoWithTarget(${1}, selector: ${2}, object: ${3})${4}
-snippet regularExpressionCheckingResultWithRanges:count:regularExpression:
-	regularExpressionCheckingResultWithRanges(${1}, count: ${2}, regularExpression: ${3})${4}
-snippet regularExpressionWithPattern:options:error:
-	regularExpressionWithPattern(${1}, options: ${2}, error: ${3})${4}
 snippet rejectProtectionSpaceAndContinueWithChallenge:
 	rejectProtectionSpaceAndContinueWithChallenge(${1})${2}
 snippet relinquishPresentedItemToReader:
@@ -2758,8 +2492,12 @@ snippet relinquishPresentedItemToWriter:
 	relinquishPresentedItemToWriter(${1})${2}
 snippet reloadComponent:
 	reloadComponent(${1})${2}
+snippet reloadItemsAtIndexPaths:
+	reloadItemsAtIndexPaths(${1})${2}
 snippet reloadRowsAtIndexPaths:withRowAnimation:
 	reloadRowsAtIndexPaths(${1}, withRowAnimation: ${2})${3}
+snippet reloadSections:
+	reloadSections(${1})${2}
 snippet reloadSections:withRowAnimation:
 	reloadSections(${1}, withRowAnimation: ${2})${3}
 snippet remoteControlReceivedWithEvent:
@@ -2778,12 +2516,16 @@ snippet removeCharactersInRange:
 	removeCharactersInRange(${1})${2}
 snippet removeCharactersInString:
 	removeCharactersInString(${1})${2}
+snippet removeConstraint:
+	removeConstraint(${1})${2}
+snippet removeConstraints:
+	removeConstraints(${1})${2}
 snippet removeCredential:forProtectionSpace:
 	removeCredential(${1}, forProtectionSpace: ${2})${3}
 snippet removeDependency:
 	removeDependency(${1})${2}
-snippet removeFilePresenter:
-	removeFilePresenter(${1})${2}
+snippet removeDictationResultPlaceholder:willInsertResult:
+	removeDictationResultPlaceholder(${1}, willInsertResult: ${2})${3}
 snippet removeFileWrapper:
 	removeFileWrapper(${1})${2}
 snippet removeFromRunLoop:forMode:
@@ -2834,16 +2576,12 @@ snippet removeObserver:fromObjectsAtIndexes:forKeyPath:context:
 	removeObserver(${1}, fromObjectsAtIndexes: ${2}, forKeyPath: ${3}, context: ${4})${5}
 snippet removeObserver:name:object:
 	removeObserver(${1}, name: ${2}, object: ${3})${4}
-snippet removeOtherVersionsOfItemAtURL:error:
-	removeOtherVersionsOfItemAtURL(${1}, error: ${2})${3}
-snippet removePasteboardWithName:
-	removePasteboardWithName(${1})${2}
 snippet removePersistentDomainForName:
 	removePersistentDomainForName(${1})${2}
+snippet removePointerAtIndex:
+	removePointerAtIndex(${1})${2}
 snippet removePort:forMode:
 	removePort(${1}, forMode: ${2})${3}
-snippet removePropertyForKey:inRequest:
-	removePropertyForKey(${1}, inRequest: ${2})${3}
 snippet removeSegmentAtIndex:animated:
 	removeSegmentAtIndex(${1}, animated: ${2})${3}
 snippet removeSuiteNamed:
@@ -2888,42 +2626,30 @@ snippet replaceObjectsInRange:withObjectsFromArray:range:
 	replaceObjectsInRange(${1}, withObjectsFromArray: ${2}, range: ${3})${4}
 snippet replaceOccurrencesOfString:withString:options:range:
 	replaceOccurrencesOfString(${1}, withString: ${2}, options: ${3}, range: ${4})${5}
+snippet replacePointerAtIndex:withPointer:
+	replacePointerAtIndex(${1}, withPointer: ${2})${3}
 snippet replaceRange:withText:
 	replaceRange(${1}, withText: ${2})${3}
 snippet replaceSublayer:with:
 	replaceSublayer(${1}, with: ${2})${3}
-snippet replacementCheckingResultWithRange:replacementString:
-	replacementCheckingResultWithRange(${1}, replacementString: ${2})${3}
 snippet replacementObjectForCoder:
 	replacementObjectForCoder(${1})${2}
 snippet replacementObjectForKeyedArchiver:
 	replacementObjectForKeyedArchiver(${1})${2}
 snippet replacementStringForResult:inString:offset:template:
 	replacementStringForResult(${1}, inString: ${2}, offset: ${3}, template: ${4})${5}
-snippet requestHeaderFieldsWithCookies:
-	requestHeaderFieldsWithCookies(${1})${2}
-snippet requestIsCacheEquivalent:toRequest:
-	requestIsCacheEquivalent(${1}, toRequest: ${2})${3}
-snippet requestWithURL:
-	requestWithURL(${1})${2}
-snippet requestWithURL:cachePolicy:timeoutInterval:
-	requestWithURL(${1}, cachePolicy: ${2}, timeoutInterval: ${3})${4}
 snippet requireGestureRecognizerToFail:
 	requireGestureRecognizerToFail(${1})${2}
 snippet resetBytesInRange:
 	resetBytesInRange(${1})${2}
 snippet resizableImageWithCapInsets:
 	resizableImageWithCapInsets(${1})${2}
-snippet resolveClassMethod:
-	resolveClassMethod(${1})${2}
-snippet resolveInstanceMethod:
-	resolveInstanceMethod(${1})${2}
+snippet resizableImageWithCapInsets:resizingMode:
+	resizableImageWithCapInsets(${1}, resizingMode: ${2})${3}
 snippet resolveWithTimeout:
 	resolveWithTimeout(${1})${2}
 snippet resourceValuesForKeys:error:
 	resourceValuesForKeys(${1}, error: ${2})${3}
-snippet resourceValuesForKeys:fromBookmarkData:
-	resourceValuesForKeys(${1}, fromBookmarkData: ${2})${3}
 snippet respondsToSelector:
 	respondsToSelector(${1})${2}
 snippet resultAtIndex:
@@ -2976,16 +2702,10 @@ snippet scanUpToCharactersFromSet:intoString:
 	scanUpToCharactersFromSet(${1}, intoString: ${2})${3}
 snippet scanUpToString:intoString:
 	scanUpToString(${1}, intoString: ${2})${3}
-snippet scannerWithString:
-	scannerWithString(${1})${2}
 snippet scheduleInRunLoop:forMode:
 	scheduleInRunLoop(${1}, forMode: ${2})${3}
 snippet scheduleLocalNotification:
 	scheduleLocalNotification(${1})${2}
-snippet scheduledTimerWithTimeInterval:invocation:repeats:
-	scheduledTimerWithTimeInterval(${1}, invocation: ${2}, repeats: ${3})${4}
-snippet scheduledTimerWithTimeInterval:target:selector:userInfo:repeats:
-	scheduledTimerWithTimeInterval(${1}, target: ${2}, selector: ${3}, userInfo: ${4}, repeats: ${5})${6}
 snippet scopeBarButtonBackgroundImageForState:
 	scopeBarButtonBackgroundImageForState(${1})${2}
 snippet scopeBarButtonDividerImageForLeftSegmentState:rightSegmentState:
@@ -3000,6 +2720,8 @@ snippet scrollRectToVisible:
 	scrollRectToVisible(${1})${2}
 snippet scrollRectToVisible:animated:
 	scrollRectToVisible(${1}, animated: ${2})${3}
+snippet scrollToItemAtIndexPath:atScrollPosition:animated:
+	scrollToItemAtIndexPath(${1}, atScrollPosition: ${2}, animated: ${3})${4}
 snippet scrollToNearestSelectedRowAtScrollPosition:animated:
 	scrollToNearestSelectedRowAtScrollPosition(${1}, animated: ${2})${3}
 snippet scrollToPoint:
@@ -3092,10 +2814,14 @@ snippet sectionIndexTitlesForTableView:
 	sectionIndexTitlesForTableView(${1})${2}
 snippet seekToFileOffset:
 	seekToFileOffset(${1})${2}
+snippet segueForUnwindingToViewController:fromViewController:identifier:
+	segueForUnwindingToViewController(${1}, fromViewController: ${2}, identifier: ${3})${4}
 snippet select:
 	select(${1})${2}
 snippet selectAll:
 	selectAll(${1})${2}
+snippet selectItemAtIndexPath:animated:scrollPosition:
+	selectItemAtIndexPath(${1}, animated: ${2}, scrollPosition: ${3})${4}
 snippet selectRow:inComponent:animated:
 	selectRow(${1}, inComponent: ${2}, animated: ${3})${4}
 snippet selectRowAtIndexPath:animated:scrollPosition:
@@ -3104,6 +2830,8 @@ snippet selectedRowInComponent:
 	selectedRowInComponent(${1})${2}
 snippet selectionDidChange:
 	selectionDidChange(${1})${2}
+snippet selectionRectsForRange:
+	selectionRectsForRange(${1})${2}
 snippet selectionWillChange:
 	selectionWillChange(${1})${2}
 snippet sendAction:to:forEvent:
@@ -3112,8 +2840,6 @@ snippet sendAction:to:from:forEvent:
 	sendAction(${1}, to: ${2}, from: ${3}, forEvent: ${4})${5}
 snippet sendActionsForControlEvents:
 	sendActionsForControlEvents(${1})${2}
-snippet sendAsynchronousRequest:queue:completionHandler:
-	sendAsynchronousRequest(${1}, queue: ${2}, completionHandler: ${3})${4}
 snippet sendBeforeDate:components:from:reserved:
 	sendBeforeDate(${1}, components: ${2}, from: ${3}, reserved: ${4})${5}
 snippet sendBeforeDate:msgid:components:from:reserved:
@@ -3122,14 +2848,10 @@ snippet sendEvent:
 	sendEvent(${1})${2}
 snippet sendSubviewToBack:
 	sendSubviewToBack(${1})${2}
-snippet sendSynchronousRequest:returningResponse:error:
-	sendSynchronousRequest(${1}, returningResponse: ${2}, error: ${3})${4}
 snippet sentenceRangeForRange:
 	sentenceRangeForRange(${1})${2}
 snippet setAMSymbol:
 	setAMSymbol(${1})${2}
-snippet setAbbreviationDictionary:
-	setAbbreviationDictionary(${1})${2}
 snippet setAccessibilityActivationPoint:
 	setAccessibilityActivationPoint(${1})${2}
 snippet setAccessibilityContainer:
@@ -3158,6 +2880,8 @@ snippet setAccessoryType:
 	setAccessoryType(${1})${2}
 snippet setAccessoryView:
 	setAccessoryView(${1})${2}
+snippet setAcquireFunction:
+	setAcquireFunction(${1})${2}
 snippet setAction:
 	setAction(${1})${2}
 snippet setActionIsDiscardable:
@@ -3174,6 +2898,8 @@ snippet setActive:animated:
 	setActive(${1}, animated: ${2})${3}
 snippet setActivityIndicatorViewStyle:
 	setActivityIndicatorViewStyle(${1})${2}
+snippet setAdaptive:
+	setAdaptive(${1})${2}
 snippet setAdditive:
 	setAdditive(${1})${2}
 snippet setAdjustsFontSizeToFitWidth:
@@ -3182,6 +2908,8 @@ snippet setAdjustsImageWhenDisabled:
 	setAdjustsImageWhenDisabled(${1})${2}
 snippet setAdjustsImageWhenHighlighted:
 	setAdjustsImageWhenHighlighted(${1})${2}
+snippet setAdjustsLetterSpacingToFitWidth:
+	setAdjustsLetterSpacingToFitWidth(${1})${2}
 snippet setAffineTransform:
 	setAffineTransform(${1})${2}
 snippet setAlertAction:
@@ -3192,14 +2920,22 @@ snippet setAlertLaunchImage:
 	setAlertLaunchImage(${1})${2}
 snippet setAlertViewStyle:
 	setAlertViewStyle(${1})${2}
+snippet setAlignment:
+	setAlignment(${1})${2}
 snippet setAlignmentMode:
 	setAlignmentMode(${1})${2}
 snippet setAllHTTPHeaderFields:
 	setAllHTTPHeaderFields(${1})${2}
 snippet setAllowableMovement:
 	setAllowableMovement(${1})${2}
+snippet setAllowedUnits:
+	setAllowedUnits(${1})${2}
+snippet setAllowsCellularAccess:
+	setAllowsCellularAccess(${1})${2}
 snippet setAllowsEditing:
 	setAllowsEditing(${1})${2}
+snippet setAllowsEditingTextAttributes:
+	setAllowsEditingTextAttributes(${1})${2}
 snippet setAllowsFloats:
 	setAllowsFloats(${1})${2}
 snippet setAllowsImageEditing:
@@ -3210,6 +2946,8 @@ snippet setAllowsMultipleSelection:
 	setAllowsMultipleSelection(${1})${2}
 snippet setAllowsMultipleSelectionDuringEditing:
 	setAllowsMultipleSelectionDuringEditing(${1})${2}
+snippet setAllowsNonnumericFormatting:
+	setAllowsNonnumericFormatting(${1})${2}
 snippet setAllowsSelection:
 	setAllowsSelection(${1})${2}
 snippet setAllowsSelectionDuringEditing:
@@ -3230,36 +2968,14 @@ snippet setAnchorPoint:
 	setAnchorPoint(${1})${2}
 snippet setAnchorPointZ:
 	setAnchorPointZ(${1})${2}
-snippet setAnimationBeginsFromCurrentState:
-	setAnimationBeginsFromCurrentState(${1})${2}
-snippet setAnimationCurve:
-	setAnimationCurve(${1})${2}
-snippet setAnimationDelay:
-	setAnimationDelay(${1})${2}
-snippet setAnimationDelegate:
-	setAnimationDelegate(${1})${2}
-snippet setAnimationDidStopSelector:
-	setAnimationDidStopSelector(${1})${2}
 snippet setAnimationDuration:
 	setAnimationDuration(${1})${2}
 snippet setAnimationImages:
 	setAnimationImages(${1})${2}
-snippet setAnimationRepeatAutoreverses:
-	setAnimationRepeatAutoreverses(${1})${2}
 snippet setAnimationRepeatCount:
 	setAnimationRepeatCount(${1})${2}
-snippet setAnimationStartDate:
-	setAnimationStartDate(${1})${2}
-snippet setAnimationTimingFunction:
-	setAnimationTimingFunction(${1})${2}
-snippet setAnimationTransition:forView:cache:
-	setAnimationTransition(${1}, forView: ${2}, cache: ${3})${4}
-snippet setAnimationWillStartSelector:
-	setAnimationWillStartSelector(${1})${2}
 snippet setAnimations:
 	setAnimations(${1})${2}
-snippet setAnimationsEnabled:
-	setAnimationsEnabled(${1})${2}
 snippet setAnnotation:
 	setAnnotation(${1})${2}
 snippet setApplicationIconBadgeNumber:
@@ -3278,8 +2994,16 @@ snippet setArrowDirection:
 	setArrowDirection(${1})${2}
 snippet setArrowOffset:
 	setArrowOffset(${1})${2}
+snippet setAttributedPlaceholder:
+	setAttributedPlaceholder(${1})${2}
 snippet setAttributedString:
 	setAttributedString(${1})${2}
+snippet setAttributedText:
+	setAttributedText(${1})${2}
+snippet setAttributedTitle:
+	setAttributedTitle(${1})${2}
+snippet setAttributedTitle:forState:
+	setAttributedTitle(${1}, forState: ${2})${3}
 snippet setAttributes:ofItemAtPath:error:
 	setAttributes(${1}, ofItemAtPath: ${2}, error: ${3})${4}
 snippet setAttributes:range:
@@ -3318,6 +3042,8 @@ snippet setBackgroundImage:forState:
 	setBackgroundImage(${1}, forState: ${2})${3}
 snippet setBackgroundImage:forState:barMetrics:
 	setBackgroundImage(${1}, forState: ${2}, barMetrics: ${3})${4}
+snippet setBackgroundImage:forState:style:barMetrics:
+	setBackgroundImage(${1}, forState: ${2}, style: ${3}, barMetrics: ${4})${5}
 snippet setBackgroundImage:forToolbarPosition:barMetrics:
 	setBackgroundImage(${1}, forToolbarPosition: ${2}, barMetrics: ${3})${4}
 snippet setBackgroundVerticalPositionAdjustment:forBarMetrics:
@@ -3328,6 +3054,8 @@ snippet setBadgeValue:
 	setBadgeValue(${1})${2}
 snippet setBarStyle:
 	setBarStyle(${1})${2}
+snippet setBaseWritingDirection:
+	setBaseWritingDirection(${1})${2}
 snippet setBaseWritingDirection:forRange:
 	setBaseWritingDirection(${1}, forRange: ${2})${3}
 snippet setBaselineAdjustment:
@@ -3408,22 +3136,38 @@ snippet setClearsContextBeforeDrawing:
 	setClearsContextBeforeDrawing(${1})${2}
 snippet setClearsOnBeginEditing:
 	setClearsOnBeginEditing(${1})${2}
+snippet setClearsOnInsertion:
+	setClearsOnInsertion(${1})${2}
 snippet setClearsSelectionOnViewWillAppear:
 	setClearsSelectionOnViewWillAppear(${1})${2}
 snippet setClipsToBounds:
 	setClipsToBounds(${1})${2}
+snippet setCollectionView:
+	setCollectionView(${1})${2}
+snippet setCollectionViewLayout:
+	setCollectionViewLayout(${1})${2}
+snippet setCollectionViewLayout:animated:
+	setCollectionViewLayout(${1}, animated: ${2})${3}
 snippet setColor:
 	setColor(${1})${2}
 snippet setColors:
 	setColors(${1})${2}
 snippet setCompletionBlock:
 	setCompletionBlock(${1})${2}
+snippet setCompletionHandler:
+	setCompletionHandler(${1})${2}
 snippet setCompositingFilter:
 	setCompositingFilter(${1})${2}
+snippet setConstant:
+	setConstant(${1})${2}
+snippet setContentCompressionResistancePriority:forAxis:
+	setContentCompressionResistancePriority(${1}, forAxis: ${2})${3}
 snippet setContentEdgeInsets:
 	setContentEdgeInsets(${1})${2}
 snippet setContentHorizontalAlignment:
 	setContentHorizontalAlignment(${1})${2}
+snippet setContentHuggingPriority:forAxis:
+	setContentHuggingPriority(${1}, forAxis: ${2})${3}
 snippet setContentInset:
 	setContentInset(${1})${2}
 snippet setContentInsets:
@@ -3474,10 +3218,14 @@ snippet setCookies:forURL:mainDocumentURL:
 	setCookies(${1}, forURL: ${2}, mainDocumentURL: ${3})${4}
 snippet setCornerRadius:
 	setCornerRadius(${1})${2}
+snippet setCount:
+	setCount(${1})${2}
 snippet setCountDownDuration:
 	setCountDownDuration(${1})${2}
 snippet setCountLimit:
 	setCountLimit(${1})${2}
+snippet setCountStyle:
+	setCountStyle(${1})${2}
 snippet setCredential:forProtectionSpace:
 	setCredential(${1}, forProtectionSpace: ${2})${3}
 snippet setCumulative:
@@ -3494,6 +3242,8 @@ snippet setCurrentMode:
 	setCurrentMode(${1})${2}
 snippet setCurrentPage:
 	setCurrentPage(${1})${2}
+snippet setCurrentPageIndicatorTintColor:
+	setCurrentPageIndicatorTintColor(${1})${2}
 snippet setCustomView:
 	setCustomView(${1})${2}
 snippet setCustomizableViewControllers:
@@ -3524,16 +3274,12 @@ snippet setDecelerationRate:
 	setDecelerationRate(${1})${2}
 snippet setDecimalSeparator:
 	setDecimalSeparator(${1})${2}
-snippet setDefaultBehavior:
-	setDefaultBehavior(${1})${2}
+snippet setDecrementImage:forState:
+	setDecrementImage(${1}, forState: ${2})${3}
 snippet setDefaultCredential:forProtectionSpace:
 	setDefaultCredential(${1}, forProtectionSpace: ${2})${3}
 snippet setDefaultDate:
 	setDefaultDate(${1})${2}
-snippet setDefaultFormatterBehavior:
-	setDefaultFormatterBehavior(${1})${2}
-snippet setDefaultTimeZone:
-	setDefaultTimeZone(${1})${2}
 snippet setDefersCurrentPageDisplay:
 	setDefersCurrentPageDisplay(${1})${2}
 snippet setDefinesPresentationContext:
@@ -3548,6 +3294,8 @@ snippet setDelegate:
 	setDelegate(${1})${2}
 snippet setDelegateQueue:
 	setDelegateQueue(${1})${2}
+snippet setDescriptionFunction:
+	setDescriptionFunction(${1})${2}
 snippet setDestructiveButtonIndex:
 	setDestructiveButtonIndex(${1})${2}
 snippet setDetectsPhoneNumbers:
@@ -3560,14 +3308,14 @@ snippet setDirection:
 	setDirection(${1})${2}
 snippet setDirectionalLockEnabled:
 	setDirectionalLockEnabled(${1})${2}
-snippet setDisableActions:
-	setDisableActions(${1})${2}
 snippet setDisabledBackground:
 	setDisabledBackground(${1})${2}
 snippet setDiscardable:
 	setDiscardable(${1})${2}
 snippet setDiskCapacity:
 	setDiskCapacity(${1})${2}
+snippet setDividerImage:forLeftSegmentState:rightSegmentState:
+	setDividerImage(${1}, forLeftSegmentState: ${2}, rightSegmentState: ${3})${4}
 snippet setDividerImage:forLeftSegmentState:rightSegmentState:barMetrics:
 	setDividerImage(${1}, forLeftSegmentState: ${2}, rightSegmentState: ${3}, barMetrics: ${4})${5}
 snippet setDoesRelativeDateFormatting:
@@ -3576,6 +3324,8 @@ snippet setDouble:forKey:
 	setDouble(${1}, forKey: ${2})${3}
 snippet setDoubleSided:
 	setDoubleSided(${1})${2}
+snippet setDrawsAsynchronously:
+	setDrawsAsynchronously(${1})${2}
 snippet setDuplex:
 	setDuplex(${1})${2}
 snippet setDuration:
@@ -3630,6 +3380,8 @@ snippet setEraSymbols:
 	setEraSymbols(${1})${2}
 snippet setEvictsObjectsWithDiscardedContent:
 	setEvictsObjectsWithDiscardedContent(${1})${2}
+snippet setExcludedActivityTypes:
+	setExcludedActivityTypes(${1})${2}
 snippet setExclusiveTouch:
 	setExclusiveTouch(${1})${2}
 snippet setExponentSymbol:
@@ -3654,6 +3406,8 @@ snippet setFinishedSelectedImage:withFinishedUnselectedImage:
 	setFinishedSelectedImage(${1}, withFinishedUnselectedImage: ${2})${3}
 snippet setFireDate:
 	setFireDate(${1})${2}
+snippet setFirstLineHeadIndent:
+	setFirstLineHeadIndent(${1})${2}
 snippet setFirstWeekday:
 	setFirstWeekday(${1})${2}
 snippet setFlatness:
@@ -3666,6 +3420,8 @@ snippet setFontSize:
 	setFontSize(${1})${2}
 snippet setFooterHeight:
 	setFooterHeight(${1})${2}
+snippet setFooterReferenceSize:
+	setFooterReferenceSize(${1})${2}
 snippet setForegroundColor:
 	setForegroundColor(${1})${2}
 snippet setFormatWidth:
@@ -3712,8 +3468,14 @@ snippet setHTTPShouldUsePipelining:
 	setHTTPShouldUsePipelining(${1})${2}
 snippet setHasAction:
 	setHasAction(${1})${2}
+snippet setHashFunction:
+	setHashFunction(${1})${2}
+snippet setHeadIndent:
+	setHeadIndent(${1})${2}
 snippet setHeaderHeight:
 	setHeaderHeight(${1})${2}
+snippet setHeaderReferenceSize:
+	setHeaderReferenceSize(${1})${2}
 snippet setHidden:
 	setHidden(${1})${2}
 snippet setHidesAccessoryWhenEditing:
@@ -3740,6 +3502,8 @@ snippet setHighlightedTextColor:
 	setHighlightedTextColor(${1})${2}
 snippet setHour:
 	setHour(${1})${2}
+snippet setHyphenationFactor:
+	setHyphenationFactor(${1})${2}
 snippet setIdleTimerDisabled:
 	setIdleTimerDisabled(${1})${2}
 snippet setIgnoredWords:
@@ -3758,10 +3522,20 @@ snippet setImageInsets:
 	setImageInsets(${1})${2}
 snippet setImages:
 	setImages(${1})${2}
+snippet setIncludesActualByteCount:
+	setIncludesActualByteCount(${1})${2}
+snippet setIncludesCount:
+	setIncludesCount(${1})${2}
+snippet setIncludesUnit:
+	setIncludesUnit(${1})${2}
+snippet setIncrementImage:forState:
+	setIncrementImage(${1}, forState: ${2})${3}
 snippet setIndentationLevel:
 	setIndentationLevel(${1})${2}
 snippet setIndentationWidth:
 	setIndentationWidth(${1})${2}
+snippet setIndexPath:
+	setIndexPath(${1})${2}
 snippet setIndicatorStyle:
 	setIndicatorStyle(${1})${2}
 snippet setInputAccessoryView:
@@ -3792,6 +3566,10 @@ snippet setInternationalCurrencySymbol:
 	setInternationalCurrencySymbol(${1})${2}
 snippet setIsAccessibilityElement:
 	setIsAccessibilityElement(${1})${2}
+snippet setIsEqualFunction:
+	setIsEqualFunction(${1})${2}
+snippet setItemSize:
+	setItemSize(${1})${2}
 snippet setItems:
 	setItems(${1})${2}
 snippet setItems:animated:
@@ -3812,6 +3590,8 @@ snippet setLandscapeImagePhone:
 	setLandscapeImagePhone(${1})${2}
 snippet setLandscapeImagePhoneInsets:
 	setLandscapeImagePhoneInsets(${1})${2}
+snippet setLeapMonth:
+	setLeapMonth(${1})${2}
 snippet setLeftBarButtonItem:
 	setLeftBarButtonItem(${1})${2}
 snippet setLeftBarButtonItem:animated:
@@ -3852,10 +3632,14 @@ snippet setLineDashPattern:
 	setLineDashPattern(${1})${2}
 snippet setLineDashPhase:
 	setLineDashPhase(${1})${2}
+snippet setLineHeightMultiple:
+	setLineHeightMultiple(${1})${2}
 snippet setLineJoin:
 	setLineJoin(${1})${2}
 snippet setLineJoinStyle:
 	setLineJoinStyle(${1})${2}
+snippet setLineSpacing:
+	setLineSpacing(${1})${2}
 snippet setLineWidth:
 	setLineWidth(${1})${2}
 snippet setLocale:
@@ -3894,6 +3678,8 @@ snippet setMaximumFractionDigits:
 	setMaximumFractionDigits(${1})${2}
 snippet setMaximumIntegerDigits:
 	setMaximumIntegerDigits(${1})${2}
+snippet setMaximumLineHeight:
+	setMaximumLineHeight(${1})${2}
 snippet setMaximumNumberOfTouches:
 	setMaximumNumberOfTouches(${1})${2}
 snippet setMaximumSignificantDigits:
@@ -3940,16 +3726,26 @@ snippet setMinimumFractionDigits:
 	setMinimumFractionDigits(${1})${2}
 snippet setMinimumIntegerDigits:
 	setMinimumIntegerDigits(${1})${2}
+snippet setMinimumInteritemSpacing:
+	setMinimumInteritemSpacing(${1})${2}
+snippet setMinimumLineHeight:
+	setMinimumLineHeight(${1})${2}
+snippet setMinimumLineSpacing:
+	setMinimumLineSpacing(${1})${2}
 snippet setMinimumNumberOfTouches:
 	setMinimumNumberOfTouches(${1})${2}
 snippet setMinimumPressDuration:
 	setMinimumPressDuration(${1})${2}
+snippet setMinimumScaleFactor:
+	setMinimumScaleFactor(${1})${2}
 snippet setMinimumSignificantDigits:
 	setMinimumSignificantDigits(${1})${2}
 snippet setMinimumTrackImage:forState:
 	setMinimumTrackImage(${1}, forState: ${2})${3}
 snippet setMinimumTrackTintColor:
 	setMinimumTrackTintColor(${1})${2}
+snippet setMinimumTrackingAdjustment:
+	setMinimumTrackingAdjustment(${1})${2}
 snippet setMinimumValue:
 	setMinimumValue(${1})${2}
 snippet setMinimumValueImage:
@@ -4028,18 +3824,26 @@ snippet setNumberStyle:
 	setNumberStyle(${1})${2}
 snippet setObject:atIndex:
 	setObject(${1}, atIndex: ${2})${3}
+snippet setObject:atIndexedSubscript:
+	setObject(${1}, atIndexedSubscript: ${2})${3}
 snippet setObject:forKey:
 	setObject(${1}, forKey: ${2})${3}
 snippet setObject:forKey:cost:
 	setObject(${1}, forKey: ${2}, cost: ${3})${4}
+snippet setObject:forKeyedSubscript:
+	setObject(${1}, forKeyedSubscript: ${2})${3}
 snippet setObjectZone:
 	setObjectZone(${1})${2}
 snippet setObservationInfo:
 	setObservationInfo(${1})${2}
+snippet setOffImage:
+	setOffImage(${1})${2}
 snippet setOn:
 	setOn(${1})${2}
 snippet setOn:animated:
 	setOn(${1}, animated: ${2})${3}
+snippet setOnImage:
+	setOnImage(${1})${2}
 snippet setOnTintColor:
 	setOnTintColor(${1})${2}
 snippet setOpacity:
@@ -4062,8 +3866,14 @@ snippet setPaddingCharacter:
 	setPaddingCharacter(${1})${2}
 snippet setPaddingPosition:
 	setPaddingPosition(${1})${2}
+snippet setPageIndicatorTintColor:
+	setPageIndicatorTintColor(${1})${2}
 snippet setPagingEnabled:
 	setPagingEnabled(${1})${2}
+snippet setParagraphSpacing:
+	setParagraphSpacing(${1})${2}
+snippet setParagraphSpacingBefore:
+	setParagraphSpacingBefore(${1})${2}
 snippet setPartialStringValidationEnabled:
 	setPartialStringValidationEnabled(${1})${2}
 snippet setPassthroughViews:
@@ -4112,6 +3922,8 @@ snippet setPredicate:
 	setPredicate(${1})${2}
 snippet setPreferredFilename:
 	setPreferredFilename(${1})${2}
+snippet setPreferredMaxLayoutWidth:
+	setPreferredMaxLayoutWidth(${1})${2}
 snippet setPresentsWithGesture:
 	setPresentsWithGesture(${1})${2}
 snippet setPreservesDepth:
@@ -4130,6 +3942,8 @@ snippet setPrintingItem:
 	setPrintingItem(${1})${2}
 snippet setPrintingItems:
 	setPrintingItems(${1})${2}
+snippet setPriority:
+	setPriority(${1})${2}
 snippet setProcessName:
 	setProcessName(${1})${2}
 snippet setProgress:
@@ -4146,8 +3960,6 @@ snippet setPrompt:
 	setPrompt(${1})${2}
 snippet setProperty:forKey:
 	setProperty(${1}, forKey: ${2})${3}
-snippet setProperty:forKey:inRequest:
-	setProperty(${1}, forKey: ${2}, inRequest: ${3})${4}
 snippet setProvidesPresentationContextTransitionStyle:
 	setProvidesPresentationContextTransitionStyle(${1})${2}
 snippet setProximityMonitoringEnabled:
@@ -4168,6 +3980,10 @@ snippet setRedRange:
 	setRedRange(${1})${2}
 snippet setRedSpeed:
 	setRedSpeed(${1})${2}
+snippet setRefreshControl:
+	setRefreshControl(${1})${2}
+snippet setRelinquishFunction:
+	setRelinquishFunction(${1})${2}
 snippet setRemovedOnCompletion:
 	setRemovedOnCompletion(${1})${2}
 snippet setRenderMode:
@@ -4186,6 +4002,10 @@ snippet setResourceValue:forKey:error:
 	setResourceValue(${1}, forKey: ${2}, error: ${3})${4}
 snippet setResourceValues:error:
 	setResourceValues(${1}, error: ${2})${3}
+snippet setRestorationClass:
+	setRestorationClass(${1})${2}
+snippet setRestorationIdentifier:
+	setRestorationIdentifier(${1})${2}
 snippet setReturnKeyType:
 	setReturnKeyType(${1})${2}
 snippet setReturnValue:
@@ -4242,6 +4062,8 @@ snippet setScopeButtonTitles:
 	setScopeButtonTitles(${1})${2}
 snippet setScreen:
 	setScreen(${1})${2}
+snippet setScrollDirection:
+	setScrollDirection(${1})${2}
 snippet setScrollEnabled:
 	setScrollEnabled(${1})${2}
 snippet setScrollIndicatorInsets:
@@ -4274,8 +4096,14 @@ snippet setSectionFooterHeight:
 	setSectionFooterHeight(${1})${2}
 snippet setSectionHeaderHeight:
 	setSectionHeaderHeight(${1})${2}
+snippet setSectionIndexColor:
+	setSectionIndexColor(${1})${2}
 snippet setSectionIndexMinimumDisplayRowCount:
 	setSectionIndexMinimumDisplayRowCount(${1})${2}
+snippet setSectionIndexTrackingBackgroundColor:
+	setSectionIndexTrackingBackgroundColor(${1})${2}
+snippet setSectionInset:
+	setSectionInset(${1})${2}
 snippet setSecureTextEntry:
 	setSecureTextEntry(${1})${2}
 snippet setSeed:
@@ -4322,8 +4150,14 @@ snippet setSeparatorStyle:
 	setSeparatorStyle(${1})${2}
 snippet setSet:
 	setSet(${1})${2}
+snippet setShadowBlurRadius:
+	setShadowBlurRadius(${1})${2}
 snippet setShadowColor:
 	setShadowColor(${1})${2}
+snippet setShadowImage:
+	setShadowImage(${1})${2}
+snippet setShadowImage:forToolbarPosition:
+	setShadowImage(${1}, forToolbarPosition: ${2})${3}
 snippet setShadowOffset:
 	setShadowOffset(${1})${2}
 snippet setShadowOpacity:
@@ -4332,8 +4166,6 @@ snippet setShadowPath:
 	setShadowPath(${1})${2}
 snippet setShadowRadius:
 	setShadowRadius(${1})${2}
-snippet setSharedURLCache:
-	setSharedURLCache(${1})${2}
 snippet setShortMonthSymbols:
 	setShortMonthSymbols(${1})${2}
 snippet setShortQuarterSymbols:
@@ -4346,6 +4178,10 @@ snippet setShortStandaloneWeekdaySymbols:
 	setShortStandaloneWeekdaySymbols(${1})${2}
 snippet setShortWeekdaySymbols:
 	setShortWeekdaySymbols(${1})${2}
+snippet setShouldBeArchived:
+	setShouldBeArchived(${1})${2}
+snippet setShouldGroupAccessibilityChildren:
+	setShouldGroupAccessibilityChildren(${1})${2}
 snippet setShouldIndentWhileEditing:
 	setShouldIndentWhileEditing(${1})${2}
 snippet setShouldProcessNamespaces:
@@ -4380,6 +4216,10 @@ snippet setShowsTouchWhenHighlighted:
 	setShowsTouchWhenHighlighted(${1})${2}
 snippet setShowsVerticalScrollIndicator:
 	setShowsVerticalScrollIndicator(${1})${2}
+snippet setSize:
+	setSize(${1})${2}
+snippet setSizeFunction:
+	setSizeFunction(${1})${2}
 snippet setSortDescriptors:
 	setSortDescriptors(${1})${2}
 snippet setSoundName:
@@ -4446,6 +4286,8 @@ snippet setSublayers:
 	setSublayers(${1})${2}
 snippet setSubtype:
 	setSubtype(${1})${2}
+snippet setSuppressesIncrementalRendering:
+	setSuppressesIncrementalRendering(${1})${2}
 snippet setSuspended:
 	setSuspended(${1})${2}
 snippet setTXTRecordData:
@@ -4460,6 +4302,8 @@ snippet setTableView:
 	setTableView(${1})${2}
 snippet setTag:
 	setTag(${1})${2}
+snippet setTailIndent:
+	setTailIndent(${1})${2}
 snippet setTarget:
 	setTarget(${1})${2}
 snippet setTargetRect:inView:
@@ -4550,8 +4394,12 @@ snippet setTrackImage:
 	setTrackImage(${1})${2}
 snippet setTrackTintColor:
 	setTrackTintColor(${1})${2}
+snippet setTransform3D:
+	setTransform3D(${1})${2}
 snippet setTransform:
 	setTransform(${1})${2}
+snippet setTranslatesAutoresizingMaskIntoConstraints:
+	setTranslatesAutoresizingMaskIntoConstraints(${1})${2}
 snippet setTranslation:inView:
 	setTranslation(${1}, inView: ${2})${3}
 snippet setTranslucent:
@@ -4586,6 +4434,10 @@ snippet setUsesGroupingSeparator:
 	setUsesGroupingSeparator(${1})${2}
 snippet setUsesSignificantDigits:
 	setUsesSignificantDigits(${1})${2}
+snippet setUsesStrongWriteBarrier:
+	setUsesStrongWriteBarrier(${1})${2}
+snippet setUsesWeakReadAndWriteBarriers:
+	setUsesWeakReadAndWriteBarriers(${1})${2}
 snippet setValue:
 	setValue(${1})${2}
 snippet setValue:animated:
@@ -4604,8 +4456,6 @@ snippet setValueFunction:
 	setValueFunction(${1})${2}
 snippet setValueListAttributes:
 	setValueListAttributes(${1})${2}
-snippet setValueTransformer:forName:
-	setValueTransformer(${1}, forName: ${2})${3}
 snippet setValues:
 	setValues(${1})${2}
 snippet setValuesForKeysWithDictionary:
@@ -4614,8 +4464,6 @@ snippet setVelocity:
 	setVelocity(${1})${2}
 snippet setVelocityRange:
 	setVelocityRange(${1})${2}
-snippet setVersion:
-	setVersion(${1})${2}
 snippet setVeryShortMonthSymbols:
 	setVeryShortMonthSymbols(${1})${2}
 snippet setVeryShortStandaloneMonthSymbols:
@@ -4664,16 +4512,6 @@ snippet setWindow:
 	setWindow(${1})${2}
 snippet setWindowLevel:
 	setWindowLevel(${1})${2}
-snippet setWithArray:
-	setWithArray(${1})${2}
-snippet setWithCapacity:
-	setWithCapacity(${1})${2}
-snippet setWithObject:
-	setWithObject(${1})${2}
-snippet setWithObjects:count:
-	setWithObjects(${1}, count: ${2})${3}
-snippet setWithSet:
-	setWithSet(${1})${2}
 snippet setWrapped:
 	setWrapped(${1})${2}
 snippet setWraps:
@@ -4690,20 +4528,32 @@ snippet setYearForWeekOfYear:
 	setYearForWeekOfYear(${1})${2}
 snippet setZAcceleration:
 	setZAcceleration(${1})${2}
+snippet setZIndex:
+	setZIndex(${1})${2}
 snippet setZPosition:
 	setZPosition(${1})${2}
+snippet setZeroPadsFractionDigits:
+	setZeroPadsFractionDigits(${1})${2}
 snippet setZeroSymbol:
 	setZeroSymbol(${1})${2}
 snippet setZoomScale:
 	setZoomScale(${1})${2}
 snippet setZoomScale:animated:
 	setZoomScale(${1}, animated: ${2})${3}
+snippet shadowImageForToolbarPosition:
+	shadowImageForToolbarPosition(${1})${2}
 snippet shiftIndexesStartingAtIndex:by:
 	shiftIndexesStartingAtIndex(${1}, by: ${2})${3}
 snippet shouldArchiveValueForKey:
 	shouldArchiveValueForKey(${1})${2}
 snippet shouldAutorotateToInterfaceOrientation:
 	shouldAutorotateToInterfaceOrientation(${1})${2}
+snippet shouldChangeTextInRange:replacementText:
+	shouldChangeTextInRange(${1}, replacementText: ${2})${3}
+snippet shouldInvalidateLayoutForBoundsChange:
+	shouldInvalidateLayoutForBoundsChange(${1})${2}
+snippet shouldPerformSegueWithIdentifier:sender:
+	shouldPerformSegueWithIdentifier(${1}, sender: ${2})${3}
 snippet showFromBarButtonItem:animated:
 	showFromBarButtonItem(${1}, animated: ${2})${3}
 snippet showFromRect:inView:animated:
@@ -4714,8 +4564,6 @@ snippet showFromToolbar:
 	showFromToolbar(${1})${2}
 snippet showInView:
 	showInView(${1})${2}
-snippet signatureWithObjCTypes:
-	signatureWithObjCTypes(${1})${2}
 snippet sizeForNumberOfPages:
 	sizeForNumberOfPages(${1})${2}
 snippet sizeThatFits:
@@ -4730,16 +4578,6 @@ snippet sizeWithFont:forWidth:lineBreakMode:
 	sizeWithFont(${1}, forWidth: ${2}, lineBreakMode: ${3})${4}
 snippet sizeWithFont:minFontSize:actualFontSize:forWidth:lineBreakMode:
 	sizeWithFont(${1}, minFontSize: ${2}, actualFontSize: ${3}, forWidth: ${4}, lineBreakMode: ${5})${6}
-snippet sleepForTimeInterval:
-	sleepForTimeInterval(${1})${2}
-snippet sleepUntilDate:
-	sleepUntilDate(${1})${2}
-snippet sortDescriptorWithKey:ascending:
-	sortDescriptorWithKey(${1}, ascending: ${2})${3}
-snippet sortDescriptorWithKey:ascending:comparator:
-	sortDescriptorWithKey(${1}, ascending: ${2}, comparator: ${3})${4}
-snippet sortDescriptorWithKey:ascending:selector:
-	sortDescriptorWithKey(${1}, ascending: ${2}, selector: ${3})${4}
 snippet sortRange:options:usingComparator:
 	sortRange(${1}, options: ${2}, usingComparator: ${3})${4}
 snippet sortUsingComparator:
@@ -4768,8 +4606,6 @@ snippet sortedArrayWithOptions:usingComparator:
 	sortedArrayWithOptions(${1}, usingComparator: ${2})${3}
 snippet sortedCookiesUsingDescriptors:
 	sortedCookiesUsingDescriptors(${1})${2}
-snippet spellCheckingResultWithRange:
-	spellCheckingResultWithRange(${1})${2}
 snippet splitViewController:popoverController:willPresentViewController:
 	splitViewController(${1}, popoverController: ${2}, willPresentViewController: ${3})${4}
 snippet splitViewController:shouldHideViewController:inOrientation:
@@ -4782,8 +4618,6 @@ snippet startDownloadingUbiquitousItemAtURL:error:
 	startDownloadingUbiquitousItemAtURL(${1}, error: ${2})${3}
 snippet storeCachedResponse:forRequest:
 	storeCachedResponse(${1}, forRequest: ${2})${3}
-snippet storyboardWithName:bundle:
-	storyboardWithName(${1}, bundle: ${2})${3}
 snippet stream:handleEvent:
 	stream(${1}, handleEvent: ${2})${3}
 snippet stretchableImageWithLeftCapWidth:topCapHeight:
@@ -4822,38 +4656,14 @@ snippet stringForKey:
 	stringForKey(${1})${2}
 snippet stringForObjectValue:
 	stringForObjectValue(${1})${2}
+snippet stringFromByteCount:
+	stringFromByteCount(${1})${2}
 snippet stringFromDate:
 	stringFromDate(${1})${2}
 snippet stringFromNumber:
 	stringFromNumber(${1})${2}
-snippet stringWithCString:
-	stringWithCString(${1})${2}
-snippet stringWithCString:encoding:
-	stringWithCString(${1}, encoding: ${2})${3}
-snippet stringWithCString:length:
-	stringWithCString(${1}, length: ${2})${3}
-snippet stringWithCapacity:
-	stringWithCapacity(${1})${2}
-snippet stringWithCharacters:length:
-	stringWithCharacters(${1}, length: ${2})${3}
-snippet stringWithContentsOfFile:
-	stringWithContentsOfFile(${1})${2}
-snippet stringWithContentsOfFile:encoding:error:
-	stringWithContentsOfFile(${1}, encoding: ${2}, error: ${3})${4}
-snippet stringWithContentsOfFile:usedEncoding:error:
-	stringWithContentsOfFile(${1}, usedEncoding: ${2}, error: ${3})${4}
-snippet stringWithContentsOfURL:
-	stringWithContentsOfURL(${1})${2}
-snippet stringWithContentsOfURL:encoding:error:
-	stringWithContentsOfURL(${1}, encoding: ${2}, error: ${3})${4}
-snippet stringWithContentsOfURL:usedEncoding:error:
-	stringWithContentsOfURL(${1}, usedEncoding: ${2}, error: ${3})${4}
 snippet stringWithFileSystemRepresentation:length:
 	stringWithFileSystemRepresentation(${1}, length: ${2})${3}
-snippet stringWithString:
-	stringWithString(${1})${2}
-snippet stringWithUTF8String:
-	stringWithUTF8String(${1})${2}
 snippet stringsByAppendingPaths:
 	stringsByAppendingPaths(${1})${2}
 snippet strokeWithBlendMode:alpha:
@@ -4872,8 +4682,10 @@ snippet substringToIndex:
 	substringToIndex(${1})${2}
 snippet substringWithRange:
 	substringWithRange(${1})${2}
-snippet systemFontOfSize:
-	systemFontOfSize(${1})${2}
+snippet supportedInterfaceOrientationsForWindow:
+	supportedInterfaceOrientationsForWindow(${1})${2}
+snippet systemLayoutSizeFittingSize:
+	systemLayoutSizeFittingSize(${1})${2}
 snippet tabBar:didBeginCustomizingItems:
 	tabBar(${1}, didBeginCustomizingItems: ${2})${3}
 snippet tabBar:didEndCustomizingItems:changed:
@@ -4910,10 +4722,20 @@ snippet tableView:commitEditingStyle:forRowAtIndexPath:
 	tableView(${1}, commitEditingStyle: ${2}, forRowAtIndexPath: ${3})${4}
 snippet tableView:didDeselectRowAtIndexPath:
 	tableView(${1}, didDeselectRowAtIndexPath: ${2})${3}
+snippet tableView:didEndDisplayingCell:forRowAtIndexPath:
+	tableView(${1}, didEndDisplayingCell: ${2}, forRowAtIndexPath: ${3})${4}
+snippet tableView:didEndDisplayingFooterView:forSection:
+	tableView(${1}, didEndDisplayingFooterView: ${2}, forSection: ${3})${4}
+snippet tableView:didEndDisplayingHeaderView:forSection:
+	tableView(${1}, didEndDisplayingHeaderView: ${2}, forSection: ${3})${4}
 snippet tableView:didEndEditingRowAtIndexPath:
 	tableView(${1}, didEndEditingRowAtIndexPath: ${2})${3}
+snippet tableView:didHighlightRowAtIndexPath:
+	tableView(${1}, didHighlightRowAtIndexPath: ${2})${3}
 snippet tableView:didSelectRowAtIndexPath:
 	tableView(${1}, didSelectRowAtIndexPath: ${2})${3}
+snippet tableView:didUnhighlightRowAtIndexPath:
+	tableView(${1}, didUnhighlightRowAtIndexPath: ${2})${3}
 snippet tableView:editingStyleForRowAtIndexPath:
 	tableView(${1}, editingStyleForRowAtIndexPath: ${2})${3}
 snippet tableView:heightForFooterInSection:
@@ -4932,6 +4754,8 @@ snippet tableView:performAction:forRowAtIndexPath:withSender:
 	tableView(${1}, performAction: ${2}, forRowAtIndexPath: ${3}, withSender: ${4})${5}
 snippet tableView:sectionForSectionIndexTitle:atIndex:
 	tableView(${1}, sectionForSectionIndexTitle: ${2}, atIndex: ${3})${4}
+snippet tableView:shouldHighlightRowAtIndexPath:
+	tableView(${1}, shouldHighlightRowAtIndexPath: ${2})${3}
 snippet tableView:shouldIndentWhileEditingRowAtIndexPath:
 	tableView(${1}, shouldIndentWhileEditingRowAtIndexPath: ${2})${3}
 snippet tableView:shouldShowMenuForRowAtIndexPath:
@@ -4954,12 +4778,18 @@ snippet tableView:willDeselectRowAtIndexPath:
 	tableView(${1}, willDeselectRowAtIndexPath: ${2})${3}
 snippet tableView:willDisplayCell:forRowAtIndexPath:
 	tableView(${1}, willDisplayCell: ${2}, forRowAtIndexPath: ${3})${4}
+snippet tableView:willDisplayFooterView:forSection:
+	tableView(${1}, willDisplayFooterView: ${2}, forSection: ${3})${4}
+snippet tableView:willDisplayHeaderView:forSection:
+	tableView(${1}, willDisplayHeaderView: ${2}, forSection: ${3})${4}
 snippet tableView:willSelectRowAtIndexPath:
 	tableView(${1}, willSelectRowAtIndexPath: ${2})${3}
 snippet tagAtIndex:scheme:tokenRange:sentenceRange:
 	tagAtIndex(${1}, scheme: ${2}, tokenRange: ${3}, sentenceRange: ${4})${5}
 snippet tagsInRange:scheme:options:tokenRanges:
 	tagsInRange(${1}, scheme: ${2}, options: ${3}, tokenRanges: ${4})${5}
+snippet targetContentOffsetForProposedContentOffset:withScrollingVelocity:
+	targetContentOffsetForProposedContentOffset(${1}, withScrollingVelocity: ${2})${3}
 snippet textDidChange:
 	textDidChange(${1})${2}
 snippet textField:shouldChangeCharactersInRange:replacementString:
@@ -5010,18 +4840,6 @@ snippet thumbRectForBounds:trackRect:value:
 	thumbRectForBounds(${1}, trackRect: ${2}, value: ${3})${4}
 snippet timeIntervalSinceDate:
 	timeIntervalSinceDate(${1})${2}
-snippet timeZoneForSecondsFromGMT:
-	timeZoneForSecondsFromGMT(${1})${2}
-snippet timeZoneWithAbbreviation:
-	timeZoneWithAbbreviation(${1})${2}
-snippet timeZoneWithName:
-	timeZoneWithName(${1})${2}
-snippet timeZoneWithName:data:
-	timeZoneWithName(${1}, data: ${2})${3}
-snippet timerWithTimeInterval:invocation:repeats:
-	timerWithTimeInterval(${1}, invocation: ${2}, repeats: ${3})${4}
-snippet timerWithTimeInterval:target:selector:userInfo:repeats:
-	timerWithTimeInterval(${1}, target: ${2}, selector: ${3}, userInfo: ${4}, repeats: ${5})${6}
 snippet titleColorForState:
 	titleColorForState(${1})${2}
 snippet titleForSegmentAtIndex:
@@ -5038,6 +4856,12 @@ snippet titleTextAttributesForState:
 	titleTextAttributesForState(${1})${2}
 snippet titleVerticalPositionAdjustmentForBarMetrics:
 	titleVerticalPositionAdjustmentForBarMetrics(${1})${2}
+snippet toggleBoldface:
+	toggleBoldface(${1})${2}
+snippet toggleItalics:
+	toggleItalics(${1})${2}
+snippet toggleUnderline:
+	toggleUnderline(${1})${2}
 snippet touchesBegan:withEvent:
 	touchesBegan(${1}, withEvent: ${2})${3}
 snippet touchesCancelled:withEvent:
@@ -5060,24 +4884,14 @@ snippet trackRectForBounds:
 	trackRectForBounds(${1})${2}
 snippet transformedValue:
 	transformedValue(${1})${2}
-snippet transitInformationCheckingResultWithRange:components:
-	transitInformationCheckingResultWithRange(${1}, components: ${2})${3}
-snippet transitionFromView:toView:duration:options:completion:
-	transitionFromView(${1}, toView: ${2}, duration: ${3}, options: ${4}, completion: ${5})${6}
 snippet transitionFromViewController:toViewController:duration:options:animations:completion:
 	transitionFromViewController(${1}, toViewController: ${2}, duration: ${3}, options: ${4}, animations: ${5}, completion: ${6})${7}
-snippet transitionWithView:duration:options:animations:completion:
-	transitionWithView(${1}, duration: ${2}, options: ${3}, animations: ${4}, completion: ${5})${6}
 snippet translationInView:
 	translationInView(${1})${2}
 snippet truncateFileAtOffset:
 	truncateFileAtOffset(${1})${2}
 snippet tryLockWhenCondition:
 	tryLockWhenCondition(${1})${2}
-snippet unarchiveObjectWithData:
-	unarchiveObjectWithData(${1})${2}
-snippet unarchiveObjectWithFile:
-	unarchiveObjectWithFile(${1})${2}
 snippet unarchiver:cannotDecodeObjectOfClassName:originalClasses:
 	unarchiver(${1}, cannotDecodeObjectOfClassName: ${2}, originalClasses: ${3})${4}
 snippet unarchiver:didDecodeObject:
@@ -5090,24 +4904,22 @@ snippet unarchiverWillFinish:
 	unarchiverWillFinish(${1})${2}
 snippet undoMenuTitleForUndoActionName:
 	undoMenuTitleForUndoActionName(${1})${2}
+snippet unionHashTable:
+	unionHashTable(${1})${2}
 snippet unionOrderedSet:
 	unionOrderedSet(${1})${2}
 snippet unionSet:
 	unionSet(${1})${2}
-snippet unlearnWord:
-	unlearnWord(${1})${2}
 snippet unlockWithCondition:
 	unlockWithCondition(${1})${2}
-snippet unregisterClass:
-	unregisterClass(${1})${2}
-snippet unresolvedConflictVersionsOfItemAtURL:
-	unresolvedConflictVersionsOfItemAtURL(${1})${2}
 snippet unscheduleFromRunLoop:forMode:
 	unscheduleFromRunLoop(${1}, forMode: ${2})${3}
 snippet updateChangeCount:
 	updateChangeCount(${1})${2}
 snippet updateChangeCountWithToken:forSaveOperation:
 	updateChangeCountWithToken(${1}, forSaveOperation: ${2})${3}
+snippet uppercaseStringWithLocale:
+	uppercaseStringWithLocale(${1})${2}
 snippet useCredential:forAuthenticationChallenge:
 	useCredential(${1}, forAuthenticationChallenge: ${2})${3}
 snippet userInteractionNoLongerPermittedForError:
@@ -5116,8 +4928,6 @@ snippet validateValue:forKey:error:
 	validateValue(${1}, forKey: ${2}, error: ${3})${4}
 snippet validateValue:forKeyPath:error:
 	validateValue(${1}, forKeyPath: ${2}, error: ${3})${4}
-snippet value:withObjCType:
-	value(${1}, withObjCType: ${2})${3}
 snippet valueAtIndex:
 	valueAtIndex(${1})${2}
 snippet valueForAttribute:
@@ -5134,64 +4944,22 @@ snippet valueForUndefinedKey:
 	valueForUndefinedKey(${1})${2}
 snippet valueOfAttribute:forResultAtIndex:
 	valueOfAttribute(${1}, forResultAtIndex: ${2})${3}
-snippet valueTransformerForName:
-	valueTransformerForName(${1})${2}
-snippet valueWithBytes:objCType:
-	valueWithBytes(${1}, objCType: ${2})${3}
-snippet valueWithCATransform3D:
-	valueWithCATransform3D(${1})${2}
-snippet valueWithCGAffineTransform:
-	valueWithCGAffineTransform(${1})${2}
-snippet valueWithCGPoint:
-	valueWithCGPoint(${1})${2}
-snippet valueWithCGRect:
-	valueWithCGRect(${1})${2}
-snippet valueWithCGSize:
-	valueWithCGSize(${1})${2}
-snippet valueWithNonretainedObject:
-	valueWithNonretainedObject(${1})${2}
-snippet valueWithPointer:
-	valueWithPointer(${1})${2}
-snippet valueWithRange:
-	valueWithRange(${1})${2}
-snippet valueWithUIEdgeInsets:
-	valueWithUIEdgeInsets(${1})${2}
-snippet valueWithUIOffset:
-	valueWithUIOffset(${1})${2}
 snippet valuesForAttributes:
 	valuesForAttributes(${1})${2}
 snippet valuesForPasteboardType:inItemSet:
 	valuesForPasteboardType(${1}, inItemSet: ${2})${3}
-snippet vectorWithCGAffineTransform:
-	vectorWithCGAffineTransform(${1})${2}
-snippet vectorWithCGPoint:
-	vectorWithCGPoint(${1})${2}
-snippet vectorWithCGRect:
-	vectorWithCGRect(${1})${2}
-snippet vectorWithString:
-	vectorWithString(${1})${2}
-snippet vectorWithValues:count:
-	vectorWithValues(${1}, count: ${2})${3}
-snippet vectorWithX:
-	vectorWithX(${1})${2}
-snippet vectorWithX:Y:
-	vectorWithX(${1}, Y: ${2})${3}
-snippet vectorWithX:Y:Z:
-	vectorWithX(${1}, Y: ${2}, Z: ${3})${4}
-snippet vectorWithX:Y:Z:W:
-	vectorWithX(${1}, Y: ${2}, Z: ${3}, W: ${4})${5}
 snippet velocityInView:
 	velocityInView(${1})${2}
 snippet versionForClassName:
 	versionForClassName(${1})${2}
-snippet versionOfItemAtURL:forPersistentIdentifier:
-	versionOfItemAtURL(${1}, forPersistentIdentifier: ${2})${3}
 snippet videoEditorController:didFailWithError:
 	videoEditorController(${1}, didFailWithError: ${2})${3}
 snippet videoEditorController:didSaveEditedVideoToPath:
 	videoEditorController(${1}, didSaveEditedVideoToPath: ${2})${3}
 snippet videoEditorControllerDidCancel:
 	videoEditorControllerDidCancel(${1})${2}
+snippet viewControllerForUnwindSegueAction:fromViewController:withSender:
+	viewControllerForUnwindSegueAction(${1}, fromViewController: ${2}, withSender: ${3})${4}
 snippet viewDidAppear:
 	viewDidAppear(${1})${2}
 snippet viewDidDisappear:
@@ -5248,26 +5016,20 @@ snippet willRemoveSubview:
 	willRemoveSubview(${1})${2}
 snippet willRotateToInterfaceOrientation:duration:
 	willRotateToInterfaceOrientation(${1}, duration: ${2})${3}
+snippet willTransitionFromLayout:toLayout:
+	willTransitionFromLayout(${1}, toLayout: ${2})${3}
 snippet willTransitionToState:
 	willTransitionToState(${1})${2}
-snippet windowsLocaleCodeFromLocaleIdentifier:
-	windowsLocaleCodeFromLocaleIdentifier(${1})${2}
 snippet write:maxLength:
 	write(${1}, maxLength: ${2})${3}
 snippet writeAdditionalContent:toURL:originalContentsURL:error:
 	writeAdditionalContent(${1}, toURL: ${2}, originalContentsURL: ${3}, error: ${4})${5}
-snippet writeBookmarkData:toURL:options:error:
-	writeBookmarkData(${1}, toURL: ${2}, options: ${3}, error: ${4})${5}
 snippet writeContents:andAttributes:safelyToURL:forSaveOperation:error:
 	writeContents(${1}, andAttributes: ${2}, safelyToURL: ${3}, forSaveOperation: ${4}, error: ${5})${6}
 snippet writeContents:toURL:forSaveOperation:originalContentsURL:error:
 	writeContents(${1}, toURL: ${2}, forSaveOperation: ${3}, originalContentsURL: ${4}, error: ${5})${6}
 snippet writeData:
 	writeData(${1})${2}
-snippet writeJSONObject:toStream:options:error:
-	writeJSONObject(${1}, toStream: ${2}, options: ${3}, error: ${4})${5}
-snippet writePropertyList:toStream:format:options:error:
-	writePropertyList(${1}, toStream: ${2}, format: ${3}, options: ${4}, error: ${5})${6}
 snippet writeToFile:atomically:
 	writeToFile(${1}, atomically: ${2})${3}
 snippet writeToFile:atomically:encoding:error:
