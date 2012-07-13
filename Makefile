@@ -10,10 +10,7 @@ update: update-local update-oh-my-zsh update-janus update-rbenv link
 update-local:
 	git pull --rebase || (git stash && git pull --rebase && git stash pop)
 	git submodule update --init
-	git submodule foreach git checkout master
-	git submodule foreach git pull origin master
-	# powerline.vim uses a "develop" branch, not master.
-	cd janus/powerline && git checkout develop && git pull origin develop
+	git submodule foreach git pull
 
 ln_options = hfsv
 link:
