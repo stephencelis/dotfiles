@@ -23,3 +23,6 @@ augroup END
 
 let g:vroom_use_bundle_exec=0
 let g:vroom_use_vimux=1
+
+nnoremap <leader>j :VimuxScrollDownInspect<cr>
+nnoremap <leader>k :VimuxScrollUpInspect<cr>
