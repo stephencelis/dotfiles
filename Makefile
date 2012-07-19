@@ -108,6 +108,7 @@ uninstall-rbenv:
 homebrew_formulae = \
 	ack \
 	browser \
+	brew-gem \
 	clojure \
 	ctags \
 	discount \
@@ -138,6 +139,8 @@ homebrew_formulae = \
 	zsh
 install-homebrew-formulae:
 	brew install $(homebrew_formulae)
+install-homebrew-gems: install-homebrew-formulae
+	brew gem testrbl
 
 
 # Uninstall
