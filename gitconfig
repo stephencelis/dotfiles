@@ -1,8 +1,6 @@
 [user]
 	name = Stephen Celis
 	email = stephen@stephencelis.com
-[color]
-	ui = auto
 [alias]
 	br = branch
 	ci = commit -s -v
@@ -12,13 +10,22 @@
 	st = status -s
 	h = "!source ~/.githelpers && show_git_head"
 	l = "!source ~/.githelpers && pretty_git_log"
+	fixup = "!source ~/.githelpers && fixup"
+	squash = "!source ~/.githelpers && squash"
+[color]
+	ui = auto
 [core]
 	excludesfile = ~/.gitignore
-[push]
-	default = matching
-[merge]
-	tool = vimdiff
 [credential]
 	helper = osxkeychain
+[merge]
+	tool = vimdiff
+[push]
+	default = matching
+[rebase]
+	autosquash = true
+[rerere]
+	enabled = true
+	autoupdate = true
 [github]
 	user = stephencelis

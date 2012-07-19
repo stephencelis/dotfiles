@@ -33,3 +33,15 @@ pretty_git_log() {
     # Page only if we need to
     less -FXRS
 }
+
+fixup() {
+  fixup_or_squash fixup
+}
+
+squash() {
+  fixup_or_squash squash
+}
+
+fixup_or_squash() {
+  git commit -am "$1! $(git log -1 --format='%s' $@)"
+}
