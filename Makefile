@@ -9,6 +9,7 @@ update: update-local update-oh-my-zsh update-janus update-rbenv link
 
 update-local:
 	git pull --rebase || (git stash && git pull --rebase && git stash pop)
+	git submodule sync
 	git submodule update --init
 	git submodule foreach git pull
 
