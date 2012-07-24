@@ -19,6 +19,7 @@
 [credential]
 	helper = osxkeychain
 [merge]
+	conflictstyle = diff3
 	tool = vimdiff
 [push]
 	default = matching
