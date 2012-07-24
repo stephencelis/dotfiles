@@ -18,6 +18,8 @@
 	excludesfile = ~/.gitignore
 [credential]
 	helper = osxkeychain
+[diff]
+	renames = copies
 [merge]
 	conflictstyle = diff3
 	tool = vimdiff
