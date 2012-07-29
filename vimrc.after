@@ -15,11 +15,14 @@ set wildmode=list:longest,full
 set nowrap
 
 nnoremap <leader>/ :nohlsearch<cr>
+nnoremap <cr> :nohlsearch<cr><cr>
 
 augroup myvimrc
   au!
   autocmd FileType mml nnoremap <leader>m :w<cr>:MmlMake<cr>
 augroup END
+
+let g:syntastic_ruby_checker = 'macruby'
 
 let g:vroom_use_bundle_exec = 0
 let g:vroom_use_vimux = 1
