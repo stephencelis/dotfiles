@@ -17,6 +17,14 @@ set nowrap
 nnoremap <leader>/ :nohlsearch<cr>
 nnoremap <cr> :nohlsearch<cr><cr>
 
+" :help tcsh-style
+cnoremap <c-a> <home>
+cnoremap <c-e> <end>
+cnoremap <esc>b <s-left>
+cnoremap <esc>f <s-right>
+cnoremap <c-f> <right>
+cnoremap <c-b> <left>
+
 augroup myvimrc
   au!
   autocmd FileType mml nnoremap <leader>m :w<cr>:MmlMake<cr>
@@ -28,5 +36,5 @@ let g:vroom_use_bundle_exec = 0
 let g:vroom_use_vimux = 1
 let g:vroom_test_unit_command = 'testrbl '
 
-nnoremap <leader>j :VimuxScrollDownInspect<cr>
-nnoremap <leader>k :VimuxScrollUpInspect<cr>
+nnoremap <esc>j :VimuxScrollDownInspect<cr>
+nnoremap <esc>k :VimuxScrollUpInspect<cr>
