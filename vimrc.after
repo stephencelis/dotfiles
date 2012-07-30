@@ -30,11 +30,40 @@ augroup myvimrc
   autocmd FileType mml nnoremap <leader>m :w<cr>:MmlMake<cr>
 augroup END
 
+" Syntastic
+"
 let g:syntastic_ruby_checker = 'macruby'
 
+" Vimux
+"
+function! MyVimuxScrollDownInspect()
+  ruby MyTmuxSession.new.inspect_scroll_down
+endfunction
+
+function! MyVimuxScrollUpInspect()
+  ruby MyTmuxSession.new.inspect_scroll_up
+endfunction
+
+command! MyVimuxScrollDownInspect :call MyVimuxScrollDownInspect()
+command! MyVimuxScrollUpInspect :call MyVimuxScrollUpInspect()
+
+nnoremap <esc>k :MyVimuxScrollUpInspect<cr>
+nnoremap <esc>j :MyVimuxScrollDownInspect<cr>
+
+ruby <<RUBY
+class MyTmuxSession < CurrentTmuxSession
+  def inspect_scroll_up
+    super unless current_panes.size == 1
+  end
+
+  def inspect_scroll_down
+    super unless current_panes.size == 1
+  end
+end
+RUBY
+
+" Vroom
+"
 let g:vroom_use_bundle_exec = 0
 let g:vroom_use_vimux = 1
 let g:vroom_test_unit_command = 'testrbl '
-
-nnoremap <esc>j :VimuxScrollDownInspect<cr>
-nnoremap <esc>k :VimuxScrollUpInspect<cr>
