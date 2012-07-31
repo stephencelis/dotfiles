@@ -52,6 +52,12 @@ nnoremap <esc>j :MyVimuxScrollDownInspect<cr>
 
 ruby <<RUBY
 class MyTmuxSession < CurrentTmuxSession
+  def initialize
+    super
+  rescue => e
+    raise unless e.message == 'You are not in a tmux session'
+  end
+
   def inspect_scroll_up
     super unless current_panes.size == 1
   end
