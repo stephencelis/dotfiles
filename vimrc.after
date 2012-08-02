@@ -54,16 +54,18 @@ ruby <<RUBY
 class MyTmuxSession < CurrentTmuxSession
   def initialize
     super
+    @_session = true
   rescue => e
     raise unless e.message == 'You are not in a tmux session'
+    @_session = false
   end
 
   def inspect_scroll_up
-    super unless current_panes.size == 1
+    super if @_session && current_panes.size > 1
   end
 
   def inspect_scroll_down
-    super unless current_panes.size == 1
+    super if @_session && current_panes.size > 1
   end
 end
 RUBY
