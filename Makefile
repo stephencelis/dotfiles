@@ -14,7 +14,7 @@ update-local:
 	git submodule foreach git pull --rebase
 
 ln_options = hfsv
-link:
+link: link-oh-my-zsh link-janus
 	ln -$(ln_options) $(PWD)/gitconfig $(HOME)/.gitconfig
 	ln -$(ln_options) $(PWD)/githelpers $(HOME)/.githelpers
 	ln -$(ln_options) $(PWD)/gitignore $(HOME)/.gitignore
@@ -58,6 +58,9 @@ update-oh-my-zsh:
 		&& git pull --rebase origin master
 uninstall-oh-my-zsh:
 	rm -fR $(HOME)/.oh-my-zsh
+unlink-oh-my-zsh:
+	unlink $(HOME)/.zshenv
+	unlink $(HOME)/.zshrc
 
 
 # Janus
@@ -76,6 +79,8 @@ update-janus:
 		&& rake
 uninstall-janus:
 	rm -fR $(HOME)/.vim
+unlink-janus:
+	unlink $(HOME)/.janus
 
 
 # rbenv
@@ -146,10 +151,15 @@ install-homebrew-gems: install-homebrew-formulae
 
 # Uninstall
 
-clean: uninstall unlink
-uninstall: uninstall-oh-my-zsh uninstall-janus uninstall-rbenv
+clean: \
+	uninstall \
+	unlink
+uninstall: \
+	uninstall-oh-my-zsh \
+	uninstall-janus \
+	uninstall-rbenv
 
-unlink:
+unlink: unlink-oh-my-zsh unlink-janus
 	unlink $(HOME)/.gitconfig
 	unlink $(HOME)/.gitignore
 	unlink $(HOME)/.irbrc
@@ -157,7 +167,4 @@ unlink:
 	unlink $(HOME)/.tmux.conf
 	unlink $(HOME)/.vimrc.after
 	unlink $(HOME)/.vimrc.before
-	unlink $(HOME)/.zshenv
-	unlink $(HOME)/.zshrc
-	unlink $(HOME)/.janus
 	unlink $(HOME)/.local
