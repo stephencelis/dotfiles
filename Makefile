@@ -130,10 +130,12 @@ homebrew_formulae = \
 	lame \
 	lua \
 	lynx \
+	macvim \
 	memcached \
 	mongodb \
 	mysql \
 	node \
+	python \
 	reattach-to-user-namespace \
 	redis \
 	repl \
