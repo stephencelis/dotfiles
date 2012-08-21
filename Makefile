@@ -1,8 +1,20 @@
 
 all: update
 
-install: update-local setup-oh-my-zsh setup-janus setup-rbenv link
-update: update-local update-oh-my-zsh update-janus update-rbenv link
+install: \
+	update-local \
+	setup-oh-my-zsh \
+	setup-janus \
+	setup-rbenv \
+	link
+update: \
+	update-local \
+	update-oh-my-zsh \
+	update-janus \
+	update-rbenv \
+	update-submodules \
+	update-homebrew \
+	link
 
 
 # Local
@@ -12,12 +24,12 @@ update-local:
 	git submodule sync
 	git submodule update --init
 
-submodules:
+update-submodules:
 	git submodule foreach git checkout master
 	cd $(PWD)/janus/powerline && git checkout develop
 	git submodule foreach git pull --rebase
 
-homebrew:
+update-homebrew:
 	brew update
 	brew upgrade
 	brew cleanup
@@ -28,6 +40,7 @@ link: link-oh-my-zsh link-janus
 	ln -$(ln_options) $(PWD)/githelpers $(HOME)/.githelpers
 	ln -$(ln_options) $(PWD)/gitignore $(HOME)/.gitignore
 	ln -$(ln_options) $(PWD)/irbrc $(HOME)/.irbrc
+	ln -$(ln_options) $(PWD)/jshintrc $(HOME)/.jshintrc
 	ln -$(ln_options) $(PWD)/screenrc $(HOME)/.screenrc
 	ln -$(ln_options) $(PWD)/tmux.conf $(HOME)/.tmux.conf
 	ln -$(ln_options) $(PWD)/vimrc.after $(HOME)/.vimrc.after
@@ -158,6 +171,16 @@ install-homebrew-formulae:
 	brew install $(homebrew_formulae)
 install-homebrew-gems: install-homebrew-formulae
 	brew gem testrbl
+
+
+# npm
+
+npm_packages = \
+	coffee-script \
+	jshint \
+	supervisor
+install-npm-packages:
+	npm install -g $(npm_packages)
 
 
 # Uninstall
