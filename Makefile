@@ -11,7 +11,16 @@ update-local:
 	git pull --rebase || (git stash && git pull --rebase && git stash pop)
 	git submodule sync
 	git submodule update --init
+
+submodules:
+	git submodule foreach git checkout master
+	cd $(PWD)/janus/powerline && git checkout develop
 	git submodule foreach git pull --rebase
+
+homebrew:
+	brew update
+	brew upgrade
+	brew cleanup
 
 ln_options = hfsv
 link: link-oh-my-zsh link-janus
