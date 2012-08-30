@@ -22,7 +22,7 @@ FORMAT="$HASH}$DATE}$AUTHOR}$REFS $SUBJECT"
 
 show_git_head() {
   echo "$(pretty_git_log -1)
-$(git show --color -p --pretty="tformat:")" |
+  $(git show --color -p --pretty="tformat:")" |
     less -FXRS
 }
 
@@ -44,4 +44,13 @@ squash() {
 
 fixup_or_squash() {
   git commit -am "$1! $(git log -1 --format='%s' $@)"
+}
+
+prune_merged_remotes() {
+  git fetch origin
+  git remote prune origin
+  git branch --list --remote --merged $1 |
+    grep --invert-match -E "HEAD|master|$1" |
+    sed 's/ *origin\///' |
+    xargs -p -I branch git push origin :branch
 }
