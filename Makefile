@@ -41,6 +41,7 @@ link: link-oh-my-zsh link-janus
 	ln -$(ln_options) $(PWD)/gitignore $(HOME)/.gitignore
 	ln -$(ln_options) $(PWD)/irbrc $(HOME)/.irbrc
 	ln -$(ln_options) $(PWD)/jshintrc $(HOME)/.jshintrc
+	ln -$(ln_options) $(PWD)/powconfig $(HOME)/.powconfig
 	ln -$(ln_options) $(PWD)/screenrc $(HOME)/.screenrc
 	ln -$(ln_options) $(PWD)/tmux.conf $(HOME)/.tmux.conf
 	ln -$(ln_options) $(PWD)/vimrc.after $(HOME)/.vimrc.after
