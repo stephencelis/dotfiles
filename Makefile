@@ -141,6 +141,7 @@ homebrew_formulae = \
 	brew-gem \
 	clojure \
 	ctags \
+	daemonize \
 	discount \
 	erlang \
 	figlet \
