@@ -30,6 +30,11 @@ augroup myvimrc
   autocmd FileType mml nnoremap <leader>m :w<cr>:MmlMake<cr>
 augroup END
 
+" Ctrl-P
+"
+let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files --exclude-standard -co']
+
+
 " Syntastic
 "
 let g:syntastic_ruby_checker = 'macruby'
@@ -72,6 +77,7 @@ RUBY
 
 " Vroom
 "
-let g:vroom_use_bundle_exec = 0
+let g:vroom_use_bundle_exec = 0 " Rely on rbenv-bundler.
 let g:vroom_use_vimux = 1
+let g:vroom_spec_command = 'rspec  --drb '
 let g:vroom_test_unit_command = 'testrbl '
