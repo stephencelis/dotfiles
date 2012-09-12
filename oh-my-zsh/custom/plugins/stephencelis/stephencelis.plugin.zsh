@@ -10,18 +10,18 @@ alias which="builtin which -a"
 alias ssh-add-all="ssh-add ~/.ssh/*id_rsa"
 
 # Quickly toggle your editor with ^Z.
-foreground-editor() { fg $EDITOR 2>/dev/null }
+function foreground-editor { fg $EDITOR 2>/dev/null }
 zle -N foreground-editor
 bindkey '^Z' foreground-editor
 
 # ~Code completion.
 Code="$HOME/Documents/Code"
-c() { cd $Code; for match in $*; do eval cd "$match*(/,@[1])"; done }
-_c() { _files -W $Code -/ }
+function c { cd $Code; for match in $*; do eval cd "$match*(/,@[1])"; done }
+function _c { _files -W $Code -/ }
 compdef _c c
 
 # http://blog.plenz.com/2012-01/zsh-complete-words-from-tmux-pane.html
-_tmux_pane_words() {
+function _tmux_pane_words {
   local expl
   local -a w
   if test -z "$TMUX_PANE"

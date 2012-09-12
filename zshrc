@@ -44,12 +44,16 @@ plugins=( \
   # pow \
   # rails3 \
   # rake \
-  rbenv \
+  # rbenv \
   # redis-cli \
   stephencelis \
   terminalapp \
   zsh-syntax-highlighting \
 )
+
+# Faster than the rbenv plugin, but requires manual rehashing.
+export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
+eval "$(rbenv init - --no-rehash zsh)"
 
 source $ZSH/oh-my-zsh.sh
 
