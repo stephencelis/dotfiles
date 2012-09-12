@@ -156,6 +156,7 @@ homebrew_formulae = \
 	lynx \
 	macvim \
 	memcached \
+	mercurial \
 	mongodb \
 	mysql \
 	node \
@@ -168,6 +169,7 @@ homebrew_formulae = \
 	tmux \
 	tree \
 	varnish \
+	watch \
 	yajl \
 	zsh
 install-homebrew-formulae:
@@ -193,7 +195,7 @@ install-npm-packages:
 
 pip_packages = \
 	Pygments \
-	mercurial
+	glances
 install-pip-packages:
 	pip install $(pip_packages)
 
