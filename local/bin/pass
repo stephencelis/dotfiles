@@ -1,0 +1,112 @@
+#!/usr/bin/env ruby
+# encoding: utf-8
+#
+# pass: A simple CLI wrapper over `security' and the keychain.
+#
+# usage: pass <uri> [<password>]
+#        pass <host>
+#
+# © 2012 Stephen Celis <stephen@stephencelis.com>
+require 'open3'
+require 'optparse'
+require 'uri'
+
+module Pasteboard
+  module_function
+
+  def copy string
+    IO.popen('pbcopy', 'w') { |io| io.write string }
+  end
+
+  def paste
+    IO.popen('pbpaste') { |io| io.read }
+  end
+end
+
+module Keychain
+  module_function
+
+  def save uri, password
+    uri = URI(uri)
+    protocol = uri.scheme == 'https' ? 'htps' : '% 4s' % uri.scheme
+    options = %W[
+      -a #{uri.host} -s #{uri.host} -w #{password}
+      -r #{protocol} -P #{uri.port} -p #{uri.request_uri}
+    ]
+    system "security add-internet-password #{options.join ' '}"
+  end
+
+  def find host
+    uri = URI(host)
+    command = "security find-internet-password -gs #{uri.host || uri}"
+    Open3.popen3(command) do |stdin, stdout, stderr|
+      data = stderr.read.match(/^password: [^"]*"(.+)"$/)
+      data[1] if data
+    end
+  end
+end
+
+Signal.trap 'INT' do
+  print '^C'
+  abort
+end
+
+options = OptionParser.new do |opts|
+  command = File.basename $0
+  opts.banner = <<-EOF
+usage: #{command} <uri> [<password>]
+       #{command} <host>
+  EOF
+end
+options.parse!
+
+def read_password host
+  previous = Pasteboard.paste
+  password = Keychain.find host
+
+  if password.nil?
+    warn 'Password not found.'
+
+    uri = URI(host)
+    if uri.scheme
+      print 'Enter password: '
+
+      system 'stty -echo'
+      password = STDIN.gets
+      system 'stty echo'
+
+      if password
+        password.chomp!
+        unless password.empty?
+          write_password host, password
+          return
+        end
+      end
+    end
+
+    abort
+  end
+
+  Pasteboard.copy password
+  at_exit { Pasteboard.copy previous if Pasteboard.paste == password }
+
+  puts 'Password available in clipboard for 10 seconds...'
+  sleep 10
+end
+
+def write_password uri, password
+  uri, password = ARGV
+  Keychain.save uri, password
+end
+
+case ARGV.length
+when 2..3
+  uri, password = ARGV
+  write_password uri, password
+when 1
+  host, = ARGV
+  read_password host
+else
+  puts options
+  abort
+end
