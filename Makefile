@@ -153,6 +153,7 @@ homebrew_formulae = \
 	imagemagick \
 	io \
 	lame \
+	libyaml \
 	lua \
 	lynx \
 	macvim \
