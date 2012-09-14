@@ -6,7 +6,6 @@ bindkey '^R' history-incremental-pattern-search-backward
 bindkey '^S' history-incremental-pattern-search-forward
 
 # Aliases.
-alias which="builtin which -a"
 alias ssh-add-all="ssh-add ~/.ssh/*id_rsa"
 
 # Quickly toggle your editor with ^Z.
