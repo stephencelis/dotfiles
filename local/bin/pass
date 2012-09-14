@@ -7,6 +7,18 @@
 #        pass <host>
 #
 # © 2012 Stephen Celis <stephen@stephencelis.com>
+#--
+# TODO:
+#
+# - Accept stdin, e.g.: `ha-gen | pass https://mail.gmail.com/`
+# - Built-in completion, e.g.:
+#
+# function _pass {
+#   compadd $(security dump-keychain | grep '"srvr"' | cut -d '"' -f 4 -)
+# }
+# compdef _pass pass
+#++
+require 'io/console'
 require 'open3'
 require 'optparse'
 require 'uri'
@@ -47,7 +59,7 @@ module Keychain
 end
 
 Signal.trap 'INT' do
-  print '^C'
+  print '^C' unless STDIN.echo?
   abort
 end
 
@@ -70,11 +82,7 @@ def read_password host
     uri = URI(host)
     if uri.scheme
       print 'Enter password: '
-
-      system 'stty -echo'
-      password = STDIN.gets
-      system 'stty echo'
-
+      password = STDIN.noecho { STDIN.gets }
       if password
         password.chomp!
         unless password.empty?
@@ -90,8 +98,12 @@ def read_password host
   Pasteboard.copy password
   at_exit { Pasteboard.copy previous if Pasteboard.paste == password }
 
-  puts 'Password available in clipboard for 10 seconds...'
-  sleep 10
+  print 'Password available in clipboard for 10 seconds'
+  10.times do
+    sleep 1
+    print '.'
+  end
+  puts
 end
 
 def write_password uri, password

@@ -19,6 +19,12 @@ function c { cd $Code; for match in $*; do eval cd "$match*(/,@[1])"; done }
 function _c { _files -W $Code -/ }
 compdef _c c
 
+# pass completion.
+function _pass {
+  compadd $(security dump-keychain | grep '"srvr"' | cut -d '"' -f 4 -)
+}
+compdef _pass pass
+
 # http://blog.plenz.com/2012-01/zsh-complete-words-from-tmux-pane.html
 function _tmux_pane_words {
   local expl
