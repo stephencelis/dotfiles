@@ -48,12 +48,19 @@ module Keychain
     system "security add-internet-password #{options.join ' '}"
   end
 
-  def find host
+  def find host, include_username = false
     uri = URI(host)
     command = "security find-internet-password -gs #{uri.host || uri}"
     Open3.popen3(command) do |stdin, stdout, stderr|
       data = stderr.read.match(/^password: [^"]*"(.+)"$/)
-      data[1] if data
+      if data
+        response = [data[1]]
+        if include_username
+          data = stdout.read.match(/^    "acct"<blob>="(.+)"$/)
+          response << data[1] if data
+        end
+        response.join "\n"
+      end
     end
   end
 end
@@ -63,24 +70,26 @@ Signal.trap 'INT' do
   abort
 end
 
+include_username = false
 options = OptionParser.new do |opts|
   command = File.basename $0
   opts.banner = <<-EOF
 usage: #{command} <uri> [<password>]
        #{command} <host>
   EOF
+  opts.on('-u') { include_username = true }
 end
 options.parse!
 
-def read_password host
+def read_password host, include_username = false
   previous = Pasteboard.paste
-  password = Keychain.find host
+  password = Keychain.find host, include_username
 
   if password.nil?
     warn 'Password not found.'
 
     uri = URI(host)
-    if uri.scheme
+    if uri.scheme && STDIN.tty?
       print 'Enter password: '
       password = STDIN.noecho { STDIN.gets }
       if password
@@ -95,11 +104,17 @@ def read_password host
     abort
   end
 
+  unless STDIN.tty?
+    print password
+    exit
+  end
+
   Pasteboard.copy password
   at_exit { Pasteboard.copy previous if Pasteboard.paste == password }
 
-  print 'Password available in clipboard for 10 seconds'
-  10.times do
+  seconds = 5
+  print "Password available in clipboard for #{seconds} seconds"
+  seconds.times do
     sleep 1
     print '.'
   end
@@ -117,7 +132,7 @@ when 2..3
   write_password uri, password
 when 1
   host, = ARGV
-  read_password host
+  read_password host, include_username
 else
   puts options
   abort
