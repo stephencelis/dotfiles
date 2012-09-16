@@ -3,8 +3,7 @@
 #
 # pass: A simple CLI wrapper over `security' and the keychain.
 #
-# usage: pass <uri> [<password>]
-#        pass <host>
+# usage: pass <uri>
 #
 # © 2012 Stephen Celis <stephen@stephencelis.com>
 #--
@@ -38,11 +37,11 @@ end
 module Keychain
   module_function
 
-  def save uri, password
+  def save uri, password, username
     uri = URI(uri)
     protocol = uri.scheme == 'https' ? 'htps' : '% 4s' % uri.scheme
     options = %W[
-      -a #{uri.host} -s #{uri.host} -w #{password}
+      -a #{username} -s #{uri.host} -w #{password}
       -r #{protocol} -P #{uri.port} -p #{uri.request_uri}
     ]
     system "security add-internet-password #{options.join ' '}"
@@ -90,13 +89,20 @@ def read_password host, include_username = false
 
     uri = URI(host)
     if uri.scheme && STDIN.tty?
-      print 'Enter password: '
-      password = STDIN.noecho { STDIN.gets }
-      if password
-        password.chomp!
-        unless password.empty?
-          write_password host, password
-          return
+      print 'Enter username: '
+      username = STDIN.gets
+      if username
+        username.chomp!
+        unless username.empty?
+          print 'Enter password: '
+          password = STDIN.noecho { STDIN.gets }
+          if password
+            password.chomp!
+            unless password.empty?
+              write_password host, password, username
+              return
+            end
+          end
         end
       end
     end
@@ -121,15 +127,14 @@ def read_password host, include_username = false
   puts
 end
 
-def write_password uri, password
-  uri, password = ARGV
-  Keychain.save uri, password
+def write_password uri, password, username
+  Keychain.save uri, password, username
 end
 
 case ARGV.length
 when 2..3
-  uri, password = ARGV
-  write_password uri, password
+  uri, password, username = ARGV
+  write_password uri, password, username
 when 1
   host, = ARGV
   read_password host, include_username
