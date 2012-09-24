@@ -47,6 +47,7 @@ link: link-oh-my-zsh link-janus
 	ln -$(ln_options) $(PWD)/tmux.conf $(HOME)/.tmux.conf
 	ln -$(ln_options) $(PWD)/vimrc.after $(HOME)/.vimrc.after
 	ln -$(ln_options) $(PWD)/vimrc.before $(HOME)/.vimrc.before
+	ln -F$(ln_options) $(PWD)/config/ $(HOME)/.config
 	ln -F$(ln_options) $(PWD)/local/ $(HOME)/.local
 
 
