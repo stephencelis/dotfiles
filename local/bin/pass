@@ -20,6 +20,7 @@
 require 'io/console'
 require 'open3'
 require 'optparse'
+require 'shellwords'
 require 'uri'
 
 module Pasteboard
@@ -39,12 +40,16 @@ module Keychain
 
   def save uri, password, username
     uri = URI(uri)
-    protocol = uri.scheme == 'https' ? 'htps' : '% 4s' % uri.scheme
-    options = %W[
-      -a #{username} -s #{uri.host} -w #{password}
-      -r #{protocol} -P #{uri.port} -p #{uri.request_uri}
-    ]
-    system "security add-internet-password #{options.join ' '}"
+    if uri.scheme
+      protocol = uri.scheme == 'https' ? 'htps' : uri.scheme.ljust(4)
+    end
+    path = uri.request_uri if uri.respond_to? :request_uri
+    args = {
+      '-a' => username, '-s' => uri.host, '-w' => password,
+      '-r' => protocol, '-P' => uri.port, '-p' => path
+    }
+    args = args.map { |f, v| "#{f} #{v.to_s.shellescape}" }.join ' '
+    system "security add-internet-password #{args}"
   end
 
   def find host, include_username = false
@@ -118,7 +123,7 @@ def read_password host, include_username = false
   Pasteboard.copy password
   at_exit { Pasteboard.copy previous if Pasteboard.paste == password }
 
-  seconds = 5
+  seconds = 15
   print "Password available in clipboard for #{seconds} seconds"
   seconds.times do
     sleep 1

@@ -66,11 +66,23 @@ class MyTmuxSession < CurrentTmuxSession
   end
 
   def inspect_scroll_up
-    super if @_session && current_panes.size > 1
+    if @_session && current_panes.size > 1
+      super
+    else
+      window = VIM::Window.current
+      row, col = window.cursor
+      window.cursor = [row - 1, col]
+    end
   end
 
   def inspect_scroll_down
-    super if @_session && current_panes.size > 1
+    if @_session && current_panes.size > 1
+      super
+    else
+      window = VIM::Window.current
+      row, col = window.cursor
+      window.cursor = [row + 1, col]
+    end
   end
 end
 RUBY
