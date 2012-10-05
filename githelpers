@@ -46,6 +46,16 @@ fixup_or_squash() {
   git commit -am "$1! $(git log -1 --format='%s' $@)"
 }
 
+prune_merged() {
+  test -n "$1" && prune_merged_remotes $@ || prune_merged_local
+}
+
+prune_merged_local() {
+  git branch --list --merged |
+    grep --invert-match '*' |
+    xargs -n 1 git branch -d
+}
+
 prune_merged_remotes() {
   git fetch origin
   git remote prune origin

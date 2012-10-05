@@ -12,7 +12,7 @@
 	l = "!source ~/.githelpers && pretty_git_log"
 	fixup = "!source ~/.githelpers && fixup"
 	squash = "!source ~/.githelpers && squash"
-	prune-merged = "!source ~/.githelpers && prune_merged_remotes"
+	prune-merged = "!source ~/.githelpers && prune_merged"
 [color]
 	ui = auto
 [core]
