@@ -7,4 +7,4 @@
 tmp/**/*
 
 .bundle
-vendor/bundler
+vendor/bundle
