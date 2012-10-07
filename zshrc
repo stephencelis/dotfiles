@@ -57,3 +57,7 @@ fi
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+if command -v grc >/dev/null
+then
+  source "$(brew --prefix)/etc/grc.bashrc"
+fi
