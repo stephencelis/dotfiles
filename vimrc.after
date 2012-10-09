@@ -41,21 +41,22 @@ let g:syntastic_ruby_checker = 'macruby'
 
 " Vimux
 "
-function! MyVimuxScrollDownInspect()
-  ruby MyTmuxSession.new.inspect_scroll_down
-endfunction
+if has('ruby')
+  function! MyVimuxScrollDownInspect()
+    ruby MyTmuxSession.new.inspect_scroll_down
+  endfunction
 
-function! MyVimuxScrollUpInspect()
-  ruby MyTmuxSession.new.inspect_scroll_up
-endfunction
+  function! MyVimuxScrollUpInspect()
+    ruby MyTmuxSession.new.inspect_scroll_up
+  endfunction
 
-command! MyVimuxScrollDownInspect :call MyVimuxScrollDownInspect()
-command! MyVimuxScrollUpInspect :call MyVimuxScrollUpInspect()
+  command! MyVimuxScrollDownInspect :call MyVimuxScrollDownInspect()
+  command! MyVimuxScrollUpInspect :call MyVimuxScrollUpInspect()
 
-nnoremap <esc>k :MyVimuxScrollUpInspect<cr>
-nnoremap <esc>j :MyVimuxScrollDownInspect<cr>
+  nnoremap <esc>k :MyVimuxScrollUpInspect<cr>
+  nnoremap <esc>j :MyVimuxScrollDownInspect<cr>
 
-ruby <<RUBY
+  ruby <<RUBY
 class MyTmuxSession < CurrentTmuxSession
   def initialize
     super
@@ -86,6 +87,7 @@ class MyTmuxSession < CurrentTmuxSession
   end
 end
 RUBY
+endif
 
 " Vroom
 "
