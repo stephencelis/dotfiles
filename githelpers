@@ -52,8 +52,8 @@ prune_merged() {
 
 prune_merged_local() {
   git branch --list --merged |
-    grep --invert-match '*' |
-    xargs -n 1 git branch -d
+    grep --invert-match -E '\*|master' |
+    xargs -n 1 git branch --delete
 }
 
 prune_merged_remotes() {
