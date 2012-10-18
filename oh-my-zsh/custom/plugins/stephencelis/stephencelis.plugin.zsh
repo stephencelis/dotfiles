@@ -27,6 +27,13 @@ function _pass {
 }
 compdef _pass pass
 
+function weather {
+  echo -n "\n${1:=SFO}\nX" |
+    nc rainmaker.wunderground.com 23 |
+    tail -n +18 |
+    head -22
+}
+
 # http://blog.plenz.com/2012-01/zsh-complete-words-from-tmux-pane.html
 function _tmux_pane_words {
   local expl
