@@ -2,6 +2,8 @@
 PATH="$HOME/.local/bin:$PATH"
 # Homebrew.
 PATH="/usr/local/bin:/usr/local/sbin:/usr/local/share/python:$PATH"
+# Plan9.
+PATH="$PATH:/usr/local/plan9/bin"
 # jsc.
 PATH="$PATH:/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources"
 # ActionScript.

@@ -33,3 +33,4 @@
 	autoupdate = true
 [github]
 	user = stephencelis
+	password = "!echo | pass github.com"
