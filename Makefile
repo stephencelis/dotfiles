@@ -50,6 +50,7 @@ link: link-oh-my-zsh link-janus
 	ln -F$(ln_options) $(PWD)/bundle/ $(HOME)/.bundle
 	ln -F$(ln_options) $(PWD)/config/ $(HOME)/.config
 	ln -F$(ln_options) $(PWD)/local/ $(HOME)/.local
+	ln -F$(ln_options) $(PWD)/tmux/ $(HOME)/.tmux
 
 
 # OH MY ZSHELL!
