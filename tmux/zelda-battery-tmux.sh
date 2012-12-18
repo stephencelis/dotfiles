@@ -10,7 +10,7 @@
 battery="$(pmset -g ps | tail -1 | perl -pe 's/.*?(\d+)%.*/\1/')"
 
 if [[ $battery -lt 25 ]]; then
-  echo "#[blink]♥ ♡ ♡ "
+  echo "#[blink]♥#[noblink] ♡ ♡ "
 elif [[ $battery -lt 50 ]]; then
   echo "♥ ♡ ♡ "
 elif [[ $battery -lt 75 ]]; then
