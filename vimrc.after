@@ -1,4 +1,4 @@
-colorscheme wombat256
+colorscheme Tomorrow-Night-Eighties
 highlight ColorColumn ctermbg=233
 
 set autoindent
