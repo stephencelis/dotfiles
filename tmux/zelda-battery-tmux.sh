@@ -7,7 +7,7 @@
 #
 #     set -g status-right "#[fg=red]#(path/to/zelda-battery-tmux.sh)"
 
-battery="$(pmset -g ps | tail -1 | perl -pe 's/.*?(\d+)%.*/\1/')"
+battery="$(pmset -g ps | awk 'NR==2' | perl -pe 's/.*?(\d+)%.*/\1/')"
 
 if [[ $battery -lt 25 ]]; then
   echo "#[blink]♥#[noblink] ♡ ♡ "
