@@ -123,12 +123,24 @@ install-rbenv-plugins:
 	mkdir -p $(HOME)/.rbenv/plugins
 	git clone -- git://github.com/sstephenson/ruby-build.git \
 		$(HOME)/.rbenv/plugins/ruby-build
+	git clone -- git://github.com/sstephenson/rbenv-default-gems.git \
+		$(HOME)/.rbenv/plugins/rbenv-default-gems
+	git clone -- git://github.com/sstephenson/rbenv-gem-rehash.git \
+		$(HOME)/.rbenv/plugins/rbenv-gem-rehash
+	git clone -- git://github.com/sstephenson/rbenv-vars.git \
+		$(HOME)/.rbenv/plugins/rbenv-vars
 	git clone -- git://github.com/carsomyr/rbenv-bundler.git \
 		$(HOME)/.rbenv/plugins/bundler
 update-rbenv:
 	cd $(HOME)/.rbenv \
 		&& git pull --rebase origin master
 	cd $(HOME)/.rbenv/plugins/ruby-build \
+		&& git pull --rebase origin master
+	cd $(HOME)/.rbenv/plugins/rbenv-default-gems \
+		&& git pull --rebase origin master
+	cd $(HOME)/.rbenv/plugins/rbenv-gem-rehash \
+		&& git pull --rebase origin master
+	cd $(HOME)/.rbenv/plugins/rbenv-vars \
 		&& git pull --rebase origin master
 	cd $(HOME)/.rbenv/plugins/bundler \
 		&& git pull --rebase origin master

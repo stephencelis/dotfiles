@@ -25,7 +25,7 @@
 	conflictstyle = diff3
 	tool = vimdiff
 [push]
-	default = matching
+	default = current
 [rebase]
 	autosquash = true
 [rerere]
