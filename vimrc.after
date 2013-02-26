@@ -34,6 +34,10 @@ augroup END
 "
 let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files --exclude-standard -co']
 
+" Git Gutter
+"
+highlight LineNr     ctermbg=236
+highlight SignColumn ctermbg=237
 
 " Syntastic
 "

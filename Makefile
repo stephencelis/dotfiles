@@ -98,12 +98,12 @@ setup-janus: \
 	install-janus \
 	link-janus
 install-janus:
-	curl -Lo- https://bit.ly/janus-bootstrap | bash
+	curl -Lo- https://bit.ly/janus-bootstrap | RBENV_VERSION=system bash
 link-janus:
 	ln -F$(ln_options) $(PWD)/janus/ $(HOME)/.janus
 update-janus:
 	cd $(HOME)/.vim \
-		&& rake
+		&& RBENV_VERSION=system rake
 uninstall-janus:
 	rm -fR $(HOME)/.vim
 unlink-janus:
