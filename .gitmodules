@@ -25,3 +25,6 @@
 [submodule "janus/gitgutter"]
 	path = janus/gitgutter
 	url = git://github.com/airblade/vim-gitgutter.git
+[submodule "janus/ag"]
+	path = janus/ag
+	url = git://github.com/rking/ag.vim.git
