@@ -20,6 +20,11 @@ update: install
 	cd $(OH_MY_ZSH)/custom/plugins/zsh-syntax-highlighting && git pull
 	# Janus
 	cd $(HOME)/.vim && rake
+	# rbenv
+	for plugin in $(RBENV_PLUGINS); \
+		do \
+			cd $$plugin && git pull; \
+		done
 
 
 install: homebrew janus oh-my-zsh symlinks
@@ -87,6 +92,11 @@ janus: \
 # Oh My Zsh
 
 OH_MY_ZSH = $(HOME)/.oh-my-zsh
+OH_MY_ZSH_PLUGINS = \
+	$(OH_MY_ZSH)/custom/plugins/zsh-history-substring-search \
+	$(OH_MY_ZSH)/custom/plugins/zsh-syntax-highlighting \
+	$(OH_MY_ZSH)/custom/stephencelis.zsh-theme \
+	$(OH_MY_ZSH)/custom/plugins/stephencelis
 $(OH_MY_ZSH)/custom/plugins/zsh-history-substring-search: $(OH_MY_ZSH)
 	git clone -- git://github.com/zsh-users/zsh-history-substring-search.git \
 		$(OH_MY_ZSH)/custom/plugins/zsh-history-substring-search
@@ -102,11 +112,37 @@ $(OH_MY_ZSH)/custom/plugins/stephencelis: $(OH_MY_ZSH)
 $(OH_MY_ZSH):
 	curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 
-oh-my-zsh: \
-	$(OH_MY_ZSH)/custom/plugins/zsh-history-substring-search \
-	$(OH_MY_ZSH)/custom/plugins/zsh-syntax-highlighting \
-	$(OH_MY_ZSH)/custom/stephencelis.zsh-theme \
-	$(OH_MY_ZSH)/custom/plugins/stephencelis
+oh-my-zsh: $(OH_MY_ZSH_PLUGINS)
+
+
+# rbenv
+
+RBENV = $(HOME)/.rbenv
+RBENV_PLUGINS = \
+	$(RBENV)/plugins/bundler \
+	$(RBENV)/plugins/ruby-build \
+	$(RBENV)/plugins/rbenv-default-gems \
+	$(RBENV)/plugins/rbenv-gem-rehash \
+	$(RBENV)/plugins/rbenv-vars
+$(RBENV)/plugins/bundler: $(RBENV)
+	git clone -- git://github.com/carsomyr/rbenv-bundler.git \
+		$(RBENV)/plugins/bundler
+$(RBENV)/plugins/ruby-build: $(RBENV)
+	git clone -- git://github.com/sstephenson/ruby-build.git \
+		$(RBENV)/plugins/ruby-build
+$(RBENV)/plugins/rbenv-default-gems: $(RBENV)
+	git clone -- git://github.com/sstephenson/rbenv-default-gems.git \
+		$(RBENV)/plugins/rbenv-default-gems
+$(RBENV)/plugins/rbenv-gem-rehash: $(RBENV)
+	git clone -- git://github.com/sstephenson/rbenv-gem-rehash.git \
+		$(RBENV)/plugins/rbenv-gem-rehash
+$(RBENV)/plugins/rbenv-vars: $(RBENV)
+	git clone -- git://github.com/sstephenson/rbenv-vars.git \
+		$(RBENV)/plugins/rbenv-vars
+$(RBENV):
+	git clone -- git://github.com/sstephenson/rbenv.git $(RBENV)
+
+rbenv: $(RBENV_PLUGINS)
 
 
 .PHONY: update
