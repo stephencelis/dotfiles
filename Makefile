@@ -21,6 +21,7 @@ update: install
 	# Janus
 	cd $(HOME)/.vim && rake
 	# rbenv
+	cd $(RBENV) && git pull
 	for plugin in $(RBENV_PLUGINS); \
 		do \
 			cd $$plugin && git pull; \
