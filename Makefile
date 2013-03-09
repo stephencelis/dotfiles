@@ -27,7 +27,7 @@ update: install
 		done
 
 
-install: homebrew janus oh-my-zsh symlinks
+install: homebrew janus oh-my-zsh rbenv symlinks
 
 
 # Dotfiles
