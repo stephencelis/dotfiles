@@ -43,68 +43,18 @@ highlight SignColumn ctermbg=237
 "
 let g:syntastic_ruby_checker = 'macruby'
 
-" Vimux
-"
-if has('ruby')
-  function! MyVimuxScrollDownInspect()
-    ruby MyTmuxSession.new.inspect_scroll_down
-  endfunction
-
-  function! MyVimuxScrollUpInspect()
-    ruby MyTmuxSession.new.inspect_scroll_up
-  endfunction
-
-  command! MyVimuxScrollDownInspect :call MyVimuxScrollDownInspect()
-  command! MyVimuxScrollUpInspect :call MyVimuxScrollUpInspect()
-
-  nnoremap <esc>k :MyVimuxScrollUpInspect<cr>
-  nnoremap <esc>j :MyVimuxScrollDownInspect<cr>
-
-  ruby <<RUBY
-class MyTmuxSession < CurrentTmuxSession
-  def initialize
-    super
-    @_session = true
-  rescue => e
-    raise unless e.message == 'You are not in a tmux session'
-    @_session = false
-  end
-
-  def inspect_scroll_up
-    if @_session && current_panes.size > 1
-      super
-    else
-      window = VIM::Window.current
-      row, col = window.cursor
-      window.cursor = [row - 1, col]
-    end
-  end
-
-  def inspect_scroll_down
-    if @_session && current_panes.size > 1
-      super
-    else
-      window = VIM::Window.current
-      row, col = window.cursor
-      window.cursor = [row + 1, col]
-    end
-  end
-end
-RUBY
-endif
-
 " Vroom
 "
 let g:vroom_use_bundle_exec = 0 " Rely on rbenv-bundler.
 let g:vroom_use_vimux = 1
-let g:vroom_spec_command = 'time  rspec  --drb '
-let g:vroom_test_unit_command = 'time  testrbl '
+let g:vroom_spec_command = 'time  bin/rspec  --drb '
+let g:vroom_test_unit_command = 'time  bin/testrbl '
 
 " Zeus
 "
 function! Zeus()
-  let g:vroom_spec_command = 'time  zeus  rspec '
-  let g:vroom_test_unit_command = 'time  testrbl '
+  let g:vroom_spec_command = 'time  bin/zeus  rspec '
+  let g:vroom_test_unit_command = 'time  bin/testrbl '
 endfunction
 command! Zeus :call Zeus()
 
