@@ -120,14 +120,10 @@ oh-my-zsh: $(OH_MY_ZSH_PLUGINS)
 
 RBENV = $(HOME)/.rbenv
 RBENV_PLUGINS = \
-	$(RBENV)/plugins/bundler \
 	$(RBENV)/plugins/ruby-build \
 	$(RBENV)/plugins/rbenv-default-gems \
 	$(RBENV)/plugins/rbenv-gem-rehash \
 	$(RBENV)/plugins/rbenv-vars
-$(RBENV)/plugins/bundler: $(RBENV)
-	git clone -- git://github.com/carsomyr/rbenv-bundler.git \
-		$(RBENV)/plugins/bundler
 $(RBENV)/plugins/ruby-build: $(RBENV)
 	git clone -- git://github.com/sstephenson/ruby-build.git \
 		$(RBENV)/plugins/ruby-build
