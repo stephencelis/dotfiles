@@ -10,6 +10,7 @@ bindkey '^S' history-incremental-pattern-search-forward
 # Aliases.
 alias ssh-add-all="ssh-add ~/.ssh/*id_rsa"
 alias ag="ag --smart-case"
+alias ack="echo ag\!"
 
 # Quickly toggle your editor with ^Z.
 function foreground-editor { fg $EDITOR 2>/dev/null }
