@@ -22,8 +22,9 @@ update: install
 	cd $(HOME)/.vim && rake
 	# rbenv
 	cd $(RBENV) && git pull
-	for plugin in $(RBENV_PLUGINS); \
+	@for plugin in $(RBENV_PLUGINS); \
 		do \
+			echo "cd $$plugin && git pull"; \
 			cd $$plugin && git pull; \
 		done
 
