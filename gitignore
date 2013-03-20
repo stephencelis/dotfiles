@@ -7,7 +7,7 @@
 tmp/**/*
 
 .bundle
-bin/
+/bin/
 vendor/bundle
 
 .pt

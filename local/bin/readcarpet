@@ -1,0 +1,51 @@
+#!/usr/bin/env ruby
+
+require 'redcarpet'
+require 'pygments.rb'
+
+class Pygmentize < Redcarpet::Render::HTML
+  def block_code code, language
+    Pygments.highlight code, lexer: language
+  end
+end
+
+css = File.expand_path '../../lib/readcarpet/style.css', __FILE__
+
+STDOUT.write <<EOF
+<!doctype html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="#{css}">
+
+<body>
+<div id="wrapper">
+<div class="site hfeed">
+<div class="hentry">
+<div class="pagehead repohead instapaper_ignore readability-menu">
+</div>
+<div class="container context-loader-container">
+<div id="slider">
+<div class="frames">
+<div class="frame">
+<div id="readme" class="clearfix announce instapaper_body md">
+<!-- <span class="name"></span> -->
+<article class="markdown-body entry-content">
+#{Redcarpet::Markdown.new(
+  Pygmentize.new,
+  no_intra_emphasis: true,
+  tables: true,
+  fenced_code_blocks: true,
+  autolink: true,
+  strikethrough: true
+).render ARGF.read}
+</article>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div style="height: 50px;"></div>
+</div>
+</body>
+EOF
