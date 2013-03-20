@@ -28,6 +28,11 @@ cnoremap <c-b> <left>
 augroup myvimrc
   au!
   autocmd FileType mml nnoremap <leader>m :w<cr>:MmlMake<cr>
+
+  function! README()
+    call system('readcarpet ' . bufname('%') . ' | browser')
+  endfunction
+  autocmd FileType markdown command! README :call README()
 augroup END
 
 " Ctrl-P

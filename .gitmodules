@@ -28,3 +28,6 @@
 [submodule "janus/ag"]
 	path = janus/ag
 	url = git://github.com/rking/ag.vim.git
+[submodule "janus/rbenv"]
+	path = janus/rbenv
+	url = git://github.com/tpope/vim-rbenv.git

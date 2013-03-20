@@ -42,21 +42,6 @@ plugins=( \
   zsh-syntax-highlighting \
 )
 
-# Faster than the rbenv plugin...
-
-export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
-if command -v rbenv >/dev/null
-then
-  eval "$(rbenv init - --no-rehash zsh)"
-
-  if command -v daemonize >/dev/null
-  then
-    daemonize $HOME/.rbenv/bin/rbenv rehash
-  else
-    nohup rbenv rehash >/dev/null 1>&2 &
-  fi
-fi
-
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...

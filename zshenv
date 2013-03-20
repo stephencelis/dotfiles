@@ -1,27 +1,42 @@
-# Local.
+# Path
+
+# Local
 PATH="$HOME/.local/bin:$PATH"
-# Homebrew.
+# Homebrew
 PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 PATH="$PATH:/usr/local/share/python"
 PATH="$PATH:/usr/local/share/npm/bin"
-# Plan9.
+# Plan9
 PATH="$PATH:/usr/local/plan9/bin"
-# jsc.
+# jsc
 PATH="$PATH:/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources"
-# ActionScript.
+# ActionScript
 PATH="$PATH:/$HOME/Library/Developer/flex_sdk_4/bin"
 export PATH
 
-# MacVim.
+# MacVim
+
 EDITOR=$(command -v {~,}/Applications/MacVim.app/Contents/MacOS/Vim | head -1)
 EDITOR=${EDITOR:=vim}
 export EDITOR
 export VISUAL=$EDITOR
 alias vim=$EDITOR
 
-# Ruby 1.9.3-p194-perf
-#
-# https://gist.github.com/1688857
+# Ruby
+
+export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
+if command -v rbenv >/dev/null
+then
+  eval "$(rbenv init - --no-rehash zsh)"
+
+  if command -v daemonize >/dev/null
+  then
+    daemonize $HOME/.rbenv/bin/rbenv rehash
+  else
+    nohup rbenv rehash >/dev/null 1>&2 &
+  fi
+fi
+
 export RUBY_HEAP_MIN_SLOTS=1000000
 export RUBY_HEAP_SLOTS_INCREMENT=1000000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
