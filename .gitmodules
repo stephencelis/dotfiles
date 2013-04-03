@@ -31,3 +31,6 @@
 [submodule "janus/rbenv"]
 	path = janus/rbenv
 	url = git://github.com/tpope/vim-rbenv.git
+[submodule "janus/instant-markdown"]
+	path = janus/instant-markdown
+	url = git://github.com/suan/vim-instant-markdown.git

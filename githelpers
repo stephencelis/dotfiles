@@ -43,7 +43,7 @@ squash() {
 }
 
 fixup_or_squash() {
-  git commit -am "$1! $(git log -1 --format='%s' $@)"
+  git commit -m "$1! $(git log -1 --format='%s' $@ || echo $@)"
 }
 
 prune_merged() {
