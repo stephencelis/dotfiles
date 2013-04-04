@@ -39,6 +39,14 @@ augroup END
 "
 let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files --exclude-standard -co']
 
+" Dispatch
+"
+augroup dispatch
+  au!
+  autocmd BufNewFile,BufRead *_spec.rb compiler rspec
+  autocmd BufNewFile,BufRead *_spec.rb set makeprg=bundle\ exec\ rspec\ %
+augroup END
+
 " Git Gutter
 "
 highlight LineNr     ctermbg=236
@@ -47,13 +55,6 @@ highlight SignColumn ctermbg=237
 " Syntastic
 "
 let g:syntastic_ruby_checker = 'macruby'
-
-" Vroom
-"
-let g:vroom_use_bundle_exec = 0 " Rely on rbenv-bundler.
-let g:vroom_use_vimux = 1
-let g:vroom_spec_command = 'time  bin/rspec  --drb '
-let g:vroom_test_unit_command = 'time  bin/testrbl '
 
 " Zeus
 "

@@ -19,9 +19,6 @@
 [submodule "janus/tomorrow-theme"]
 	path = janus/tomorrow-theme
 	url = git://github.com/chriskempson/vim-tomorrow-theme.git
-[submodule "janus/vimux"]
-	path = janus/vimux
-	url = git://github.com/benmills/vimux.git
 [submodule "janus/gitgutter"]
 	path = janus/gitgutter
 	url = git://github.com/airblade/vim-gitgutter.git
@@ -34,3 +31,12 @@
 [submodule "janus/instant-markdown"]
 	path = janus/instant-markdown
 	url = git://github.com/suan/vim-instant-markdown.git
+[submodule "janus/dispatch"]
+	path = janus/dispatch
+	url = git://github.com/tpope/vim-dispatch.git
+[submodule "janus/tbone"]
+	path = janus/tbone
+	url = git://github.com/tpope/vim-tbone.git
+[submodule "janus/bundler"]
+	path = janus/bundler
+	url = git://github.com/tpope/vim-bundler.git
