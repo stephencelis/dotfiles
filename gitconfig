@@ -6,13 +6,15 @@
 	ci = commit -s -v
 	co = checkout
 	di = diff
-	ignore = update-index --assume-unchanged
 	st = status -s
-	h = "!source ~/.githelpers && show_git_head"
-	l = "!source ~/.githelpers && pretty_git_log"
-	fixup = "!source ~/.githelpers && fixup"
-	squash = "!source ~/.githelpers && squash"
-	prune-merged = "!source ~/.githelpers && prune_merged"
+  fixup = !sh -c 'git commit --fixup=$@' -
+  squash = !sh -c 'git commit --squash=$@' -
+	ignore = update-index --assume-unchanged
+	h = !source ~/.githelpers && show_git_head
+	l = !source ~/.githelpers && pretty_git_log
+	prune-merged = !source ~/.githelpers && prune_merged
+[branch]
+	autosetuprebase = always
 [color]
 	ui = auto
 [core]

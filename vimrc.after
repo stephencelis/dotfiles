@@ -45,6 +45,7 @@ augroup dispatch
   au!
   autocmd BufNewFile,BufRead *_spec.rb compiler rspec
   autocmd BufNewFile,BufRead *_spec.rb set makeprg=bundle\ exec\ rspec\ %
+  autocmd BufNewFile,BufRead *_spec.rb nnoremap <leader>r :Make<cr>
 augroup END
 
 " Git Gutter

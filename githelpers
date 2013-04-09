@@ -34,18 +34,6 @@ pretty_git_log() {
     less -FXRS
 }
 
-fixup() {
-  fixup_or_squash fixup
-}
-
-squash() {
-  fixup_or_squash squash
-}
-
-fixup_or_squash() {
-  git commit -m "$1! $(git log -1 --format='%s' $@ || echo $@)"
-}
-
 prune_merged() {
   # TODO: Test for origin/master vs. master instead.
   test -n "$1" && prune_merged_remotes $@ || prune_merged_local
