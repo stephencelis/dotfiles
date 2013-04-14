@@ -10,10 +10,6 @@ update: install
 	git submodule foreach git checkout master
 	cd $(PWD)/janus/powerline && git checkout develop
 	git submodule foreach git pull
-	# Homebrew
-	brew update
-	brew upgrade
-	brew cleanup
 	# Oh My Zsh
 	cd $(OH_MY_ZSH) && git pull
 	cd $(OH_MY_ZSH)/custom/plugins/zsh-history-substring-search && git pull
@@ -27,6 +23,10 @@ update: install
 			echo "cd $$plugin && git pull"; \
 			cd $$plugin && git pull; \
 		done
+	# Homebrew
+	brew update
+	brew upgrade
+	brew cleanup
 
 
 install: homebrew janus oh-my-zsh rbenv symlinks
