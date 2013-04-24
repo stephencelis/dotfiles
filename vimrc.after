@@ -53,10 +53,6 @@ augroup END
 highlight LineNr     ctermbg=236
 highlight SignColumn ctermbg=237
 
-" Syntastic
-"
-let g:syntastic_ruby_checker = 'macruby'
-
 " Zeus
 "
 function! Zeus()
