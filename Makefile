@@ -29,7 +29,7 @@ update: install
 	brew cleanup
 
 
-install: homebrew janus oh-my-zsh rbenv symlinks
+install: homebrew janus oh-my-zsh rbenv nave symlinks
 
 
 # Dotfiles
@@ -141,6 +141,15 @@ $(RBENV):
 	git clone -- git://github.com/sstephenson/rbenv.git $(RBENV)
 
 rbenv: $(RBENV_PLUGINS)
+
+
+# nave
+
+NAVE = $(HOME)/.nave
+$(NAVE):
+	git clone -- git://github.com/isaacs/nave.git $(NAVE)
+/usr/local/bin/nave: $(NAVE)
+nave: /usr/local/bin/nave
 
 
 .PHONY: update
