@@ -1,7 +1,6 @@
 
 MAKEFLAGS += --check-symlink-times
 BIN = /usr/local/bin
-RBENV_VERSION = system
 
 
 update: install
@@ -16,20 +15,13 @@ update: install
 	cd $(OH_MY_ZSH)/custom/plugins/zsh-syntax-highlighting && git pull
 	# Janus
 	cd $(HOME)/.vim && rake
-	# rbenv
-	cd $(RBENV) && git pull
-	@for plugin in $(RBENV_PLUGINS); \
-		do \
-			echo "cd $$plugin && git pull"; \
-			cd $$plugin && git pull; \
-		done
 	# Homebrew
 	brew update
 	brew upgrade
 	brew cleanup
 
 
-install: homebrew janus oh-my-zsh rbenv nave symlinks
+install: homebrew janus oh-my-zsh nave symlinks
 
 
 # Dotfiles
@@ -115,32 +107,6 @@ $(OH_MY_ZSH):
 	curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 
 oh-my-zsh: $(OH_MY_ZSH_PLUGINS)
-
-
-# rbenv
-
-RBENV = $(HOME)/.rbenv
-RBENV_PLUGINS = \
-	$(RBENV)/plugins/ruby-build \
-	$(RBENV)/plugins/rbenv-default-gems \
-	$(RBENV)/plugins/rbenv-gem-rehash \
-	$(RBENV)/plugins/rbenv-vars
-$(RBENV)/plugins/ruby-build: $(RBENV)
-	git clone -- git://github.com/sstephenson/ruby-build.git \
-		$(RBENV)/plugins/ruby-build
-$(RBENV)/plugins/rbenv-default-gems: $(RBENV)
-	git clone -- git://github.com/sstephenson/rbenv-default-gems.git \
-		$(RBENV)/plugins/rbenv-default-gems
-$(RBENV)/plugins/rbenv-gem-rehash: $(RBENV)
-	git clone -- git://github.com/sstephenson/rbenv-gem-rehash.git \
-		$(RBENV)/plugins/rbenv-gem-rehash
-$(RBENV)/plugins/rbenv-vars: $(RBENV)
-	git clone -- git://github.com/sstephenson/rbenv-vars.git \
-		$(RBENV)/plugins/rbenv-vars
-$(RBENV):
-	git clone -- git://github.com/sstephenson/rbenv.git $(RBENV)
-
-rbenv: $(RBENV_PLUGINS)
 
 
 # nave

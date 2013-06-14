@@ -25,17 +25,7 @@ alias vim=$EDITOR
 # Ruby
 
 export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
-if command -v rbenv >/dev/null
-then
-  eval "$(rbenv init - --no-rehash zsh)"
-
-  if command -v daemonize >/dev/null
-  then
-    daemonize $HOME/.rbenv/bin/rbenv rehash
-  else
-    nohup rbenv rehash >/dev/null 1>&2 &
-  fi
-fi
+command -v rbenv >/dev/null && eval "$(rbenv init - --no-rehash zsh)"
 
 export RUBY_HEAP_MIN_SLOTS=1000000
 export RUBY_HEAP_SLOTS_INCREMENT=1000000
