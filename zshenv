@@ -10,8 +10,6 @@ PATH="$PATH:/usr/local/share/npm/bin"
 PATH="$PATH:/usr/local/plan9/bin"
 # jsc
 PATH="$PATH:/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources"
-# ActionScript
-PATH="$PATH:/$HOME/Library/Developer/flex_sdk_4/bin"
 export PATH
 
 # MacVim
