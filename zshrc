@@ -32,10 +32,8 @@ DISABLE_AUTO_TITLE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=( \
   brew \
-  emoji-clock \
   gem \
   git \
-  # github \
   history-substring-search \
   redis-cli \
   stephencelis \
