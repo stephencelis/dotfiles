@@ -1,4 +1,2 @@
 ---
-BUNDLE_BIN: bin
 BUNDLE_PATH: vendor/bundle
-BUNDLE_LOCAL__CREPE: /Users/stephen/Documents/Code/crepe
