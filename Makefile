@@ -1,6 +1,7 @@
 
 MAKEFLAGS += --check-symlink-times
 BIN = /usr/local/bin
+SSL_CERT_FILE = $(shell brew --prefix)/share/ca-bundle.crt
 
 
 update: install
@@ -14,7 +15,7 @@ update: install
 	cd $(OH_MY_ZSH)/custom/plugins/zsh-history-substring-search && git pull
 	cd $(OH_MY_ZSH)/custom/plugins/zsh-syntax-highlighting && git pull
 	# Janus
-	cd $(HOME)/.vim && rake
+	cd $(HOME)/.vim && SSL_CERT_FILE=$(SSL_CERT_FILE) rake
 	# Homebrew
 	brew update
 	brew upgrade
