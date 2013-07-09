@@ -10,6 +10,8 @@ PATH="$PATH:/usr/local/share/npm/bin"
 PATH="$PATH:/usr/local/plan9/bin"
 # jsc
 PATH="$PATH:/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources"
+# Heroku
+PATH="$PATH:/usr/local/heroku/bin"
 export PATH
 
 # MacVim
