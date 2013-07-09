@@ -33,6 +33,9 @@ augroup myvimrc
     call system('readcarpet ' . bufname('%') . ' | browser')
   endfunction
   autocmd FileType markdown command! README :call README()
+
+  " CocoaPods
+  autocmd BufNewFile,BufRead Podfile,*.podspec set filetype=ruby
 augroup END
 
 " Ctrl-P
