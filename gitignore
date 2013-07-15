@@ -8,6 +8,7 @@ tmp/**/*
 
 # Xcode
 xcuserdata/
+xcshareddata/
 
 # Bundler
 .bundle
