@@ -1,10 +1,9 @@
 
 MAKEFLAGS += --check-symlink-times
 BIN = /usr/local/bin
-SSL_CERT_FILE = $(shell brew --prefix)/share/ca-bundle.crt
 
 
-update: install
+update: install $(SSL_CERT_FILE)
 	git pull --rebase || (git stash && git pull --rebase && git stash pop)
 	git submodule update --init
 	git submodule foreach git checkout master
@@ -117,6 +116,14 @@ $(NAVE):
 	git clone -- git://github.com/isaacs/nave.git $(NAVE)
 /usr/local/bin/nave: $(NAVE)
 nave: /usr/local/bin/nave
+
+
+# misc
+
+
+SSL_CERT_FILE = /usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
+$(SSL_CERT_FILE): homebrew
+	@brew install curl-ca-bundle
 
 
 .PHONY: update
