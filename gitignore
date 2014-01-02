@@ -8,9 +8,11 @@ tmp/**/*
 
 # Xcode
 xcuserdata/
-xcshareddata/
 
 # Bundler
 .bundle
-/bin/
+bin/*
+!bin/bundle
+!bin/rails
+!bin/rake
 vendor/bundle

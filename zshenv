@@ -27,8 +27,8 @@ alias vim=$EDITOR
 export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
 command -v rbenv >/dev/null && eval "$(rbenv init - --no-rehash zsh)"
 
-export RUBY_HEAP_MIN_SLOTS=1000000
-export RUBY_HEAP_SLOTS_INCREMENT=1000000
-export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
-export RUBY_GC_MALLOC_LIMIT=100000000
-export RUBY_HEAP_FREE_MIN=500000
+# export RUBY_CG_HEAP_MIN_SLOTS=1000000
+# export RUBY_HEAP_SLOTS_INCREMENT=1000000
+# export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
+# export RUBY_GC_MALLOC_LIMIT=100000000
+# export RUBY_HEAP_FREE_MIN=500000

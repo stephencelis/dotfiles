@@ -28,9 +28,6 @@
 [submodule "janus/rbenv"]
 	path = janus/rbenv
 	url = git://github.com/tpope/vim-rbenv.git
-[submodule "janus/instant-markdown"]
-	path = janus/instant-markdown
-	url = git://github.com/suan/vim-instant-markdown.git
 [submodule "janus/dispatch"]
 	path = janus/dispatch
 	url = git://github.com/tpope/vim-dispatch.git
@@ -40,3 +37,6 @@
 [submodule "janus/bundler"]
 	path = janus/bundler
 	url = git://github.com/tpope/vim-bundler.git
+[submodule "janus/jade"]
+	path = janus/jade
+	url = git://github.com/digitaltoad/vim-jade.git
