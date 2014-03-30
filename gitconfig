@@ -40,4 +40,4 @@
 [github]
 	user = stephencelis
 [ghi]
-	token = 9f8f2ca20e7bbc25f128c1faa10356f692a2dfbf
+	token = !security find-internet-password -a stephencelis -s github.com -l 'ghi token' -w
