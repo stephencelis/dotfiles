@@ -43,9 +43,6 @@
 [submodule "janus/vinegar"]
 	path = janus/vinegar
 	url = git://github.com/tpope/vim-vinegar.git
-[submodule "janus/github-issues"]
-	path = janus/github-issues
-	url = git://github.com/jaxbot/github-issues.vim.git
 [submodule "janus/neocomplete"]
 	path = janus/neocomplete
 	url = git://github.com/Shougo/neocomplete.vim.git

@@ -48,3 +48,5 @@ if command -v grc >/dev/null
 then
   source "$(brew --prefix)/etc/grc.bashrc"
 fi
+
+source /usr/local/opt/chruby/share/chruby/chruby.sh

@@ -7,9 +7,6 @@
 	co = checkout
 	di = diff
 	st = status -s
-  fixup = !sh -c 'git commit --fixup=$@' -
-  squash = !sh -c 'git commit --squash=$@' -
-	ignore = update-index --assume-unchanged
 	h = !source ~/.githelpers && show_git_head
 	l = !source ~/.githelpers && pretty_git_log
 	prune-merged = !source ~/.githelpers && prune_merged
@@ -39,5 +36,3 @@
 	autoupdate = true
 [github]
 	user = stephencelis
-[ghi]
-	token = !security find-internet-password -a stephencelis -s github.com -l 'ghi token' -w

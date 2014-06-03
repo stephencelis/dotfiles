@@ -14,14 +14,15 @@ update: install $(SSL_CERT_FILE)
 	cd $(OH_MY_ZSH)/custom/plugins/zsh-history-substring-search && git pull
 	cd $(OH_MY_ZSH)/custom/plugins/zsh-syntax-highlighting && git pull
 	# Janus
-	cd $(HOME)/.vim && SSL_CERT_FILE=$(SSL_CERT_FILE) rake
+	cd $(HOME)/.vim && rake
 	# Homebrew
 	brew update
 	brew upgrade
+	brew bundle
 	brew cleanup
 
 
-install: homebrew janus oh-my-zsh nave symlinks
+install: homebrew janus oh-my-zsh symlinks
 
 
 # Dotfiles
@@ -31,8 +32,6 @@ DOTFILES = \
 	githelpers \
 	gitignore \
 	irbrc \
-	jshintrc \
-	powconfig \
 	rspec \
 	screenrc \
 	tmux.conf \
@@ -65,8 +64,7 @@ symlinks: $(SYMLINKS)
 BREW = $(BIN)/brew
 $(BREW):
 	ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
-$(BIN)/ag: $(BREW)
-	$(BREW) install the_silver_searcher
+	brew bundle
 
 homebrew: $(BREW)
 
@@ -107,23 +105,6 @@ $(OH_MY_ZSH):
 	curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 
 oh-my-zsh: $(OH_MY_ZSH_PLUGINS)
-
-
-# nave
-
-NAVE = $(HOME)/.nave
-$(NAVE):
-	git clone -- git://github.com/isaacs/nave.git $(NAVE)
-/usr/local/bin/nave: $(NAVE)
-nave: /usr/local/bin/nave
-
-
-# misc
-
-
-SSL_CERT_FILE = /usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
-$(SSL_CERT_FILE): homebrew
-	@brew install curl-ca-bundle
 
 
 .PHONY: update
