@@ -33,6 +33,7 @@ DOTFILES = \
 	gitignore \
 	irbrc \
 	rspec \
+	ruby-version \
 	screenrc \
 	tmux.conf \
 	vimrc.after \

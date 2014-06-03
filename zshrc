@@ -49,4 +49,8 @@ then
   source "$(brew --prefix)/etc/grc.bashrc"
 fi
 
-source /usr/local/opt/chruby/share/chruby/chruby.sh
+if test -d /usr/local/opt/chruby
+then
+  source /usr/local/opt/chruby/share/chruby/chruby.sh
+  source /usr/local/opt/chruby/share/chruby/auto.sh
+fi
