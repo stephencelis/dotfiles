@@ -1,3 +1,5 @@
+install zsh
+
 # Ruby
 install chruby
 install ruby-install
