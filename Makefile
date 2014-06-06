@@ -103,7 +103,7 @@ $(OH_MY_ZSH)/custom/plugins/stephencelis: $(OH_MY_ZSH)
 	@ln -Fhfsv $(PWD)/oh-my-zsh/custom/plugins/stephencelis/ \
 		$(OH_MY_ZSH)/custom/plugins/stephencelis
 $(OH_MY_ZSH):
-	curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+	curl -L http://install.ohmyz.sh | sh
 
 oh-my-zsh: $(OH_MY_ZSH_PLUGINS)
 
