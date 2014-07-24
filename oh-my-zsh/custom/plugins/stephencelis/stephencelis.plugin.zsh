@@ -1,4 +1,5 @@
 unsetopt correct_all
+setopt interactivecomments
 setopt no_hist_verify
 
 export PATH="$(dirname $0)/bin:$PATH"
