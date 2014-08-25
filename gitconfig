@@ -15,18 +15,22 @@
 [color]
 	ui = auto
 [core]
+	commentChar = auto
 	excludesfile = ~/.gitignore
 [credential]
 	helper = osxkeychain
 [diff]
 	renames = copies
+[log]
+	decorate = auto
 [merge]
 	conflictstyle = diff3
 	tool = vimdiff
 [pager]
+	blame = less -S
+	diff = diff-highlight | less
 	log = diff-highlight | less
 	show = diff-highlight | less
-	diff = diff-highlight | less
 [push]
 	default = current
 [rebase]
