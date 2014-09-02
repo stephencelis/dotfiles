@@ -46,3 +46,6 @@
 [submodule "janus/neocomplete"]
 	path = janus/neocomplete
 	url = git://github.com/Shougo/neocomplete.vim.git
+[submodule "janus/swift"]
+	path = janus/swift
+	url = git://github.com/toyamarinyon/vim-swift.git
