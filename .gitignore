@@ -1,0 +1,11 @@
+config/fish/fishd.*
+config/fish/fish_history
+config/fish/fish_read_history
+config/fish/generated_completions
+
+config/hub
+
+vim/.netrwhist
+vim/plugged
+vim/tmp/*
+!vim/tmp/.gitkeep

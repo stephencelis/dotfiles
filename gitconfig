@@ -1,0 +1,45 @@
+[user]
+	name = Stephen Celis
+	email = stephen@stephencelis.com
+[alias]
+	br = branch
+	ci = commit -s -v
+	co = checkout
+	di = diff
+	st = status -s
+[branch]
+	autosetuprebase = always
+[color]
+	ui = auto
+[core]
+	excludesfile = ~/.gitignore
+[credential]
+	helper = osxkeychain
+[diff]
+	renames = copies
+[log]
+	decorate = auto
+[merge]
+	conflictstyle = diff3
+	tool = vimdiff
+[pager]
+	blame = less -S
+	diff = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
+	log = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
+	show = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
+[push]
+	default = current
+[pull]
+	rebase = true
+[rebase]
+	autosquash = true
+	autostash = true
+[rerere]
+	autoupdate = true
+	enabled = true
+[github]
+	user = stephencelis
+[filter "hawser"]
+	clean = git hawser clean %f
+	required = true
+	smudge = git hawser smudge %f

@@ -1,0 +1,7 @@
+*~
+*.bak
+*.log
+*.pid
+*.swp
+.DS_Store
+tmp/**/*
