@@ -9,6 +9,7 @@ symlinks = \
 		   vimrc \
 
 formulas = \
+		   caskroom/cask/brew-cask \
 		   chisel \
 		   elasticsearch \
 		   elixir \
@@ -40,10 +41,15 @@ install: brew ln ruby
 homebrew_root = /usr/local
 cellar = $(homebrew_root)/Cellar
 taps = $(homebrew_root)/Library/Taps
+caskroom = /opt/homebrew-cask/Caskroom
+
 ruby_version := $(shell cat $(PWD)/ruby-version)
 
-prefixed_formulas = $(addprefix $(cellar)/,$(formulas))
-brew: $(prefixed_formulas) $(macvim)
+anybar = $(caskroom)/anybar
+macvim = $(cellar)/macvim
+
+prefixed_formulas = $(addprefix $(cellar)/,$(notdir $(formulas)))
+brew: $(prefixed_formulas) $(anybar) $(macvim)
 
 homebrew = $(homebrew_root)/bin/brew
 $(homebrew):
@@ -53,7 +59,9 @@ $(prefixed_formulas): $(homebrew)
 	brew install $(notdir $@)
 	@touch $@
 
-macvim = $(cellar)/macvim
+$(anybar): $(cellar)/brew-cask
+	brew cask install anybar
+
 $(macvim): $(homebrew)
 	brew install macvim \
 		--override-system-vim \
