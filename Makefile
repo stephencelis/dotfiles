@@ -22,6 +22,7 @@ formulas = \
 		   mercurial \
 		   mysql \
 		   node \
+		   pandoc \
 		   postgres \
 		   redis \
 		   ruby-install \
