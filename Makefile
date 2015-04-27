@@ -32,7 +32,7 @@ formulas = \
 
 update: install
 	brew update
-	brew upgrade
+	brew upgrade --all
 	brew cleanup
 
 install: brew ln ruby
