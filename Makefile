@@ -28,6 +28,7 @@ formulas = \
 		   ruby-install \
 		   rust \
 		   the_silver_searcher \
+		   trash \
 		   tree \
 
 update: install

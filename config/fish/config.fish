@@ -13,6 +13,7 @@ set -x DEVELOPER ~/Developer
 
 # aliases
 alias ag 'ag --smart-case'
+alias rm 'trash'
 
 # ruby
 if test -f /usr/local/share/fry/fry.fish
