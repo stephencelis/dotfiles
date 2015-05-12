@@ -5,7 +5,6 @@ symlinks = \
 		   lldbinit \
 		   local \
 		   ruby-version \
-		   vim \
 		   vimrc \
 
 formulas = \
@@ -37,7 +36,7 @@ update: | install
 	brew cleanup
 	vim +PlugUpgrade +PlugInstall +PlugUpdate +PlugClean +quitall
 
-install: | brew ln ruby
+install: | brew ln ruby vim_plug
 
 # brew
 
@@ -90,6 +89,15 @@ ruby: | $(ruby)
 
 $(ruby): | $(HOME)/.ruby-version $(cellar)/ruby-install
 	ruby-install ruby $(ruby_version)
+
+# vim
+
+vim_plug = $(HOME)/.vim/autoload/plug.vim
+vim_plug: | $(vim_plug)
+
+$(vim_plug):
+	curl -fLo $(vim_plug) --create-dirs \
+		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # make
 
