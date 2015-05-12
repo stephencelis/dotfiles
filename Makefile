@@ -31,13 +31,13 @@ formulas = \
 		   trash \
 		   tree \
 
-update: install
+update: | install
 	brew update
 	brew upgrade --all
 	brew cleanup
 	vim +PlugUpgrade +PlugInstall +PlugUpdate +PlugClean +quitall
 
-install: brew ln ruby
+install: | brew ln ruby
 
 # brew
 
@@ -52,36 +52,33 @@ anybar = $(caskroom)/anybar
 macvim = $(cellar)/macvim
 
 prefixed_formulas = $(addprefix $(cellar)/,$(notdir $(formulas)))
-brew: $(prefixed_formulas) $(anybar) $(macvim)
+brew: | $(prefixed_formulas) $(anybar) $(macvim)
 
 homebrew = $(homebrew_root)/bin/brew
 $(homebrew):
 	@ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-$(prefixed_formulas): $(homebrew)
+$(prefixed_formulas): | $(homebrew)
 	brew install $(notdir $@)
-	@touch $@
 
-$(anybar): $(cellar)/brew-cask
+$(anybar): | $(cellar)/brew-cask
 	brew cask install anybar
 
-$(macvim): $(homebrew)
+$(macvim): | $(homebrew)
 	brew install macvim \
 		--override-system-vim \
 		--with-lua \
-	@touch $(macvim)
 
 homebrew_fry = $(taps)/igas/homebrew-fry
 $(homebrew_fry):
 	brew tap igas/fry
-	@touch $(homebrew_fry)
 
-$(cellar)/fry: $(homebrew_fry)
+$(cellar)/fry: | $(homebrew_fry)
 
 # ln
 
 prefixed_symlinks = $(addprefix $(HOME)/.,$(symlinks))
-ln: $(prefixed_symlinks)
+ln: | $(prefixed_symlinks)
 
 $(prefixed_symlinks):
 	@ln -Fsv $(PWD)/$(patsubst .%,%,$(notdir $@)) $@
@@ -89,9 +86,9 @@ $(prefixed_symlinks):
 # ruby
 
 ruby = $(HOME)/.rubies/ruby-$(ruby_version)
-ruby: $(ruby)
+ruby: | $(ruby)
 
-$(ruby): $(HOME)/.ruby-version $(cellar)/ruby-install
+$(ruby): | $(HOME)/.ruby-version $(cellar)/ruby-install
 	ruby-install ruby $(ruby_version)
 
 # make
