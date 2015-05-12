@@ -35,6 +35,7 @@ update: install
 	brew update
 	brew upgrade --all
 	brew cleanup
+	vim +PlugUpgrade +PlugInstall +PlugUpdate +PlugClean +quitall
 
 install: brew ln ruby
 
