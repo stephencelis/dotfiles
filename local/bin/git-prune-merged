@@ -1,18 +1,17 @@
 #!/bin/sh
 
-prune_merged_local() {
-    git branch --list --merged |
-        grep --invert-match --extended-regexp '\*|master' |
-        xargs -n 1 git branch --delete
-}
+remote=${1:-origin}
 
-prune_merged_remotes() {
-    git fetch origin
-    git remote prune origin
-    git branch --list --remote --merged $1 |
-        grep --invert-match --extended-regexp "HEAD|master|$1" |
-        sed 's/ *origin\///' |
-        xargs -p -I branch git push origin :branch
-}
+# Prune all local branches that have been merged into master.
+git branch --list --merged |
+  grep --invert-match --extended-regexp '\*|master' |
+  xargs -n 1 git branch --delete &&
 
-test -n "$1" && prune_merged_remotes $@ || prune_merged_local
+# Prune all remote branches that have been merged into the specified remote's
+# master. Defaults to `origin`.
+git fetch $remote
+git remote prune $remote
+git branch --list --remote --merged $remote/master |
+  grep --invert-match --extended-regexp 'HEAD|master' | grep $remote |
+  sed "s/ *$remote\\///" |
+  xargs -p -I branch git push $remote :branch
