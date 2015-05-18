@@ -8,7 +8,6 @@ symlinks = \
 		   vimrc \
 
 formulas = \
-		   caskroom/cask/brew-cask \
 		   chisel \
 		   elasticsearch \
 		   elixir \
@@ -22,7 +21,7 @@ formulas = \
 		   mysql \
 		   node \
 		   pandoc \
-		   postgres \
+		   postgresql \
 		   redis \
 		   ruby-install \
 		   rust \
@@ -51,16 +50,26 @@ anybar = $(caskroom)/anybar
 macvim = $(cellar)/macvim
 
 prefixed_formulas = $(addprefix $(cellar)/,$(notdir $(formulas)))
-brew: | $(prefixed_formulas) $(anybar) $(macvim)
+brew: | $(brew_cask) $(prefixed_formulas) $(anybar) $(macvim)
 
 homebrew = $(homebrew_root)/bin/brew
 $(homebrew):
-	@ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	@ruby -e "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+brew_cask = $(cellar)/brew-cask
+$(brew_cask): | $(homebrew)
+	brew install Caskroom/cask/brew-cask
 
 $(prefixed_formulas): | $(homebrew)
 	brew install $(notdir $@)
 
-$(anybar): | $(cellar)/brew-cask
+java = $(caskroom)/java
+$(java): $(brew_cask)
+	brew cask install java
+
+$(cellar)/elasticsearch: | $(java)
+
+$(anybar): | $(brew_cask)
 	brew cask install anybar
 
 $(macvim): | $(homebrew)
@@ -72,7 +81,8 @@ homebrew_fry = $(taps)/igas/homebrew-fry
 $(homebrew_fry):
 	brew tap igas/fry
 
-$(cellar)/fry: | $(homebrew_fry)
+fry = $(cellar)/fry
+$(fry): | $(homebrew_fry)
 
 # ln
 
@@ -87,8 +97,9 @@ $(prefixed_symlinks):
 ruby = $(HOME)/.rubies/ruby-$(ruby_version)
 ruby: | $(ruby)
 
-$(ruby): | $(HOME)/.ruby-version $(cellar)/ruby-install
+$(ruby): | $(fry) $(HOME)/.ruby-version $(cellar)/ruby-install
 	ruby-install ruby $(ruby_version)
+	fry config auto on
 
 # vim
 
