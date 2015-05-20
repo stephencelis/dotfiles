@@ -14,6 +14,7 @@ formulas = \
 		   fish \
 		   fry \
 		   ghc \
+		   git \
 		   go \
 		   hub \
 		   lua \
