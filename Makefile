@@ -132,4 +132,4 @@ $(vim_plug):
 
 # make
 
-.PHONY: update
+.PHONY: update clean
