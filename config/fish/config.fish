@@ -3,6 +3,7 @@ set -e fish_greeting
 
 # universal
 set -x PATH $HOME/.local/bin $PATH
+set -x PATH /opt/vagrant/bin $PATH
 set -x EDITOR vim
 set -x VISUAL $EDITOR
 
