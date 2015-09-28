@@ -2,3 +2,4 @@ config
 !config/fish/completions
 !config/fish/config.fish
 !config/fish/functions
+local/share
