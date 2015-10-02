@@ -111,7 +111,7 @@ ruby: | $(ruby) $(bundler) $(cocoapods)
 
 $(ruby): | $(fry) $(HOME)/.ruby-version $(cellar)/ruby-install
 	ruby-install ruby $(ruby_version)
-	fry config auto on
+	fish --command 'fry config auto on'
 
 gem = $(ruby)/bin/gem
 
