@@ -70,7 +70,7 @@ $(prefixed_formulas): | $(homebrew)
 	brew install $(notdir $@)
 
 java = $(caskroom)/java
-$(java): $(brew_cask)
+$(java): | $(brew_cask)
 	brew cask install java
 
 $(cellar)/elasticsearch: | $(java)
