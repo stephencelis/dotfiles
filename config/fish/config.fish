@@ -17,7 +17,10 @@ end
 
 # aliases
 alias ag 'ag --smart-case'
-alias rm 'trash'
+
+if type -q trash
+    alias rm 'trash'
+end
 
 # ruby
 if test -f /usr/local/share/fry/fry.fish
