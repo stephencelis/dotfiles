@@ -22,6 +22,10 @@ if type -q trash
     alias rm 'trash'
 end
 
+# go
+set -x GOPATH $DEVELOPER/_go
+set -x PATH $GOROOT/bin $PATH
+
 # ruby
 if test -f /usr/local/share/fry/fry.fish
     source /usr/local/share/fry/fry.fish
