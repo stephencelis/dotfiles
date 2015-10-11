@@ -90,6 +90,8 @@ $(homebrew_fry):
 fry = $(cellar)/fry
 $(fry): | $(homebrew_fry)
 
+$(HOME)/.lldbinit: | $(cellar)/chisel
+
 # ln
 
 prefixed_symlinks = $(addprefix $(HOME)/.,$(symlinks))
