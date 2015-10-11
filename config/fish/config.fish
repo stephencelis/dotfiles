@@ -8,9 +8,9 @@ set -x VISUAL $EDITOR
 
 set -x __fish_git_prompt_show_informative_status 1
 
-# local
 set -x DEVELOPER ~/Developer
 
+# local
 if test -f $HOME/.config/fish/local.fish
     source $HOME/.config/fish/local.fish
 end
