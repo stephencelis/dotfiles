@@ -48,6 +48,8 @@ colorscheme Tomorrow-Night-Eighties
 
 syntax enable filetype plugin indent on
 
+set lazyredraw
+
 " whitespace
 
 set tabstop=4 shiftwidth=4 expandtab
@@ -71,13 +73,16 @@ highlight ColorColumn ctermbg=235
 set scrolloff=3
 set showcmd
 
+" folding
+set foldmethod=syntax
+set foldlevelstart=3
+
 " completion
 set wildmenu wildmode=list:longest,full
 
+" remember
 set undodir=~/.vim/tmp undofile
-
-set backupdir^=~/.vim/tmp
-set directory^=~/.vim/tmp
+set backup backupdir^=~/.vim/tmp directory^=~/.vim/tmp
 
 " statusline
 set laststatus=2
