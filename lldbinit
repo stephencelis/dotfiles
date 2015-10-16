@@ -1,5 +1,7 @@
+# chisel - https://github.com/facebook/chisel
 command script import /usr/local/opt/chisel/libexec/fblldb.py
 
+# http://furbo.org/2015/05/11/an-import-ant-change-in-xcode/
 command alias foundation expr @import Foundation
 command alias cocoa expr @import Cocoa
 command alias uikit expr @import UIKit
