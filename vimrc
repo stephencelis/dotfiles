@@ -81,8 +81,9 @@ set foldlevelstart=3
 set wildmenu wildmode=list:longest,full
 
 " remember
-set undodir=~/.vim/tmp undofile
-set backup backupdir^=~/.vim/tmp directory^=~/.vim/tmp
+set undofile undodir=~/.vim/tmp
+set backup backupdir^=~/.vim/tmp
+set directory^=~/.vim/tmp
 
 " statusline
 set laststatus=2

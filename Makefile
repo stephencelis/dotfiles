@@ -32,7 +32,7 @@ formulas = \
 
 default: | update clean
 
-install: | brew ln ruby vim_plug
+install: | brew ln ruby vim
 
 update: | install
 	brew update
@@ -124,6 +124,14 @@ $(cocoapods): | $(ruby)
 	$(gem) install cocoapods
 
 # vim
+
+vim: | vim_tmp vim_plug
+
+vim_tmp = $(HOME)/.vim/tmp
+vim_tmp: | $(vim_tmp)
+
+$(vim_tmp):
+	mkdir -p $(vim_tmp)
 
 vim_plug = $(HOME)/.vim/autoload/plug.vim
 vim_plug: | $(vim_plug)
