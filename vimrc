@@ -27,6 +27,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/syntastic'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sleuth'
@@ -75,7 +76,7 @@ set showcmd
 
 " folding
 set foldmethod=syntax
-set foldlevelstart=3
+set foldlevelstart=7
 
 " completion
 set wildmenu wildmode=list:longest,full
