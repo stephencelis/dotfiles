@@ -97,9 +97,6 @@ if !exists('g:airline_symbols')
 endif
 let g:airline_symbols.branch = '⎇'
 
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_min_count = 2
-
 " mappings
 
 " upper/lower word
@@ -138,3 +135,5 @@ autocmd FileType ruby set tabstop=2 shiftwidth=2
 " see :help last-position-jump
 autocmd BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal! g`\"" | endif
+
+set mouse=a
