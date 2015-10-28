@@ -74,10 +74,6 @@ highlight ColorColumn ctermbg=235
 set scrolloff=3
 set showcmd
 
-" folding
-set foldmethod=syntax
-set foldlevelstart=7
-
 " completion
 set wildmenu wildmode=list:longest,full
 
