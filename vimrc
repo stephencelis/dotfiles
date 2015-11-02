@@ -35,10 +35,11 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 
 " snippets
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
+Plug 'justinj/vim-react-snippets'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
 
 call plug#end()
 
