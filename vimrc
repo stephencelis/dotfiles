@@ -135,6 +135,8 @@ map <leader>ev :vsp %%
 map <leader>et :tabe %%
 
 autocmd FileType ruby set tabstop=2 shiftwidth=2
+autocmd FileType javascript set tabstop=2 shiftwidth=2
+autocmd BufNewFile,BufRead .eslintrc set filetype=json
 
 " Remember last location in file, but not for commit messages.
 " see :help last-position-jump
