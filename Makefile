@@ -17,6 +17,7 @@ formulae = \
 		   git \
 		   go \
 		   hub \
+		   io \
 		   lua \
 		   mercurial \
 		   mysql \
