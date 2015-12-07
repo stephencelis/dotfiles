@@ -138,6 +138,9 @@ autocmd FileType ruby set tabstop=2 shiftwidth=2
 autocmd FileType javascript set tabstop=2 shiftwidth=2
 autocmd BufNewFile,BufRead .eslintrc set filetype=json
 
+nmap <leader>g :GitGutterToggle<cr>
+nmap <leader>s :SyntasticToggleMode<cr>
+
 " Remember last location in file, but not for commit messages.
 " see :help last-position-jump
 autocmd BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
