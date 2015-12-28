@@ -29,7 +29,8 @@ set -x PATH /Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin \
 
 # go
 set -x GOPATH $DEVELOPER/_go
-set -x PATH $GOROOT/bin $PATH
+set -x PATH /usr/local/opt/go/libexec/bin $PATH
+set -x PATH $GOPATH/bin $PATH
 
 # ruby
 if test -f /usr/local/share/fry/fry.fish
