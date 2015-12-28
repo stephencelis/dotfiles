@@ -22,6 +22,11 @@ if type -q trash
     alias rm 'trash'
 end
 
+# swift
+set -x PATH /Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin \
+    $PATH
+
+
 # go
 set -x GOPATH $DEVELOPER/_go
 set -x PATH $GOROOT/bin $PATH
