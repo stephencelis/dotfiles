@@ -9,10 +9,10 @@ symlinks = \
 
 formulae = \
 		   chisel \
-		   elasticsearch \
+		   cmake \
 		   elixir \
+		   elm \
 		   fish \
-		   fry \
 		   ghc \
 		   git \
 		   go \
@@ -20,26 +20,21 @@ formulae = \
 		   io \
 		   lua \
 		   mercurial \
-		   mysql \
-		   node \
+		   ninja \
 		   pandoc \
 		   postgresql \
+		   rbenv \
 		   redis \
-		   ruby-install \
+		   ruby-build \
 		   rust \
 		   the_silver_searcher \
+		   tig \
 		   trash \
 		   tree \
 
-node_modules = \
-			   babel-cli \
-			   babel-eslint \
-			   eslint \
-			   eslint-plugin-react \
-
 default: | update clean
 
-install: | brew ln node ruby vim
+install: | brew ln ruby vim
 
 update: | install
 	brew update
@@ -95,13 +90,6 @@ $(cellar)/macvim: | $(homebrew)
 $(macvim): | $(cellar)/macvim
 	brew linkapps macvim
 
-homebrew_fry := $(taps)/igas/homebrew-fry
-$(homebrew_fry):
-	brew tap igas/fry
-
-fry := $(cellar)/fry
-$(fry): | $(homebrew_fry)
-
 $(HOME)/.lldbinit: | $(cellar)/chisel
 
 # ln
@@ -112,31 +100,19 @@ ln: | $(prefixed_symlinks)
 $(prefixed_symlinks):
 	@ln -Fsv $(PWD)/$(patsubst .%,%,$(notdir $@)) $@
 
-# node
-
-node := $(cellar)/node
-node_modules_root = $(shell npm root --global 2>/dev/null)
-
-prefixed_node_modules = $(addprefix $(node_modules_root)/,$(node_modules))
-node: | $(node) $(prefixed_node_modules)
-
-$(prefixed_node_modules):
-	npm install --global $(notdir $@)
-
 # ruby
 
 ruby_version := $(shell cat $(PWD)/ruby-version)
 
-ruby := $(HOME)/.rubies/ruby-$(ruby_version)
+ruby := $(HOME)/.rbenv/versions/$(ruby_version)
 
 bundler := $(ruby)/bin/bundle
 cocoapods := $(ruby)/bin/pod
 
 ruby: | $(ruby) $(bundler) $(cocoapods)
 
-$(ruby): | $(fry) $(HOME)/.ruby-version $(cellar)/ruby-install
-	ruby-install ruby $(ruby_version)
-	fish --command 'fry config auto on'
+$(ruby): | $(HOME)/.ruby-version $(cellar)/rbenv $(cellar)/ruby-build
+	rbenv install $(ruby_version)
 
 gem := $(ruby)/bin/gem
 

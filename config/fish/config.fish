@@ -34,8 +34,8 @@ set -x PATH /usr/local/opt/go/libexec/bin $PATH
 set -x PATH $GOPATH/bin $PATH
 
 # ruby
-if test -f /usr/local/share/fry/fry.fish
-    source /usr/local/share/fry/fry.fish
+if test -d ~/.rbenv
+    source (rbenv init - | psub)
 end
 
 # vagrant
