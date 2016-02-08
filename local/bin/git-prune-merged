@@ -11,7 +11,16 @@ git branch --list --merged |
 # master. Defaults to `origin`.
 git fetch $remote
 git remote prune $remote
-git branch --list --remote --merged $remote/master |
+branches=`git branch --list --remote --merged $remote/master |
   grep --invert-match --extended-regexp 'HEAD|master' | grep $remote |
-  sed "s/ *$remote\\///" |
-  xargs -p -I branch git push $remote :branch
+  sed "s/ *$remote\\///"`
+
+for branch in $branches
+do
+  git show --no-patch $remote/$branch
+  echo
+  printf "git push $remote :$branch?..."
+  read -n1 del
+  echo
+  test "$del" = "y" && git push $remote :$branch
+done
