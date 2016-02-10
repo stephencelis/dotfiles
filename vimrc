@@ -67,8 +67,7 @@ set list listchars=tab:▸\ ,trail:·,extends:→,precedes:←
 set hlsearch incsearch ignorecase smartcase
 nnoremap <cr> :nohlsearch<cr><cr>
 
-let g:ctrlp_user_command =
-    \['.git/', 'cd %s && git ls-files --exclude-standard -co']
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard']
 
 " context
 set cursorline

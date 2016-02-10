@@ -5,6 +5,7 @@ symlinks = \
 		   lldbinit \
 		   local \
 		   ruby-version \
+		   tmux.conf \
 		   vimrc \
 
 formulae = \
