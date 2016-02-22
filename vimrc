@@ -128,6 +128,8 @@ cnoremap <esc>f <s-right>
 cnoremap <c-f> <right>
 cnoremap <c-b> <left>
 
+map <leader>r :!clear;make<cr>
+
 " http://vimcasts.org/episodes/the-edit-command/
 cnoremap %% <c-r>=fnameescape(expand('%:h')).'/'<cr>
 map <leader>ew :e %%
