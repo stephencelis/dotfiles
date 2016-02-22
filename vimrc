@@ -56,7 +56,7 @@ set lazyredraw
 
 " whitespace
 
-set tabstop=4 shiftwidth=4 expandtab
+set tabstop=2 shiftwidth=2 expandtab
 set autoindent smartindent
 set nowrap
 set backspace=indent,eol,start
@@ -135,8 +135,6 @@ map <leader>es :sp %%
 map <leader>ev :vsp %%
 map <leader>et :tabe %%
 
-autocmd FileType ruby set tabstop=2 shiftwidth=2
-autocmd FileType javascript set tabstop=2 shiftwidth=2
 autocmd BufNewFile,BufRead .eslintrc set filetype=json
 
 nmap <leader>g :GitGutterToggle<cr>
