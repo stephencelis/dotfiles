@@ -17,7 +17,7 @@ if test -f $HOME/.config/fish/local.fish
 end
 
 # aliases
-alias ag 'ag --smart-case'
+alias gg 'git grep'
 
 if type -q trash
     alias rm 'trash'

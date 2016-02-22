@@ -17,8 +17,10 @@ formulae = \
 		   ghc \
 		   git \
 		   go \
+		   htop \
 		   hub \
 		   io \
+		   kotlin \
 		   lua \
 		   mercurial \
 		   ninja \
@@ -28,7 +30,6 @@ formulae = \
 		   redis \
 		   ruby-build \
 		   rust \
-		   the_silver_searcher \
 		   tig \
 		   trash \
 		   tree \

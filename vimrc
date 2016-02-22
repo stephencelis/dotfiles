@@ -26,9 +26,9 @@ Plug 'bling/vim-airline'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'ervandew/supertab'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'rking/ag.vim'
 Plug 'scrooloose/syntastic'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'tjennings/git-grep-vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
@@ -148,3 +148,7 @@ autocmd BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"")
     \| exe "normal! g`\"" | endif
 
 set mouse=a
+
+" GitGrep.vim
+
+map <leader>f :GitGrep<space>""<space><left><left>
