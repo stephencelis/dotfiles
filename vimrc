@@ -13,16 +13,17 @@ Plug 'keith/swift.vim'
 Plug 'lambdatoast/elm.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'pangloss/vim-javascript'
+Plug 'rhysd/vim-crystal'
 Plug 'skwp/vim-rspec'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
 Plug 'airblade/vim-gitgutter'
+Plug 'rust-lang/rust.vim'
 
 Plug 'ap/vim-css-color'
 Plug 'bogado/file-line'
-Plug 'bling/vim-airline'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'ervandew/supertab'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -35,6 +36,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " snippets
 Plug 'garbas/vim-snipmate'
@@ -94,6 +97,7 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 let g:airline_symbols.branch = '⎇'
+let g:airline_theme = 'base16'
 
 " syntastic
 let g:syntastic_always_populate_loc_list = 1
@@ -139,9 +143,6 @@ map <leader>et :tabe %%
 
 autocmd BufNewFile,BufRead .eslintrc set filetype=json
 
-nmap <leader>g :GitGutterToggle<cr>
-nmap <leader>s :SyntasticToggleMode<cr>
-
 " Remember last location in file, but not for commit messages.
 " see :help last-position-jump
 autocmd BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
@@ -152,3 +153,12 @@ set mouse=a
 " GitGrep.vim
 
 map <leader>f :GitGrep<space>""<space><left><left>
+
+" GitGutter.vim
+
+let g:gitgutter_enabled = 0
+nmap <leader>g :GitGutterToggle<cr>
+
+" Syntastic
+
+nmap <leader>s :SyntasticToggleMode<cr>
