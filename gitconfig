@@ -11,17 +11,44 @@
 	autosetuprebase = always
 [color]
 	ui = auto
+; [commit]
+; 	gpgsign = true
 [core]
 	excludesfile = ~/.gitignore
 [credential]
 	helper = osxkeychain
 [diff]
+	compactionHeuristic = true
 	renames = copies
+	tool = Kaleidoscope
+[difftool]
+	prompt = false
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[filter "hawser"]
+	clean = git hawser clean %f
+	required = true
+	smudge = git hawser smudge %f
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[ghi]
+	token = !security find-internet-password -a stephencelis -s github.com -l 'ghi token' -w
+[github]
+	user = stephencelis
+[interactive]
+	diffFilter = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight
 [log]
 	decorate = auto
 [merge]
 	conflictstyle = diff3
-	tool = vimdiff
+	tool = Kaleidoscope
+[mergetool]
+	prompt = false
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
 [pager]
 	blame = less -S
 	diff = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
@@ -37,13 +64,5 @@
 [rerere]
 	autoupdate = true
 	enabled = true
-[github]
-	user = stephencelis
-[filter "hawser"]
-	clean = git hawser clean %f
-	required = true
-	smudge = git hawser smudge %f
-[filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-	required = true
+[submodule]
+	fetchJobs = 4

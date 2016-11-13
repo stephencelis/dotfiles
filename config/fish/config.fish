@@ -17,6 +17,8 @@ if test -f $HOME/.config/fish/local.fish
 end
 
 # aliases
+alias f 'find * -type f | fzf | xargs'
+alias be 'bundle exec'
 alias gg 'git grep'
 
 if type -q trash
@@ -24,19 +26,35 @@ if type -q trash
 end
 
 # swift
-set -x PATH /Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin \
-    $PATH
+test -d /Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin
+and set -x PATH \
+    /Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin $PATH
 
+# ghc
+test -d $HOME/.cabal/bin
+and set -x PATH $HOME/.cabal/bin/ $PATH
 
 # go
 set -x GOPATH $DEVELOPER/_go
-set -x PATH /usr/local/opt/go/libexec/bin $PATH
-set -x PATH $GOPATH/bin $PATH
+test -d /usr/local/opt/go/libexec/bin
+and set -x PATH /usr/local/opt/go/libexec/bin $PATH
+test -d $GOPATH/bin
+and set -x PATH $GOPATH/bin $PATH
+
+# homebrew
+set -x HOMEBREW_NO_ANALYTICS 1
 
 # ruby
-if test -d ~/.rbenv
-    source (rbenv init - | psub)
-end
+test -d $HOME/.rbenv
+and source (rbenv init - | psub)
+
+# test -d $HOME/.psvm/current/bin
+# and set -x PATH $HOME/.psvm/current/bin $PATH
 
 # vagrant
-set -x PATH /opt/vagrant/bin $PATH
+test -d /opt/vagrant/bin
+and set -x PATH /opt/vagrant/bin $PATH
+
+# opam
+source $HOME/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
+eval (opam config env)

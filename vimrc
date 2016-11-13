@@ -10,8 +10,11 @@ Plug 'elixir-lang/vim-elixir'
 Plug 'elzr/vim-json'
 Plug 'fatih/vim-go'
 Plug 'keith/swift.vim'
-Plug 'lambdatoast/elm.vim'
+Plug 'ElmCast/elm-vim'
+" Plug 'lambdatoast/elm.vim'
+Plug 'leafgarland/typescript-vim'
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'neovimhaskell/haskell-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'rhysd/vim-crystal'
 Plug 'skwp/vim-rspec'
@@ -19,9 +22,9 @@ Plug 'tpope/vim-git'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
-Plug 'airblade/vim-gitgutter'
 Plug 'rust-lang/rust.vim'
 
+Plug 'airblade/vim-gitgutter'
 Plug 'ap/vim-css-color'
 Plug 'bogado/file-line'
 Plug 'bronson/vim-trailing-whitespace'
@@ -73,9 +76,9 @@ nnoremap <cr> :nohlsearch<cr><cr>
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard']
 
 " context
-set cursorline
+" set cursorline
 set colorcolumn=80
-highlight ColorColumn ctermbg=235
+" highlight ColorColumn ctermbg=235
 set scrolloff=3
 set showcmd
 
@@ -162,3 +165,7 @@ nmap <leader>g :GitGutterToggle<cr>
 " Syntastic
 
 nmap <leader>s :SyntasticToggleMode<cr>
+
+" Elm
+
+let g:elm_format_autosave = 1

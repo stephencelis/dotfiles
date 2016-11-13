@@ -22,5 +22,5 @@ do
   printf "git push $remote :$branch?..."
   read -n1 del
   echo
-  test "$del" = "y" && git push $remote :$branch
+  test "$del" = "y" && git push --no-verify $remote :$branch
 done

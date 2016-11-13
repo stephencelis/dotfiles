@@ -1,38 +1,55 @@
 symlinks = \
-		   config \
-		   gitconfig \
-		   gitignore \
-		   lldbinit \
-		   local \
-		   ruby-version \
-		   tmux.conf \
-		   vimrc \
+					 config \
+					 gitconfig \
+					 gitignore \
+					 lldbinit \
+					 local \
+					 ruby-version \
+					 tmux \
+					 tmux.conf \
+					 vimrc \
 
 formulae = \
-		   chisel \
-		   cmake \
-		   elixir \
-		   elm \
-		   fish \
-		   ghc \
-		   git \
-		   go \
-		   htop \
-		   hub \
-		   io \
-		   kotlin \
-		   lua \
-		   mercurial \
-		   ninja \
-		   pandoc \
-		   postgresql \
-		   rbenv \
-		   redis \
-		   ruby-build \
-		   rust \
-		   tig \
-		   trash \
-		   tree \
+					 chisel \
+					 cmake \
+					 elixir \
+					 enca \
+					 fish \
+					 fzf \
+					 ghc \
+					 git \
+					 glfw3 \
+					 go \
+					 gnupg \
+					 gpg-agent \
+					 htop \
+					 hub \
+					 io \
+					 javarepl \
+					 kotlin \
+					 lua \
+					 mercurial \
+					 ninja \
+					 pandoc \
+					 postgresql \
+					 rbenv \
+					 reattach-to-user-namespace \
+					 redis \
+					 ruby-build \
+					 rust \
+					 tig \
+					 trash \
+					 tree \
+					 yarn \
+
+npm_modules = \
+							create-react-app \
+							eslint \
+							flow-bin \
+							jest \
+							pulp \
+							purescript \
+							typescript
 
 default: | update clean
 
@@ -40,7 +57,7 @@ install: | brew ln ruby vim
 
 update: | install
 	brew update
-	brew upgrade --all
+	brew upgrade
 	npm update --global
 	gem update
 	vim +PlugUpgrade +PlugInstall +PlugUpdate +quitall
@@ -109,9 +126,8 @@ ruby_version := $(shell cat $(PWD)/ruby-version)
 ruby := $(HOME)/.rbenv/versions/$(ruby_version)
 
 bundler := $(ruby)/bin/bundle
-cocoapods := $(ruby)/bin/pod
 
-ruby: | $(ruby) $(bundler) $(cocoapods)
+ruby: | $(ruby) $(bundler)
 
 $(ruby): | $(HOME)/.ruby-version $(cellar)/rbenv $(cellar)/ruby-build
 	rbenv install $(ruby_version)
@@ -120,9 +136,6 @@ gem := $(ruby)/bin/gem
 
 $(bundler): | $(ruby)
 	$(gem) install bundler
-
-$(cocoapods): | $(ruby)
-	$(gem) install cocoapods
 
 # vim
 
