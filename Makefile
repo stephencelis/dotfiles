@@ -35,6 +35,7 @@ formulae = \
 					 rbenv \
 					 reattach-to-user-namespace \
 					 redis \
+					 ripgrep \
 					 ruby-build \
 					 rust \
 					 tig \
@@ -85,7 +86,7 @@ homebrew := $(homebrew_root)/bin/brew
 $(homebrew):
 	ruby -e "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-brew_cask := $(taps)/caskroom/homebrew-cask
+brew_cask := $(cashroom)
 $(brew_cask): | $(homebrew)
 	brew tap Caskroom/cask
 

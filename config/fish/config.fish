@@ -34,7 +34,7 @@ and set -x PATH \
 
 # ghc
 test -d $HOME/.cabal/bin
-and set -x PATH $HOME/.cabal/bin/ $PATH
+and set -x PATH $PATH $HOME/.cabal/bin
 
 # go
 set -x GOPATH $DEVELOPER/_go

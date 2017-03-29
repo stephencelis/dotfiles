@@ -5,6 +5,7 @@
 	br = branch
 	ci = commit -s -v
 	co = checkout
+	conflicts = diff --name-only --diff-filter=U
 	di = diff
 	st = status -s
 [branch]
