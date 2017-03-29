@@ -20,6 +20,8 @@ end
 alias f 'find * -type f | fzf | xargs'
 alias be 'bundle exec'
 alias gg 'git grep'
+alias ack 'echo Did you mean \"rg\"\?; sleep 2; rg'
+alias ag 'echo Did you mean \"rg\"\?; sleep 2; rg'
 
 if type -q trash
     alias rm 'trash'

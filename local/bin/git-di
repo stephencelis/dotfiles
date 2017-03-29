@@ -1,0 +1,3 @@
+#!/bin/sh
+git diff --name-only |
+  fzf --reverse --preview 'git diff --color {}'
