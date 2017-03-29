@@ -1,0 +1,4 @@
+#!/bin/sh
+git diff --name-only \
+  | fzf --multi --reverse --preview 'git diff --color -- {}' \
+  | xargs git ${1:-add}

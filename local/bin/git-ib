@@ -4,14 +4,19 @@ case $1 in
   -a)
     heads=refs/heads
     remotes=refs/remotes
+    shift
     ;;
   -r)
     remotes=refs/remotes
+    shift
     ;;
   *)
     heads=refs/heads
     ;;
 esac
+
+command=${1:-checkout}
+shift
 
 git for-each-ref \
    --sort=-committerdate \
@@ -19,4 +24,4 @@ git for-each-ref \
    $heads $remotes \
    | fzf --reverse --preview 'git log --patch --color {1}...{1}~5' \
    | awk '{print $1}' \
-   | xargs git checkout
+   | xargs git $command $@
