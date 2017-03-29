@@ -18,4 +18,5 @@ git for-each-ref \
    --format='%(refname:short) (%(committerdate:relative))' \
    $heads $remotes \
    | fzf --reverse --preview 'git log --patch --color {1}...{1}~5' \
-   | awk '{print $1}' | xargs git checkout
+   | awk '{print $1}' \
+   | xargs git checkout
