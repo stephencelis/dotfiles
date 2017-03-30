@@ -1,4 +1,13 @@
 #!/bin/sh
-git diff --name-only \
-  | fzf --multi --reverse --preview 'git diff --color -- {}' \
+
+toplevel=`git rev-parse --show-toplevel`
+
+git status --short \
+  | fzf \
+    --ansi \
+    --multi \
+    --preview \
+      "echo {} | awk '{print \"$toplevel/\", \$2}' | xargs git diff --color" \
+    --reverse \
+  | awk "{print \"$toplevel\", \$2}" \
   | xargs git ${1:-add}
