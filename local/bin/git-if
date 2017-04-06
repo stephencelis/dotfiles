@@ -2,12 +2,15 @@
 
 toplevel=`git rev-parse --show-toplevel`
 
+command=${1:-add}
+
 git status --short \
   | fzf \
     --ansi \
     --multi \
+    --header "git $command" \
     --preview \
       "echo {} | awk '{print \"$toplevel/\", \$2}' | xargs git diff --color" \
     --reverse \
   | awk "{print \"$toplevel\", \$2}" \
-  | xargs git ${1:-add}
+  | xargs git $command

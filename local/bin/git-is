@@ -6,6 +6,7 @@ git stash list \
   | fzf \
     --ansi \
     --multi \
+    --header "git stash $command" \
     --preview "echo {} | awk '{sub(/:.+/, \"\"); print}' | xargs git show --color" \
     --reverse \
   | awk '{sub(/:.+/, ""); print}' \

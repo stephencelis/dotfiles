@@ -24,6 +24,7 @@ git for-each-ref \
   $heads $remotes \
   | fzf \
     --ansi \
+    --header "git $command" \
     --multi \
     --preview 'git log --patch --color {1}...{1}~5' \
     --reverse \
