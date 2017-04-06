@@ -1,0 +1,12 @@
+#!/bin/sh
+
+command=${1:-apply}
+
+git stash list \
+  | fzf \
+    --ansi \
+    --multi \
+    --preview "echo {} | awk '{sub(/:.+/, \"\"); print}' | xargs git show --color" \
+    --reverse \
+  | awk '{sub(/:.+/, ""); print}' \
+  | xargs git stash $command

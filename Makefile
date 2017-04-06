@@ -1,5 +1,6 @@
 symlinks = \
 					 config \
+					 ghci.conf \
 					 gitconfig \
 					 gitignore \
 					 lldbinit \

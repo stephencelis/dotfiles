@@ -19,9 +19,13 @@ command=${1:-checkout}
 shift
 
 git for-each-ref \
-   --sort=-committerdate \
-   --format='%(refname:short) (%(committerdate:relative))' \
-   $heads $remotes \
-   | fzf --reverse --preview 'git log --patch --color {1}...{1}~5' \
-   | awk '{print $1}' \
-   | xargs git $command $@
+  --format='%(refname:short) %(color:yellow)(%(committerdate:relative))%(color:reset)' \
+  --sort=-committerdate \
+  $heads $remotes \
+  | fzf \
+    --ansi \
+    --multi \
+    --preview 'git log --patch --color {1}...{1}~5' \
+    --reverse \
+  | awk '{print $1}' \
+  | xargs git $command $@

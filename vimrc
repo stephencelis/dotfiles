@@ -2,59 +2,62 @@ set shell=/bin/bash
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'chriskempson/tomorrow-theme', { 'rtp': 'vim' }
-
+" Plug 'https://bitbucket.org/kisom/eink.vim.git'
+" Plug 'lambdatoast/elm.vim'
+" Plug 'robertmeta/nofrils'
+Plug 'ElmCast/elm-vim'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'airblade/vim-gitgutter'
 Plug 'aliva/vim-fish'
+Plug 'ap/vim-css-color'
+Plug 'bogado/file-line'
+Plug 'bronson/vim-trailing-whitespace'
 Plug 'cakebaker/scss-syntax.vim'
+Plug 'chriskempson/tomorrow-theme', { 'rtp': 'vim' }
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'elixir-lang/vim-elixir'
 Plug 'elzr/vim-json'
+Plug 'ervandew/supertab'
 Plug 'fatih/vim-go'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+Plug 'junegunn/seoul256.vim'
+Plug 'justinj/vim-react-snippets'
 Plug 'keith/swift.vim'
-Plug 'ElmCast/elm-vim'
-" Plug 'lambdatoast/elm.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'rhysd/vim-crystal'
-Plug 'skwp/vim-rspec'
-Plug 'tpope/vim-git'
-Plug 'tpope/vim-markdown'
-Plug 'tpope/vim-rails'
-Plug 'vim-ruby/vim-ruby'
 Plug 'rust-lang/rust.vim'
-
-Plug 'airblade/vim-gitgutter'
-Plug 'ap/vim-css-color'
-Plug 'bogado/file-line'
-Plug 'bronson/vim-trailing-whitespace'
-Plug 'ervandew/supertab'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/syntastic'
+Plug 'skwp/vim-rspec'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tjennings/git-grep-vim'
+Plug 'tomtom/tlib_vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-git'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-rails'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
-" snippets
-Plug 'garbas/vim-snipmate'
-Plug 'honza/vim-snippets'
-Plug 'justinj/vim-react-snippets'
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
+Plug 'vim-ruby/vim-ruby'
 
 call plug#end()
 
 " settings
 
-set background=dark
-colorscheme Tomorrow-Night-Eighties
+colorscheme seoul256-light
+set background=light
 
 syntax enable filetype plugin indent on
 
