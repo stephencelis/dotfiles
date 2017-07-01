@@ -9,6 +9,7 @@ symlinks = \
 					 tmux.conf \
 					 vimrc \
 					 vscode \
+					 yarnrc \
 
 formulae = \
 					 chisel \
@@ -49,17 +50,18 @@ formulae = \
 					 wifi-password \
 					 yarn \
 
-npm_modules = \
+node_modules = \
 							bower \
 							create-react-app \
 							create-react-native-app \
+							prettier \
 							pulp \
 							purescript \
 							typescript \
 
 default: | update clean
 
-install: | brew ln ruby vim
+install: | brew ln node ruby vim
 
 update: | install
 	brew update
@@ -112,6 +114,18 @@ ln: | $(prefixed_symlinks)
 
 $(prefixed_symlinks):
 	@ln -Fsv $(PWD)/$(patsubst .%,%,$(notdir $@)) $@
+
+# node
+
+node := $(cellar)/node
+yarn := $(cellar)/yarn
+node_modules_root = $(HOME)/.config/yarn/global/node_modules
+
+prefixed_node_modules = $(addprefix $(node_modules_root)/,$(node_modules))
+node: | $(node) $(yarn) $(prefixed_node_modules)
+
+$(prefixed_node_modules):
+	yarn global add $(notdir $@)
 
 # ruby
 

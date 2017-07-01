@@ -3,3 +3,4 @@ config
 !config/fish/config.fish
 !config/fish/functions
 local/share
+vscode/extensions
