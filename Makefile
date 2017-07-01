@@ -1,6 +1,5 @@
 symlinks = \
 					 config \
-					 ghci.conf \
 					 gitconfig \
 					 gitignore \
 					 lldbinit \
@@ -9,30 +8,35 @@ symlinks = \
 					 tmux \
 					 tmux.conf \
 					 vimrc \
+					 vscode \
 
 formulae = \
 					 chisel \
 					 cmake \
+					 cscope \
+					 docker \
+					 docker-compose \
 					 elixir \
-					 enca \
+					 erlang \
 					 fish \
 					 fzf \
 					 ghc \
 					 git \
-					 glfw3 \
 					 go \
-					 gnupg \
-					 gpg-agent \
-					 htop \
+					 haskell-stack \
 					 hub \
+					 idris \
 					 io \
-					 javarepl \
 					 kotlin \
 					 lua \
+					 luajit \
 					 mercurial \
+					 neovim \
 					 ninja \
+					 node \
 					 pandoc \
 					 postgresql \
+					 python3 \
 					 rbenv \
 					 reattach-to-user-namespace \
 					 redis \
@@ -42,16 +46,16 @@ formulae = \
 					 tig \
 					 trash \
 					 tree \
+					 wifi-password \
 					 yarn \
 
 npm_modules = \
+							bower \
 							create-react-app \
-							eslint \
-							flow-bin \
-							jest \
+							create-react-native-app \
 							pulp \
 							purescript \
-							typescript
+							typescript \
 
 default: | update clean
 
@@ -60,7 +64,7 @@ install: | brew ln ruby vim
 update: | install
 	brew update
 	brew upgrade
-	npm update --global
+	yarn global upgrade
 	gem update
 	vim +PlugUpgrade +PlugInstall +PlugUpdate +quitall
 
@@ -73,23 +77,16 @@ clean: | install
 
 homebrew_root = /usr/local
 cellar := $(homebrew_root)/Cellar
-taps := $(homebrew_root)/Library/Taps
-caskroom = /opt/homebrew-cask/Caskroom
+taps := $(homebrew_root)/Homebrew/Taps
 
-applications = /Applications
-anybar := $(caskroom)/anybar
-macvim := $(applications)/MacVim.app
+macvim := /usr/local/opt/macvim/MacVim.app
 
 prefixed_formulae := $(addprefix $(cellar)/,$(notdir $(formulae)))
-brew: | $(brew_cask) $(prefixed_formulae) $(anybar) $(macvim)
+brew: | $(brew_cask) $(prefixed_formulae) $(macvim)
 
 homebrew := $(homebrew_root)/bin/brew
 $(homebrew):
 	ruby -e "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-brew_cask := $(cashroom)
-$(brew_cask): | $(homebrew)
-	brew tap Caskroom/cask
 
 $(prefixed_formulae): | $(homebrew)
 	brew install $(notdir $@)
@@ -100,16 +97,11 @@ $(java): | $(brew_cask)
 
 $(cellar)/elasticsearch: | $(java)
 
-$(anybar): | $(brew_cask)
-	brew cask install anybar
-
 $(cellar)/macvim: | $(homebrew)
 	brew install macvim \
-		--override-system-vim \
-		--with-lua \
-
-$(macvim): | $(cellar)/macvim
-	brew linkapps macvim
+		--with-luajit \
+		--with-override-system-vim \
+		--with-python3 \
 
 $(HOME)/.lldbinit: | $(cellar)/chisel
 

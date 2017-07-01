@@ -1,0 +1,7 @@
+#!/bin/sh
+
+pushd $(mktemp -d)
+pulp init
+bower i $@
+pulp repl
+popd

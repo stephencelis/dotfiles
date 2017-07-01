@@ -1,5 +1,4 @@
 function fish_prompt --description 'Write out the prompt'
-
     set -l last_status $status
 
     if test "$CMD_DURATION" -gt '100'
@@ -33,5 +32,4 @@ function fish_prompt --description 'Write out the prompt'
     echo -n '$ '
 
     set_color normal
-
 end

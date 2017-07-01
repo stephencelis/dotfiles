@@ -12,8 +12,6 @@
 	autosetuprebase = always
 [color]
 	ui = auto
-; [commit]
-; 	gpgsign = true
 [core]
 	excludesfile = ~/.gitignore
 [credential]
@@ -43,7 +41,6 @@
 [log]
 	decorate = auto
 [merge]
-	conflictstyle = diff3
 	tool = Kaleidoscope
 [mergetool]
 	prompt = false

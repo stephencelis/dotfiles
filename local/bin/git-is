@@ -10,4 +10,5 @@ git stash list \
     --preview "echo {} | awk '{sub(/:.+/, \"\"); print}' | xargs git show --color" \
     --reverse \
   | awk '{sub(/:.+/, ""); print}' \
-  | xargs git stash $command
+  | tail -r \
+  | xargs -n1 git stash $command
