@@ -3,7 +3,7 @@
 	email = stephen@stephencelis.com
 [alias]
 	br = branch
-	ci = commit -s -v
+	ci = commit -v
 	co = checkout
 	conflicts = diff --name-only --diff-filter=U
 	di = diff
