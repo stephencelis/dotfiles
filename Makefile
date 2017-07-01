@@ -18,6 +18,8 @@ formulae = \
 					 docker \
 					 docker-compose \
 					 elixir \
+					 elm \
+					 elm-format \
 					 erlang \
 					 fish \
 					 fzf \
