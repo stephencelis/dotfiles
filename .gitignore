@@ -2,5 +2,6 @@ config
 !config/fish/completions
 !config/fish/config.fish
 !config/fish/functions
+bundle/cache
 local/share
 vscode/extensions

@@ -1,4 +1,5 @@
 symlinks = \
+					 bundle \
 					 config \
 					 gitconfig \
 					 gitignore \
@@ -15,8 +16,6 @@ formulae = \
 					 chisel \
 					 cmake \
 					 cscope \
-					 docker \
-					 docker-compose \
 					 elixir \
 					 elm \
 					 elm-format \
@@ -66,11 +65,10 @@ default: | update clean
 install: | brew ln node ruby vim
 
 update: | install
-	brew update
-	brew upgrade
-	yarn global upgrade
-	gem update
-	vim +PlugUpgrade +PlugInstall +PlugUpdate +quitall
+	brew update && brew upgrade || true
+	yarn global upgrade || true
+	gem update || true
+	vim +PlugUpgrade +PlugInstall +PlugUpdate +quitall || true
 
 clean: | install
 	brew cleanup

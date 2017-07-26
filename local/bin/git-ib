@@ -24,9 +24,9 @@ git for-each-ref \
   $heads $remotes \
   | fzf \
     --ansi \
-    --header "git $command" \
+    --header "git $command $@" \
     --multi \
     --preview 'git log --patch --color {1}...{1}~5' \
     --reverse \
-  | awk '{print $1}' \
+  | awk '{gsub(/.*\//, ""); print $1}' \
   | xargs git $command $@
