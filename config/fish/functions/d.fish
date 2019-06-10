@@ -1,13 +1,25 @@
-function d --description 'Like z, but d'
-    cd $DEVELOPER
-    for dir in $argv
-        set -l matches $dir*/
+function d --description 'Like z but d'
+    pushd $DEVELOPER
 
-        if [ -n "$matches" ]
-            cd $matches[1]
-        else
-            echo "fish: No matches for wildcard '$dir*/'." >&2
-            return 1
-        end
+    test "$argv" != ""
+    and set -l translated (echo $argv | tr ' ' '/')
+    and set -l query "-q $translated"
+
+    set -l matches ( \
+        find * \
+        -maxdepth 1 \
+        -type d \
+        -print \
+        2> /dev/null \
+        | fzf \
+        -1 \
+        $query \
+    )
+
+    if test "$matches" != ""
+        cd $matches[1]
+    else
+        popd
+        return 1
     end
 end

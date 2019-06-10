@@ -16,11 +16,14 @@ test -f $HOME/.config/fish/local.fish
 and source $HOME/.config/fish/local.fish
 
 # aliases
-alias f 'find * -type f | fzf | xargs'
 alias be 'bundle exec'
+alias f 'find * -type f | fzf | xargs'
 alias gg 'git grep'
 alias ack 'echo Did you mean \"rg\"\?; sleep 2; rg'
 alias ag 'echo Did you mean \"rg\"\?; sleep 2; rg'
+
+alias swift 'env PATH="/usr/bin:$PATH" swift'
+alias xcrun 'env PATH="/usr/bin:$PATH" xcrun'
 
 type -q trash
 and alias rm 'trash'
