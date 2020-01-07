@@ -34,3 +34,10 @@ set -x HOMEBREW_NO_ANALYTICS 1
 # ruby
 test -d $HOME/.rbenv
 and source (rbenv init - | psub)
+
+# bat
+alias cat 'bat'
+set -x BAT_THEME GitHub
+
+# exa
+alias ls 'exa'

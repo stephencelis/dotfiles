@@ -2,6 +2,7 @@ symlinks = \
 					 config \
 					 gitconfig \
 					 gitignore \
+					 irbrc \
 					 local \
 					 ruby-version \
 					 vimrc \
@@ -21,7 +22,10 @@ formulae = \
 					 trash \
 					 tree \
 					 wifi-password \
+					 # stripe/stripe-cli/stripe \
 
+cask_formulae = \
+								ngrok \
 
 default: | update clean
 
