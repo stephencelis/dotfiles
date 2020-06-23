@@ -8,10 +8,13 @@ symlinks = \
 					 vimrc \
 
 formulae = \
+					 bat \
 					 cmake \
+					 exa \
 					 fish \
 					 fzf \
 					 git \
+					 git-delta \
 					 hub \
 					 ninja \
 					 postgresql \

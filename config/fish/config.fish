@@ -28,16 +28,22 @@ alias xcrun 'env PATH="/usr/bin:$PATH" xcrun'
 type -q trash
 and alias rm 'trash'
 
-# homebrew
-set -x HOMEBREW_NO_ANALYTICS 1
-
-# ruby
-test -d $HOME/.rbenv
-and source (rbenv init - | psub)
-
 # bat
 alias cat 'bat'
 set -x BAT_THEME GitHub
 
 # exa
 alias ls 'exa'
+
+# homebrew
+set -x HOMEBREW_NO_ANALYTICS 1
+
+# nix
+set fish_function_path \
+  $fish_function_path \
+  $HOME/.config/fish/plugin-foreign-env/functions
+fenv source '$HOME/.nix-profile/etc/profile.d/nix.sh'
+
+# ruby
+test -d $HOME/.rbenv
+and source (rbenv init - | psub)

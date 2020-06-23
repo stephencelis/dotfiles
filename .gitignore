@@ -1,4 +1,5 @@
 bundle/cache
+config/gh
 config/stripe
 local/share
 vscode/extensions

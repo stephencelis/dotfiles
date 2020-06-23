@@ -14,6 +14,7 @@
 	ui = auto
 [core]
 	excludesfile = ~/.gitignore
+	pager = delta
 [credential]
 	helper = osxkeychain
 [diff]
@@ -29,9 +30,10 @@
 	required = true
 	smudge = git hawser smudge %f
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
 	required = true
+	process = git-lfs filter-process
 [ghi]
 	token = !security find-internet-password -a stephencelis -s github.com -l 'ghi token' -w
 [github]
@@ -47,11 +49,6 @@
 [mergetool "Kaleidoscope"]
 	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
 	trustExitCode = true
-[pager]
-	blame = less -S
-	diff = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
-	log = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
-	show = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
 [push]
 	default = current
 [pull]

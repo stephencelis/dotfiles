@@ -1,3 +1,6 @@
 [submodule "tmux/plugins/tpm"]
 	path = tmux/plugins/tpm
 	url = git://github.com/tmux-plugins/tpm.git
+[submodule "config/fish/plugin-foreign-env"]
+	path = config/fish/plugin-foreign-env
+	url = https://github.com/oh-my-fish/plugin-foreign-env
