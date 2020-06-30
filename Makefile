@@ -1,5 +1,8 @@
 symlinks = \
+					 bat \
 					 config \
+					 delta \
+					 exa \
 					 gitconfig \
 					 gitignore \
 					 irbrc \
