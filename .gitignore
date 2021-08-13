@@ -1,6 +1,8 @@
 bundle/cache
 config/gh
 config/gops
+config/hub
 config/stripe
 local/share
+local/state/gh
 vscode/extensions

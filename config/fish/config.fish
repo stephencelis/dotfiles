@@ -35,14 +35,11 @@ set -x BAT_THEME GitHub
 # exa
 alias ls 'exa'
 
+# fzf
+fzf_key_bindings
+
 # homebrew
 set -x HOMEBREW_NO_ANALYTICS 1
-
-# nix
-set fish_function_path \
-  $fish_function_path \
-  $HOME/.config/fish/plugin-foreign-env/functions
-fenv source '$HOME/.nix-profile/etc/profile.d/nix.sh'
 
 # ruby
 test -d $HOME/.rbenv

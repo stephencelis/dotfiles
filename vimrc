@@ -34,12 +34,7 @@ call plug#end()
 
 " settings
 
-let darkq = system('darkq.swift')
-if v:shell_error == 0
-  colorscheme seoul256
-else
-  colorscheme seoul256-light
-endif
+" colorscheme seoul256-light
 
 syntax enable filetype plugin indent on
 

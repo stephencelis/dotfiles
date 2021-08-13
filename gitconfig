@@ -29,11 +29,6 @@
 	clean = git hawser clean %f
 	required = true
 	smudge = git hawser smudge %f
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	required = true
-	process = git-lfs filter-process
 [ghi]
 	token = !security find-internet-password -a stephencelis -s github.com -l 'ghi token' -w
 [github]
@@ -61,3 +56,14 @@
 	enabled = true
 [submodule]
 	fetchJobs = 4
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[hub]
+	protocol = https
+[init]
+	defaultBranch = main
+[credentia]
+	helper = osxkeychain
