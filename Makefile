@@ -20,7 +20,7 @@ formulae = \
 					 git-delta \
 					 hub \
 					 ninja \
-					 postgresql \
+					 postgresql@15 \
 					 rbenv \
 					 ripgrep \
 					 ruby-build \
@@ -49,7 +49,7 @@ clean: | install
 
 # brew
 
-homebrew_root = /usr/local
+homebrew_root = /opt/homebrew
 cellar := $(homebrew_root)/Cellar
 taps := $(homebrew_root)/Homebrew/Taps
 
@@ -58,7 +58,7 @@ brew: | $(brew_cask) $(prefixed_formulae)
 
 homebrew := $(homebrew_root)/bin/brew
 $(homebrew):
-	ruby -e "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	/bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 $(prefixed_formulae): | $(homebrew)
 	brew install $(notdir $@)

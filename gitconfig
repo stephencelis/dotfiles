@@ -34,7 +34,7 @@
 [github]
 	user = stephencelis
 [interactive]
-	diffFilter = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight
+	diffFilter = /opt/homebrew/share/git-core/contrib/diff-highlight/diff-highlight
 [log]
 	decorate = auto
 [merge]
