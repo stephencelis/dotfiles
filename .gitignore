@@ -4,5 +4,5 @@ config/gops
 config/hub
 config/stripe
 local/share
-local/state/gh
+local/state
 vscode/extensions

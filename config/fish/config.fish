@@ -15,6 +15,7 @@ set -x EDITOR vim
 set -x VISUAL $EDITOR
 
 set -x __fish_git_prompt_show_informative_status 1
+set -x __fish_git_prompt_showuntrackedfiles 1
 
 set -x DEVELOPER ~/Developer
 
