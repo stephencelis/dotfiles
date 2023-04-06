@@ -22,6 +22,7 @@ formulae = \
 					 hub \
 					 libyaml \
 					 neovim \
+					 ngrok \
 					 ninja \
 					 postgresql@15 \
 					 rbenv \
