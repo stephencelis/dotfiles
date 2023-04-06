@@ -1,6 +1,13 @@
 # we're already acquainted, thanks
 set fish_greeting ''
 
+# homebrew
+if status --is-interactive
+  eval (/opt/homebrew/bin/brew shellenv)
+end
+set -x HOMEBREW_NO_ANALYTICS 1
+set -x HOMEBREW_NO_ENV_HINTS 1
+
 # universal
 set -x PATH $PATH /usr/local/sbin
 set -x PATH $HOME/.local/bin $PATH
@@ -21,7 +28,7 @@ alias f 'find * -type f | fzf | xargs'
 alias gg 'git grep'
 alias ack 'echo Did you mean \"rg\"\?; sleep 2; rg'
 alias ag 'echo Did you mean \"rg\"\?; sleep 2; rg'
-
+alias vim 'nvim'
 alias swift 'env PATH="/usr/bin:$PATH" swift'
 alias xcrun 'env PATH="/usr/bin:$PATH" xcrun'
 
@@ -37,9 +44,6 @@ alias ls 'exa'
 
 # fzf
 fzf_key_bindings
-
-# homebrew
-set -x HOMEBREW_NO_ANALYTICS 1
 
 # ruby
 test -d $HOME/.rbenv

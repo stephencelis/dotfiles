@@ -18,7 +18,10 @@ formulae = \
 					 fzf \
 					 git \
 					 git-delta \
+					 git-lfs \
 					 hub \
+					 libyaml \
+					 neovim \
 					 ninja \
 					 postgresql@15 \
 					 rbenv \
