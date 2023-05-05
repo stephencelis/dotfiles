@@ -20,6 +20,7 @@ formulae = \
 					 git-delta \
 					 git-lfs \
 					 hub \
+					 jq \
 					 libyaml \
 					 neovim \
 					 ngrok \
